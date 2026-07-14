@@ -71,3 +71,18 @@ background:#273549;
 .card h3{
 margin-bottom:10px;
 }
+
+.result{
+    text-align:center;
+    margin-top:40px;
+}
+
+input[type="file"]{
+    padding:12px;
+    background:#fff;
+    border-radius:8px;
+}
+
+button:hover{
+    background:#16a34a;
+}
