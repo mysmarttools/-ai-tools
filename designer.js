@@ -1,3 +1,8 @@
+let textX = 450;
+let textY = 250;
+
+let dragging = false;
+
 let bgImage = null;
 
 const canvas = document.getElementById("canvas");
