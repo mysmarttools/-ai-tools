@@ -270,6 +270,89 @@ function copyPrompt(){
         return;
     }
 
+    // =============================
+// AI Keyword Generator
+// =============================
+
+
+function generateKeywords(){
+
+const input = document.getElementById("keywordInput");
+
+const result = document.getElementById("keywordResult");
+
+
+if(!input || !result){
+    return;
+}
+
+
+const keyword = input.value.trim();
+
+
+if(keyword === ""){
+
+alert("Please enter keyword");
+
+return;
+
+}
+
+
+const keywords = `
+
+${keyword}
+
+best ${keyword}
+
+${keyword} online
+
+buy ${keyword}
+
+cheap ${keyword}
+
+premium ${keyword}
+
+${keyword} services
+
+${keyword} tools
+
+best ${keyword} in Pakistan
+
+${keyword} for beginners
+
+how to use ${keyword}
+
+${keyword} guide
+
+${keyword} tips
+
+${keyword} ideas
+
+`;
+
+
+result.value = keywords;
+
+
+}
+
+
+
+// Copy Keywords
+
+function copyKeywords(){
+
+const result = document.getElementById("keywordResult");
+
+
+navigator.clipboard.writeText(result.value);
+
+
+alert("✅ Keywords Copied!");
+
+}
+
 
     navigator.clipboard.writeText(result.value);
 
