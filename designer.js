@@ -1,1 +1,39 @@
+body{
 
+margin:0;
+background:#f5f5f5;
+font-family:Arial;
+text-align:center;
+
+}
+
+.container{
+
+width:90%;
+margin:auto;
+padding:30px;
+
+}
+
+input{
+
+padding:10px;
+width:300px;
+
+}
+
+button{
+
+padding:12px 25px;
+margin:10px;
+cursor:pointer;
+
+}
+
+canvas{
+
+border:2px solid #ddd;
+border-radius:10px;
+background:white;
+
+}
