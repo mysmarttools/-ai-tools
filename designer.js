@@ -21,7 +21,10 @@ const ctx = canvas.getContext("2d");
 
 // Generate Design
 
-function generateDesign(){
+function generateDesign(){ 
+    if(texts.length > 0 && texts[0].value === ""){
+    texts[0].value = "Your Text";
+}
 
 ctx.clearRect(0,0,canvas.width,canvas.height);
 
