@@ -254,3 +254,36 @@ canvas.addEventListener("mouseup", function(){
     dragging = false;
 
 });
+let texts = [
+    {
+        value: "Your Text",
+        x: 450,
+        y: 250,
+        size: 40,
+        color: "#ffffff"
+    }
+];
+
+let activeText = 0;
+function addText(){
+
+    texts.push({
+
+        value:"New Text",
+
+        x:450,
+
+        y:250,
+
+        size:40,
+
+        color:"#ffffff"
+
+    });
+
+
+    activeText = texts.length - 1;
+
+    generateDesign();
+
+}
