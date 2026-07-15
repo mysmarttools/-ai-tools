@@ -1,39 +1,51 @@
-body{
+const canvas=document.getElementById("canvas");
 
-margin:0;
-background:#f5f5f5;
-font-family:Arial;
-text-align:center;
+const ctx=canvas.getContext("2d");
+
+generateDesign();
+
+function generateDesign(){
+
+const text=document.getElementById("text").value;
+
+const bg=document.getElementById("bgColor").value;
+
+const color=document.getElementById("textColor").value;
+
+const size=document.getElementById("fontSize").value;
+
+ctx.clearRect(0,0,900,500);
+
+ctx.fillStyle=bg;
+
+ctx.fillRect(0,0,900,500);
+
+ctx.fillStyle=color;
+
+ctx.font="bold "+size+"px Arial";
+
+ctx.textAlign="center";
+
+ctx.fillText(text,450,250);
 
 }
 
-.container{
+document.getElementById("text").addEventListener("keyup",generateDesign);
 
-width:90%;
-margin:auto;
-padding:30px;
+document.getElementById("bgColor").addEventListener("input",generateDesign);
 
-}
+document.getElementById("textColor").addEventListener("input",generateDesign);
 
-input{
+document.getElementById("fontSize").addEventListener("input",generateDesign);
 
-padding:10px;
-width:300px;
+function downloadImage(){
 
-}
+const link=document.createElement("a");
 
-button{
+link.download="design.png";
 
-padding:12px 25px;
-margin:10px;
-cursor:pointer;
+link.href=canvas.toDataURL();
 
-}
-
-canvas{
-
-border:2px solid #ddd;
-border-radius:10px;
-background:white;
+link.click();
 
 }
