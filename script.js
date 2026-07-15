@@ -167,3 +167,48 @@ function copyFAQ(){
     alert("✅ FAQs Copied!");
 
 }
+
+function generatePrompt(){
+
+const topic = document.getElementById("imageTopic").value.trim();
+
+const style = document.getElementById("style").value;
+
+
+if(topic === ""){
+
+alert("Please enter image idea");
+
+return;
+
+}
+
+
+const prompts = [
+
+`A ${style} image of ${topic}, highly detailed, professional quality, beautiful lighting, 4K resolution.`,
+
+`Create a ${style} style artwork showing ${topic}, realistic details, cinematic lighting, ultra HD quality.`,
+
+`${topic} in ${style} style, amazing background, professional photography, sharp details, high resolution.`
+
+];
+
+
+const random = Math.floor(Math.random()*prompts.length);
+
+
+document.getElementById("promptResult").value = prompts[random];
+
+}
+
+
+function copyPrompt(){
+
+const result = document.getElementById("promptResult");
+
+navigator.clipboard.writeText(result.value);
+
+alert("✅ Prompt Copied!");
+
+}
