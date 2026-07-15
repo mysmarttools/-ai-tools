@@ -1,70 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Meta Generator</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Meta Description Generator | Best AI Tools Hub</title>
+
+    <meta name="description"
+        content="Generate SEO-friendly meta descriptions instantly with our free AI Meta Description Generator. Improve your website CTR and search visibility.">
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <header>
-<h1>📝 AI Meta Generator</h1>
-<nav>
-<a href="index.html">Home</a>
-</nav>
+    <h1>📝 AI Meta Description Generator</h1>
+
+    <nav>
+        <a href="index.html">🏠 Home</a>
+    </nav>
 </header>
 
 <section class="hero">
-<h2>Generate SEO Meta Description</h2>
 
-<input id="keyword" type="text" placeholder="Enter Keyword">
+    <h2>Generate SEO Meta Description</h2>
 
-<br><br>
+    <input id="keyword" type="text" placeholder="Enter Keyword">
 
-<input id="brand" type="text" placeholder="Website Name">
+    <br><br>
 
-<br><br>
-<br><br>
+    <input id="brand" type="text" placeholder="Website Name">
 
-<label>Select Length</label>
+    <br><br>
 
-<select id="length">
-<option value="120">120 Characters</option>
-<option value="150">150 Characters</option>
-<option value="160" selected>160 Characters</option>
-</select>
-<hr>
+    <label><strong>Select Meta Length</strong></label>
 
+    <br><br>
 
-<button onclick="generateMeta()">Generate</button>
+    <select id="length">
+        <option value="120">120 Characters</option>
+        <option value="150">150 Characters</option>
+        <option value="160" selected>160 Characters</option>
+    </select>
 
-<br><br>
+    <br><br>
 
-<textarea id="result" rows="6" cols="50"></textarea>
-  <textarea id="result" rows="6"></textarea>
+    <button onclick="generateMeta()">🚀 Generate</button>
 
-<br><br>
+    <br><br>
 
-<button onclick="copyMeta()">📋 Copy</button>
+    <textarea id="result" rows="6" placeholder="Your Meta Description will appear here..."></textarea>
 
-<button onclick="generateMeta()">🔄 Regenerate</button>
+    <br><br>
 
-<p id="count">Characters: 0</p>
+    <button onclick="copyMeta()">📋 Copy</button>
+
+    <button onclick="generateMeta()">🔄 Regenerate</button>
+
+    <p id="count">Characters: 0</p>
+
 </section>
+
 <hr>
+
+<section>
 
 <h2>SEO Tips</h2>
 
 <ul>
-<li>✅ Keep meta descriptions between 150–160 characters.</li>
-<li>✅ Include your primary keyword naturally.</li>
-<li>✅ Add a clear call-to-action.</li>
-<li>✅ Make every page's meta description unique.</li>
-<li>✅ Avoid keyword stuffing.</li>
+    <li>✅ Keep meta descriptions between 150–160 characters.</li>
+    <li>✅ Include your primary keyword naturally.</li>
+    <li>✅ Add a clear Call-to-Action (CTA).</li>
+    <li>✅ Make every page's meta description unique.</li>
+    <li>✅ Avoid keyword stuffing.</li>
 </ul>
+
+</section>
+
+<hr>
+
+<section>
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>What is a Meta Description?</h3>
+
+<p>
+A meta description is a short summary of your webpage that appears in Google search results.
+</p>
+
+<h3>What is the ideal Meta Description length?</h3>
+
+<p>
+The recommended length is between 150 and 160 characters.
+</p>
+
+<h3>Does Meta Description improve SEO?</h3>
+
+<p>
+A good meta description can improve your Click Through Rate (CTR), which helps attract more visitors from Google.
+</p>
+
+</section>
+
 <script src="script.js"></script>
 
-<br><br>
 </body>
 </html>
