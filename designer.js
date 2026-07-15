@@ -11,6 +11,9 @@ function generateDesign() {
     const size = document.getElementById("fontSize").value;
     const font = document.getElementById("fontFamily").value;
 
+    const bold = document.getElementById("bold").checked ? "bold" : "";
+    const italic = document.getElementById("italic").checked ? "italic" : "";
+
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     // Background
@@ -30,17 +33,54 @@ function generateDesign() {
 
     }
 
-    // Text
+    // Font Style
+    ctx.font = italic + " " + bold + " " + size + "px " + font;
+
     ctx.fillStyle = color;
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
-    ctx.font = "bold " + size + "px " + font;
 
-    ctx.fillText(text, canvas.width / 2, canvas.height / 2);
+    // Text Position
+    let y = canvas.height / 2;
+
+    const position = document.getElementById("position").value;
+
+    if (position === "top") y = 80;
+    if (position === "center") y = canvas.height / 2;
+    if (position === "bottom") y = canvas.height - 80;
+
+    // Shadow
+    if (document.getElementById("shadow").checked) {
+
+        ctx.shadowColor = "#000";
+        ctx.shadowBlur = 12;
+        ctx.shadowOffsetX = 5;
+        ctx.shadowOffsetY = 5;
+
+    } else {
+
+        ctx.shadowColor = "transparent";
+        ctx.shadowBlur = 0;
+        ctx.shadowOffsetX = 0;
+        ctx.shadowOffsetY = 0;
+
+    }
+
+    // Outline
+    if (document.getElementById("outline").checked) {
+
+        ctx.strokeStyle = "#000";
+        ctx.lineWidth = 3;
+        ctx.strokeText(text, canvas.width / 2, y);
+
+    }
+
+    // Draw Text
+    ctx.fillText(text, canvas.width / 2, y);
 
 }
 
-// Download
+// Download Image
 
 function downloadImage() {
 
@@ -72,7 +112,7 @@ document.getElementById("bgUpload").addEventListener("change", function (e) {
 
         bgImage.src = event.target.result;
 
-    }
+    };
 
     reader.readAsDataURL(file);
 
@@ -81,17 +121,17 @@ document.getElementById("bgUpload").addEventListener("change", function (e) {
 // Live Update
 
 document.getElementById("text").addEventListener("keyup", generateDesign);
-
 document.getElementById("textColor").addEventListener("input", generateDesign);
-
 document.getElementById("fontSize").addEventListener("input", generateDesign);
-
 document.getElementById("fontFamily").addEventListener("change", generateDesign);
-
 document.getElementById("color1").addEventListener("input", generateDesign);
-
 document.getElementById("color2").addEventListener("input", generateDesign);
 
-// First Load
+document.getElementById("bold").addEventListener("change", generateDesign);
+document.getElementById("italic").addEventListener("change", generateDesign);
+document.getElementById("shadow").addEventListener("change", generateDesign);
+document.getElementById("outline").addEventListener("change", generateDesign);
+document.getElementById("position").addEventListener("change", generateDesign);
 
+// First Load
 generateDesign();
