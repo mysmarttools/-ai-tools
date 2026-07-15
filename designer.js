@@ -1,9 +1,8 @@
-let textScale = 1;
 let textX = 450;
 let textY = 250;
 
 let dragging = false;
-
+let textScale = 1;
 let bgImage = null;
 
 const canvas = document.getElementById("canvas");
@@ -101,7 +100,25 @@ ctx.font = italic + " " + bold + " " + (size * textScale) + "px " + font;
     }
 
     // Draw Text
-ctx.fillText(text, textX, textY);
+// Draw Multiple Texts
+
+texts.forEach(function(item){
+
+    ctx.fillStyle = item.color;
+
+    ctx.font = "bold " + item.size + "px Arial";
+
+    ctx.textAlign = "center";
+
+    ctx.textBaseline = "middle";
+
+    ctx.fillText(
+        item.value,
+        item.x,
+        item.y
+    );
+
+});
 }
 
 // Download Image
