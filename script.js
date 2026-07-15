@@ -76,3 +76,63 @@ function copyMeta() {
     alert("✅ Meta Description Copied!");
 
 }
+// =============================
+// AI Title Generator
+// =============================
+
+function generateTitle() {
+
+    const keyword = document.getElementById("keyword").value.trim();
+    const brand = document.getElementById("brand").value.trim();
+
+    if (keyword === "" || brand === "") {
+        alert("Please enter Keyword and Website Name");
+        return;
+    }
+
+    const titles = [
+
+        `Buy ${keyword} Online | ${brand}`,
+
+        `Best ${keyword} in Pakistan | ${brand}`,
+
+        `${keyword} - Best Price | ${brand}`,
+
+        `Premium ${keyword} Collection | ${brand}`,
+
+        `Shop ${keyword} Online | ${brand}`,
+
+        `${keyword} with Fast Delivery | ${brand}`,
+
+        `Affordable ${keyword} | ${brand}`,
+
+        `${keyword} at Best Price | ${brand}`,
+
+        `Top Quality ${keyword} | ${brand}`,
+
+        `${brand} - ${keyword}`
+
+    ];
+
+    const random = Math.floor(Math.random() * titles.length);
+
+    document.getElementById("titleResult").value = titles[random];
+
+    document.getElementById("titleCount").innerHTML =
+        "Characters: " + titles[random].length;
+
+}
+
+// =============================
+// Copy Title
+// =============================
+
+function copyTitle() {
+
+    const result = document.getElementById("titleResult");
+
+    navigator.clipboard.writeText(result.value);
+
+    alert("✅ SEO Title Copied!");
+
+}
