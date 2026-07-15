@@ -270,70 +270,47 @@ function copyPrompt(){
         return;
     }
 
-    // =============================
+   // =============================
 // AI Keyword Generator
 // =============================
 
-
 function generateKeywords(){
 
-const input = document.getElementById("keywordInput");
-
-const result = document.getElementById("keywordResult");
-
-
-if(!input || !result){
-    return;
-}
+    const input = document.getElementById("keywordInput");
+    const result = document.getElementById("keywordResult");
 
 
-const keyword = input.value.trim();
+    if(!input || !result){
+        return;
+    }
 
 
-if(keyword === ""){
-
-alert("Please enter keyword");
-
-return;
-
-}
+    const keyword = input.value.trim();
 
 
-const keywords = `
+    if(keyword === ""){
 
-${keyword}
+        alert("Please enter keyword");
+        return;
 
-best ${keyword}
-
-${keyword} online
-
-buy ${keyword}
-
-cheap ${keyword}
-
-premium ${keyword}
-
-${keyword} services
-
-${keyword} tools
-
-best ${keyword} in Pakistan
-
-${keyword} for beginners
-
-how to use ${keyword}
-
-${keyword} guide
-
-${keyword} tips
-
-${keyword} ideas
-
-`;
+    }
 
 
-result.value = keywords;
+    const keywordList = [
+        `best ${keyword}`,
+        `free ${keyword}`,
+        `${keyword} online`,
+        `buy ${keyword}`,
+        `${keyword} tools`,
+        `${keyword} services`,
+        `${keyword} guide`,
+        `${keyword} tips`,
+        `${keyword} ideas`,
+        `${keyword} in Pakistan`
+    ];
 
+
+    result.value = keywordList.join("\n");
 
 }
 
@@ -343,19 +320,15 @@ result.value = keywords;
 
 function copyKeywords(){
 
-const result = document.getElementById("keywordResult");
+    const result = document.getElementById("keywordResult");
 
-
-navigator.clipboard.writeText(result.value);
-
-
-alert("✅ Keywords Copied!");
-
-}
+    if(!result){
+        return;
+    }
 
 
     navigator.clipboard.writeText(result.value);
 
-    alert("✅ Prompt Copied!");
+    alert("✅ Keywords Copied!");
 
 }
