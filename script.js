@@ -270,70 +270,7 @@ function copyPrompt(){
         return;
     }
 
-   // =============================
-// AI Keyword Generator
-// =============================
-
-function generateKeywords(){
-
-    const input = document.getElementById("keywordInput");
-    const result = document.getElementById("keywordResult");
-
-
-    if(!input || !result){
-        return;
-    }
-
-
-    const keyword = input.value.trim();
-
-
-    if(keyword === ""){
-
-        alert("Please enter keyword");
-        return;
-
-    }
-
-
-    const keywordList = [
-        `best ${keyword}`,
-        `free ${keyword}`,
-        `${keyword} online`,
-        `buy ${keyword}`,
-        `${keyword} tools`,
-        `${keyword} services`,
-        `${keyword} guide`,
-        `${keyword} tips`,
-        `${keyword} ideas`,
-        `${keyword} in Pakistan`
-    ];
-
-
-    result.value = keywordList.join("\n");
-
-}
-
-
-
-// Copy Keywords
-
-function copyKeywords(){
-
-    const result = document.getElementById("keywordResult");
-
-    if(!result){
-        return;
-    }
-
-
-    navigator.clipboard.writeText(result.value);
-
-    alert("✅ Keywords Copied!");
-
-}
-
-
+   
     // =============================
 // AI Keyword Generator
 // =============================
