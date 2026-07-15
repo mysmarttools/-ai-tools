@@ -101,3 +101,11 @@ textarea{
 height:150px;
 resize:vertical;
 }
+select{
+width:80%;
+max-width:600px;
+padding:12px;
+border-radius:8px;
+font-size:16px;
+margin-bottom:20px;
+}
