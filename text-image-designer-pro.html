@@ -1,1 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Text To Image Designer</title>
+
+<link rel="stylesheet" href="designer.css">
+
+</head>
+<body>
+
+<div class="container">
+
+<h1>🎨 Text To Image Designer</h1>
+
+<input id="text" placeholder="Enter Text">
+
+<br><br>
+
+<label>Background</label>
+
+<input type="color" id="bgColor" value="#4f46e5">
+
+<br><br>
+
+<label>Text Color</label>
+
+<input type="color" id="textColor" value="#ffffff">
+
+<br><br>
+
+<label>Font Size</label>
+
+<input type="range" id="fontSize" min="20" max="80" value="40">
+
+<br><br>
+
+<button onclick="generateDesign()">
+Generate
+</button>
+
+<button onclick="downloadImage()">
+Download
+</button>
+
+<br><br>
+
+<canvas id="canvas" width="900" height="500"></canvas>
+
+</div>
+
+<script src="designer.js"></script>
+
+</body>
+</html>
