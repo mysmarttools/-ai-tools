@@ -100,8 +100,7 @@ if (align === "right") {
     }
 
     // Draw Text
-    ctx.fillText(text, canvas.width / 2, y);
-
+ctx.fillText(text, textX, textY);
 }
 
 // Download Image
@@ -167,5 +166,42 @@ document.getElementById("opacity").addEventListener("input", function () {
     document.getElementById("opacityValue").innerHTML = this.value + "%";
 
     generateDesign();
+
+});
+
+canvas.addEventListener("mousedown", function(e){
+
+    const rect = canvas.getBoundingClientRect();
+
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
+
+    if(
+        Math.abs(mouseX - textX) < 200 &&
+        Math.abs(mouseY - textY) < 80
+    ){
+        dragging = true;
+    }
+
+});
+
+
+canvas.addEventListener("mousemove", function(e){
+
+    if(!dragging) return;
+
+    const rect = canvas.getBoundingClientRect();
+
+    textX = e.clientX - rect.left;
+    textY = e.clientY - rect.top;
+
+    generateDesign();
+
+});
+
+
+canvas.addEventListener("mouseup", function(){
+
+    dragging = false;
 
 });
