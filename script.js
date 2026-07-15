@@ -109,3 +109,61 @@ function copyTitle() {
 
     alert("✅ Meta Title Copied!");
 }
+// =============================
+// AI FAQ Generator
+// =============================
+
+function generateFAQ(){
+
+    const keyword = document.getElementById("faqKeyword").value.trim();
+
+    if(keyword === ""){
+        alert("Please enter topic or keyword");
+        return;
+    }
+
+
+    const faqs = `
+
+Q1: What is ${keyword}?
+
+A: ${keyword} is a useful solution that helps users find better results and improve their experience.
+
+
+Q2: Why should I use ${keyword}?
+
+A: Using ${keyword} can save time, improve productivity and provide better outcomes.
+
+
+Q3: How does ${keyword} work?
+
+A: ${keyword} works by providing simple and effective solutions according to user requirements.
+
+
+Q4: Is ${keyword} free to use?
+
+A: Many ${keyword} tools are available online with free options.
+
+
+Q5: Where can I learn more about ${keyword}?
+
+A: You can explore more information and related tools on Best AI Tools Hub.
+
+`;
+
+    document.getElementById("faqResult").value = faqs;
+
+}
+
+
+// Copy FAQ
+
+function copyFAQ(){
+
+    const result = document.getElementById("faqResult");
+
+    navigator.clipboard.writeText(result.value);
+
+    alert("✅ FAQs Copied!");
+
+}
