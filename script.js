@@ -344,83 +344,71 @@ alert("✅ Alt Text Copied!");
 
 function generateKeywords(){
 
-const input=document.getElementById("keywordInput");
-const result=document.getElementById("keywordResult");
+    const input = document.getElementById("keywordInput");
+    const result = document.getElementById("keywordResult");
 
 
-if(!input || !result){
-    return;
+    if (!input || !result) {
+        return;
+    }
+
+
+    const keyword = input.value.trim();
+
+
+    if (keyword === "") {
+
+        alert("Please enter keyword");
+        return;
+
+    }
+
+
+    const keywords = [
+        "best " + keyword,
+        "free " + keyword,
+        keyword + " online",
+        keyword + " tools",
+        keyword + " services",
+        keyword + " guide",
+        keyword + " tips",
+        keyword + " ideas",
+        keyword + " examples",
+        keyword + " for beginners",
+        keyword + " in Pakistan",
+        "how to use " + keyword,
+        "what is " + keyword,
+        keyword + " alternatives",
+        keyword + " comparison",
+        "buy " + keyword,
+        keyword + " price",
+        keyword + " offers",
+        "top " + keyword,
+        "latest " + keyword
+    ];
+
+
+    result.value = keywords.join("\n");
+
 }
 
 
-if(input.value.trim()===""){
 
-alert("Please enter keyword");
-return;
+// =============================
+// Copy Keywords
+// =============================
+
+function copyKeywords(){
+
+    const result = document.getElementById("keywordResult");
+
+
+    if(result){
+
+        navigator.clipboard.writeText(result.value);
+
+        alert("✅ Keywords Copied!");
+
+    }
 
 }
-
-
-const k=input.value.trim();
-
-
-const keywords = `
-
-PRIMARY KEYWORDS
-
-${k}
-best ${k}
-top ${k}
-free ${k}
-premium ${k}
-${k} online
-${k} website
-${k} tool
-
-
-LONG TAIL KEYWORDS
-
-best ${k} for beginners
-best ${k} in Pakistan
-how to use ${k}
-where to find ${k}
-${k} services online
-${k} tips and guide
-${k} step by step
-
-
-BUYER INTENT KEYWORDS
-
-buy ${k}
-${k} price
-${k} deals
-${k} offers
-cheap ${k}
-affordable ${k}
-${k} discount
-
-
-QUESTION KEYWORDS
-
-what is ${k}
-how does ${k} work
-why use ${k}
-how to choose ${k}
-is ${k} worth it
-
-
-SEO RELATED KEYWORDS
-
-${k} ideas
-${k} examples
-${k} guide
-${k} strategy
-${k} alternatives
-${k} comparison
-
-`;
-
-
-result.value = keywords;
-}
-
