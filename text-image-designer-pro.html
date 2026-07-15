@@ -10,43 +10,27 @@
 <link rel="stylesheet" href="designer.css">
 
 </head>
+
 <body>
 
 <div class="container">
 
 <h1>🎨 Text To Image Designer</h1>
 
-<input id="text" placeholder="Enter Text">
-
-<br><br>
-
-<label>Background</label>
-
-<input type="color" id="bgColor" value="#4f46e5">
+<input id="text" type="text" placeholder="Enter Text">
 
 <br><br>
 
 <label>Text Color</label>
-
 <input type="color" id="textColor" value="#ffffff">
 
 <br><br>
 
 <label>Font Size</label>
-
 <input type="range" id="fontSize" min="20" max="80" value="40">
 
 <br><br>
 
-<button onclick="generateDesign()">
-Generate
-</button>
-
-<button onclick="downloadImage()">
-Download
-</button>
-
-<br><br>
 <h3>Background Image</h3>
 
 <input type="file" id="bgUpload" accept="image/*">
@@ -65,37 +49,24 @@ Download
 <option value="Courier New">Courier New</option>
 <option value="Impact">Impact</option>
 <option value="Times New Roman">Times New Roman</option>
-<option value="Comic Sans MS">Comic Sans</option>
+<option value="Comic Sans MS">Comic Sans MS</option>
 <option value="Lucida Console">Lucida Console</option>
 
 </select>
 
 <br><br>
 
-<h3>Gradient</h3>
+<h3>Gradient Background</h3>
 
+<label>Color 1</label>
 <input type="color" id="color1" value="#4f46e5">
 
+<label>Color 2</label>
 <input type="color" id="color2" value="#9333ea">
-<canvas id="canvas" width="900" height="500"></canvas>
 
-</div>
-<input id="bgUpload" type="file">
+<br><br>
 
-<select id="fontFamily"></select>
-
-<input id="color1" type="color">
-
-<input id="color2" type="color">
-
-<input id="textColor" type="color">
-
-<input id="fontSize" type="range">
-
-<input id="text">
-
-<canvas id="canvas"></canvas>
-  <h3>Text Style</h3>
+<h3>Text Style</h3>
 
 <label>
 <input type="checkbox" id="bold">
@@ -124,21 +95,23 @@ Outline
 <select id="position">
 
 <option value="top">Top</option>
-
 <option value="center" selected>Center</option>
-
 <option value="bottom">Bottom</option>
-<input type="checkbox" id="bold">
-<input type="checkbox" id="italic">
-<input type="checkbox" id="shadow">
-<input type="checkbox" id="outline">
 
-<select id="position">
-<option value="top">Top</option>
-<option value="center">Center</option>
-<option value="bottom">Bottom</option>
 </select>
-</select>
+
+<br><br>
+
+<button onclick="generateDesign()">🎨 Generate</button>
+
+<button onclick="downloadImage()">⬇ Download</button>
+
+<br><br>
+
+<canvas id="canvas" width="900" height="500"></canvas>
+
+</div>
+
 <script src="designer.js"></script>
 
 </body>
