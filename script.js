@@ -422,7 +422,5 @@ ${k} comparison
 
 
 result.value = keywords;
-
-
 }
-}
+
