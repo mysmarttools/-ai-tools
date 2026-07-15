@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.0/fabric.min.js"></script>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -11,45 +14,71 @@
 
 </head>
 
+
 <body>
+
 
 <div class="container">
 
+
 <h1>🎨 Text To Image Designer</h1>
+
 
 <input id="text" type="text" placeholder="Enter Text">
 
+
 <br><br>
+
 
 <label>Text Color</label>
+
 <input type="color" id="textColor" value="#ffffff">
 
+
 <br><br>
+
 
 <label>Font Size</label>
-<input type="range" id="fontSize" min="20" max="80" value="40">
+
+<input type="range" id="fontSize" min="20" max="120" value="40">
+
 
 <br><br>
+
+
 <h3>Text Align</h3>
 
 <select id="align">
+
 <option value="left">Left</option>
+
 <option value="center" selected>Center</option>
+
 <option value="right">Right</option>
+
 </select>
 
+
 <br><br>
+
 
 <h3>Text Opacity</h3>
 
 <input type="range" id="opacity" min="0" max="100" value="100">
 
 <span id="opacityValue">100%</span>
+
+
+<br><br>
+
+
 <h3>Background Image</h3>
 
 <input type="file" id="bgUpload" accept="image/*">
 
+
 <br><br>
+
 
 <h3>Choose Font</h3>
 
@@ -63,80 +92,127 @@
 <option value="Courier New">Courier New</option>
 <option value="Impact">Impact</option>
 <option value="Times New Roman">Times New Roman</option>
-<option value="Comic Sans MS">Comic Sans MS</option>
+<option value="Comic Sans MS">Comic Sans</option>
 <option value="Lucida Console">Lucida Console</option>
 
 </select>
 
+
 <br><br>
+
 
 <h3>Gradient Background</h3>
 
+
 <label>Color 1</label>
+
 <input type="color" id="color1" value="#4f46e5">
 
+
 <label>Color 2</label>
+
 <input type="color" id="color2" value="#9333ea">
+
+
 
 <br><br>
 
+
 <h3>Text Style</h3>
+
 
 <label>
 <input type="checkbox" id="bold">
 Bold
 </label>
 
+
 <label>
 <input type="checkbox" id="italic">
 Italic
 </label>
+
 
 <label>
 <input type="checkbox" id="shadow">
 Shadow
 </label>
 
+
 <label>
 <input type="checkbox" id="outline">
 Outline
 </label>
 
+
 <br><br>
 
+
 <h3>Text Position</h3>
+
 
 <select id="position">
 
 <option value="top">Top</option>
+
 <option value="center" selected>Center</option>
+
 <option value="bottom">Bottom</option>
 
-  <select id="align">
-    <option value="left">Left</option>
-    <option value="center" selected>Center</option>
-    <option value="right">Right</option>
 </select>
 
-<input type="range" id="opacity" min="0" max="100" value="100">
 
-<span id="opacityValue">100%</span>
-</select>
 
 <br><br>
 
-<button onclick="generateDesign()">🎨 Generate</button>
 
-<button onclick="downloadImage()">⬇ Download</button>
+<button onclick="generateDesign()">
+🎨 Generate
+</button>
+
+
+<button onclick="downloadImage()">
+⬇ Download
+</button>
+
+
 <button onclick="addText()">
 ➕ Add Text
 </button>
+
+
 <br><br>
+
+
+
+<canvas id="canvas" width="900" height="500"></canvas>
+
 
 
 </div>
 
+
+
+<footer class="footer">
+
+
+<h3>🎨 Text To Image Designer</h3>
+
+<p>Create beautiful designs easily.</p>
+
+
+<p>
+© 2026 All Rights Reserved
+</p>
+
+
+</footer>
+
+
+
 <script src="designer.js"></script>
 
+
 </body>
+
 </html>
