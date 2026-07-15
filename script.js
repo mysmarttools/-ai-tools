@@ -212,3 +212,67 @@ navigator.clipboard.writeText(result.value);
 alert("✅ Prompt Copied!");
 
 }
+
+// =============================
+// AI Image Prompt Generator
+// =============================
+
+function generatePrompt(){
+
+    const topic = document.getElementById("imageTopic");
+    const style = document.getElementById("style");
+    const result = document.getElementById("promptResult");
+
+
+    if(!topic || !style || !result){
+        return;
+    }
+
+
+    const imageTopic = topic.value.trim();
+    const imageStyle = style.value;
+
+
+    if(imageTopic === ""){
+
+        alert("Please enter image idea");
+        return;
+
+    }
+
+
+    const prompts = [
+
+        `A ${imageStyle} image of ${imageTopic}, highly detailed, professional quality, beautiful lighting, 4K resolution.`,
+
+        `Create a ${imageStyle} artwork showing ${imageTopic}, cinematic lighting, ultra realistic details, high quality.`,
+
+        `${imageTopic} in ${imageStyle} style, amazing background, sharp details, premium AI generated artwork.`
+
+    ];
+
+
+    const random = Math.floor(Math.random() * prompts.length);
+
+
+    result.value = prompts[random];
+
+}
+
+
+// Copy Prompt
+
+function copyPrompt(){
+
+    const result = document.getElementById("promptResult");
+
+    if(!result){
+        return;
+    }
+
+
+    navigator.clipboard.writeText(result.value);
+
+    alert("✅ Prompt Copied!");
+
+}
