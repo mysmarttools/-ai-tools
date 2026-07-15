@@ -19,125 +19,148 @@ const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
 
+
 // Generate Design
 
-function generateDesign(){ 
-    if(texts.length > 0 && texts[0].value === ""){
-    texts[0].value = "Your Text";
-}
+function generateDesign(){
 
-ctx.clearRect(0,0,canvas.width,canvas.height);
+
+ctx.clearRect(
+0,
+0,
+canvas.width,
+canvas.height
+);
 
 
 // Background
 
 if(bgImage){
 
-    ctx.drawImage(
-        bgImage,
-        0,
-        0,
-        canvas.width,
-        canvas.height
-    );
+
+ctx.drawImage(
+bgImage,
+0,
+0,
+canvas.width,
+canvas.height
+);
+
 
 }else{
 
-    let gradient = ctx.createLinearGradient(
-        0,
-        0,
-        canvas.width,
-        canvas.height
-    );
+
+let gradient = ctx.createLinearGradient(
+0,
+0,
+canvas.width,
+canvas.height
+);
 
 
-    gradient.addColorStop(
-        0,
-        document.getElementById("color1").value
-    );
-
-    gradient.addColorStop(
-        1,
-        document.getElementById("color2").value
-    );
+gradient.addColorStop(
+0,
+document.getElementById("color1").value
+);
 
 
-    ctx.fillStyle = gradient;
+gradient.addColorStop(
+1,
+document.getElementById("color2").value
+);
 
-    ctx.fillRect(
-        0,
-        0,
-        canvas.width,
-        canvas.height
-    );
+
+
+ctx.fillStyle = gradient;
+
+
+ctx.fillRect(
+0,
+0,
+canvas.width,
+canvas.height
+);
+
 
 }
 
 
-// Draw All Text
+
+// Draw Texts
+
 
 texts.forEach(function(item){
 
 
-ctx.globalAlpha =
-document.getElementById("opacity").value / 100;
+
+let font = document.getElementById("fontFamily").value;
 
 
-let font =
-document.getElementById("fontFamily").value;
-
-
-let bold =
-document.getElementById("bold").checked
-? "bold"
+let bold = document.getElementById("bold").checked 
+? "bold" 
 : "";
 
 
-let italic =
-document.getElementById("italic").checked
+let italic = document.getElementById("italic").checked
 ? "italic"
 : "";
 
 
+
 ctx.font =
-italic+" "+bold+" "+
-(item.size * item.scale)
-+"px "+font;
+italic + " " +
+bold + " " +
+(item.size * item.scale) +
+"px " +
+font;
 
 
-ctx.textAlign="center";
 
-ctx.textBaseline="middle";
+ctx.textAlign = "center";
+
+ctx.textBaseline = "middle";
+
+
+
+ctx.fillStyle = item.color;
+
 
 
 // Shadow
 
 if(document.getElementById("shadow").checked){
 
+
 ctx.shadowColor="#000";
 
-ctx.shadowBlur=10;
+ctx.shadowBlur=12;
 
 ctx.shadowOffsetX=5;
 
 ctx.shadowOffsetY=5;
 
+
 }else{
+
 
 ctx.shadowColor="transparent";
 
 ctx.shadowBlur=0;
 
+
 }
+
 
 
 // Outline
 
 if(document.getElementById("outline").checked){
 
+
 ctx.strokeStyle="#000";
 
 ctx.lineWidth=3;
+
 
 ctx.strokeText(
 item.value,
@@ -145,11 +168,10 @@ item.x,
 item.y
 );
 
+
 }
 
 
-
-ctx.fillStyle=item.color;
 
 
 ctx.fillText(
@@ -159,52 +181,53 @@ item.y
 );
 
 
+
 });
 
 
-ctx.globalAlpha=1;
+
+ctx.shadowBlur=0;
+
 
 }
-
-
 // Download Image
 
 function downloadImage(){
 
-const link=document.createElement("a");
+    const link = document.createElement("a");
 
-link.download="design.png";
+    link.download = "design.png";
 
-link.href=canvas.toDataURL("image/png");
+    link.href = canvas.toDataURL("image/png");
 
-link.click();
+    link.click();
 
 }
 
 
 
-// Add New Text
+// Add Text
 
 function addText(){
 
-texts.push({
+    texts.push({
 
-value:"New Text",
+        value:"New Text",
 
-x:450,
+        x:450,
 
-y:250,
+        y:250,
 
-size:40,
+        size:40,
 
-color:"#ffffff",
+        color:"#ffffff",
 
-scale:1
+        scale:1
 
-});
+    });
 
 
-generateDesign();
+    generateDesign();
 
 }
 
@@ -215,50 +238,33 @@ generateDesign();
 document.getElementById("bgUpload").addEventListener("change",function(e){
 
 
-const file=e.target.files[0];
-
-if(!file)return;
+    const file = e.target.files[0];
 
 
-const reader=new FileReader();
-
-
-reader.onload=function(event){
-
-bgImage=new Image();
-
-bgImage.onload=generateDesign;
-
-bgImage.src=event.target.result;
-
-}
-
-
-reader.readAsDataURL(file);
-
-
-});
+    if(!file) return;
 
 
 
-
-// Text Input Update
-
-document.getElementById("text").addEventListener("keyup",function(){
+    const reader = new FileReader();
 
 
-if(selectedText){
 
-selectedText.value=this.value;
-
-}else{
-
-texts[0].value=this.value;
-
-}
+    reader.onload=function(event){
 
 
-generateDesign();
+        bgImage = new Image();
+
+
+        bgImage.onload = generateDesign;
+
+
+        bgImage.src = event.target.result;
+
+
+    };
+
+
+    reader.readAsDataURL(file);
 
 
 });
@@ -266,7 +272,35 @@ generateDesign();
 
 
 
-// Live Controls
+
+// Text Input
+
+document.getElementById("text").addEventListener("input",function(){
+
+
+    if(selectedText){
+
+        selectedText.value = this.value;
+
+
+    }else{
+
+
+        texts[0].value = this.value;
+
+
+    }
+
+
+    generateDesign();
+
+
+});
+
+
+
+
+// Controls Update
 
 [
 "textColor",
@@ -277,30 +311,46 @@ generateDesign();
 "bold",
 "italic",
 "shadow",
-"outline",
-"align",
-"opacity"
+"outline"
 
 ].forEach(function(id){
 
 
-let el=document.getElementById(id);
+    let element = document.getElementById(id);
 
 
-if(el){
-
-el.addEventListener(
-"input",
-generateDesign
-);
+    if(element){
 
 
-el.addEventListener(
-"change",
-generateDesign
-);
+        element.addEventListener(
+            "input",
+            function(){
 
-}
+                if(texts[0]){
+
+                    texts[0].color =
+                    document.getElementById("textColor").value;
+
+
+                    texts[0].size =
+                    Number(document.getElementById("fontSize").value);
+
+                }
+
+
+                generateDesign();
+
+            }
+        );
+
+
+        element.addEventListener(
+            "change",
+            generateDesign
+        );
+
+
+    }
 
 
 });
@@ -309,46 +359,47 @@ generateDesign
 
 
 
-// Mouse Select Text
+// Select + Move Text
 
 canvas.addEventListener("mousedown",function(e){
 
 
-const rect=canvas.getBoundingClientRect();
+    const rect = canvas.getBoundingClientRect();
 
 
-const mouseX=e.clientX-rect.left;
+    const mouseX = e.clientX - rect.left;
 
-const mouseY=e.clientY-rect.top;
-
-
-
-for(let i=texts.length-1;i>=0;i--){
+    const mouseY = e.clientY - rect.top;
 
 
-let item=texts[i];
+
+    for(let i=texts.length-1;i>=0;i--){
 
 
-if(
-
-Math.abs(mouseX-item.x)<200 &&
-
-Math.abs(mouseY-item.y)<60
-
-){
+        let item = texts[i];
 
 
-selectedText=item;
 
-dragging=true;
+        if(
+
+            Math.abs(mouseX-item.x)<200 &&
+
+            Math.abs(mouseY-item.y)<70
+
+        ){
 
 
-break;
+            selectedText = item;
 
-}
+            dragging = true;
+
+            break;
 
 
-}
+        }
+
+
+    }
 
 
 });
@@ -357,26 +408,29 @@ break;
 
 
 
-// Move Text
 
 canvas.addEventListener("mousemove",function(e){
 
 
-if(!dragging || !selectedText)return;
+    if(!dragging || !selectedText) return;
 
 
 
-const rect=canvas.getBoundingClientRect();
+    const rect = canvas.getBoundingClientRect();
 
 
 
-selectedText.x=e.clientX-rect.left;
-
-selectedText.y=e.clientY-rect.top;
-
+    selectedText.x =
+    e.clientX - rect.left;
 
 
-generateDesign();
+
+    selectedText.y =
+    e.clientY - rect.top;
+
+
+
+    generateDesign();
 
 
 });
@@ -384,13 +438,11 @@ generateDesign();
 
 
 
-
-// Stop Drag
 
 canvas.addEventListener("mouseup",function(){
 
 
-dragging=false;
+    dragging=false;
 
 
 });
@@ -399,54 +451,55 @@ dragging=false;
 
 
 
-// Resize Text With Mouse Wheel
+// Resize With Mouse Wheel
 
 canvas.addEventListener("wheel",function(e){
 
 
-if(!selectedText)return;
+    if(!selectedText) return;
 
 
-e.preventDefault();
-
-
-
-if(e.deltaY<0){
-
-
-selectedText.scale+=0.1;
-
-
-}else{
-
-
-selectedText.scale-=0.1;
-
-
-}
+    e.preventDefault();
 
 
 
-if(selectedText.scale<0.3){
-
-selectedText.scale=0.3;
-
-}
+    if(e.deltaY < 0){
 
 
-if(selectedText.scale>3){
-
-selectedText.scale=3;
-
-}
+        selectedText.scale += 0.1;
 
 
+    }else{
 
-generateDesign();
 
+        selectedText.scale -= 0.1;
+
+
+    }
+
+
+
+    if(selectedText.scale < 0.3){
+
+        selectedText.scale = 0.3;
+
+    }
+
+
+
+    if(selectedText.scale > 3){
+
+        selectedText.scale = 3;
+
+    }
+
+
+
+    generateDesign();
 
 
 });
+
 
 
 
