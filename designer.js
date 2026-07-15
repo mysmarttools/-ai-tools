@@ -1,3 +1,4 @@
+let textScale = 1;
 let textX = 450;
 let textY = 250;
 
@@ -58,7 +59,7 @@ if (align === "right") {
     }
 
     // Font Style
-    ctx.font = italic + " " + bold + " " + size + "px " + font;
+ctx.font = italic + " " + bold + " " + (size * textScale) + "px " + font;
 
     ctx.fillStyle = color;
     ctx.textAlign = "center";
@@ -196,6 +197,54 @@ canvas.addEventListener("mousemove", function(e){
     textY = e.clientY - rect.top;
 
     generateDesign();
+
+});
+
+canvas.addEventListener("wheel", function(e){
+
+    e.preventDefault();
+
+
+    const rect = canvas.getBoundingClientRect();
+
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
+
+
+    // text ke paas mouse ho to resize kare
+    if(
+        Math.abs(mouseX - textX) < 200 &&
+        Math.abs(mouseY - textY) < 100
+    ){
+
+        if(e.deltaY < 0){
+
+            textScale += 0.1;
+
+        }else{
+
+            textScale -= 0.1;
+
+        }
+
+
+        if(textScale < 0.3){
+
+            textScale = 0.3;
+
+        }
+
+
+        if(textScale > 3){
+
+            textScale = 3;
+
+        }
+
+
+        generateDesign();
+
+    }
 
 });
 
