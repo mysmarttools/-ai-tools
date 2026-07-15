@@ -328,3 +328,4 @@ function copyKeywords(){
     alert("✅ Keywords Copied!");
 
 }
+    alert("JS Working");
