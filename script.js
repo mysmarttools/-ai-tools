@@ -412,3 +412,82 @@ function copyKeywords(){
     }
 
 }
+
+// =============================
+// Text To Image Designer
+// =============================
+
+
+function createImage(){
+
+const text = document.getElementById("designText").value;
+
+const style = document.getElementById("designStyle").value;
+
+const canvas = document.getElementById("canvas");
+
+const ctx = canvas.getContext("2d");
+
+
+// background
+
+if(style=="sale"){
+
+ctx.fillStyle="#ff4757";
+
+}
+
+else if(style=="quote"){
+
+ctx.fillStyle="#2f3542";
+
+}
+
+else if(style=="social"){
+
+ctx.fillStyle="#3742fa";
+
+}
+
+else{
+
+ctx.fillStyle="#ffffff";
+
+}
+
+
+ctx.fillRect(0,0,800,400);
+
+
+
+// text style
+
+ctx.fillStyle="white";
+
+ctx.font="bold 55px Arial";
+
+ctx.textAlign="center";
+
+ctx.textBaseline="middle";
+
+ctx.fillText(text,400,200);
+
+
+
+}
+
+
+
+function downloadImage(){
+
+const canvas=document.getElementById("canvas");
+
+const link=document.createElement("a");
+
+link.download="ai-design.png";
+
+link.href=canvas.toDataURL();
+
+link.click();
+
+}
