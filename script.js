@@ -80,6 +80,10 @@ function copyMeta() {
 // AI Title Generator
 // =============================
 
+// =============================
+// AI Meta Title Generator
+// =============================
+
 function generateTitle() {
 
     const keyword = document.getElementById("keyword").value.trim();
@@ -96,21 +100,25 @@ function generateTitle() {
 
         `Best ${keyword} in Pakistan | ${brand}`,
 
-        `${keyword} - Best Price | ${brand}`,
+        `${keyword} - Best Price & Fast Delivery | ${brand}`,
 
-        `Premium ${keyword} Collection | ${brand}`,
+        `Shop Premium ${keyword} Online | ${brand}`,
 
-        `Shop ${keyword} Online | ${brand}`,
+        `${keyword} Collection | ${brand}`,
 
-        `${keyword} with Fast Delivery | ${brand}`,
-
-        `Affordable ${keyword} | ${brand}`,
-
-        `${keyword} at Best Price | ${brand}`,
+        `Affordable ${keyword} Online | ${brand}`,
 
         `Top Quality ${keyword} | ${brand}`,
 
-        `${brand} - ${keyword}`
+        `${keyword} Store in Pakistan | ${brand}`,
+
+        `Order ${keyword} Online Today | ${brand}`,
+
+        `${brand} | Premium ${keyword}`,
+
+        `Buy High Quality ${keyword} | ${brand}`,
+
+        `${keyword} with Free Delivery | ${brand}`
 
     ];
 
@@ -133,6 +141,7 @@ function copyTitle() {
 
     navigator.clipboard.writeText(result.value);
 
-    alert("✅ SEO Title Copied!");
+    alert("✅ Meta Title Copied!");
 
+}
 }
