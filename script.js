@@ -342,7 +342,6 @@ alert("✅ Alt Text Copied!");
 // AI Keyword Generator
 // =============================
 
-
 function generateKeywords(){
 
 const input=document.getElementById("keywordInput");
@@ -350,7 +349,7 @@ const result=document.getElementById("keywordResult");
 
 
 if(!input || !result){
-return;
+    return;
 }
 
 
@@ -362,38 +361,68 @@ return;
 }
 
 
-const k=input.value;
+const k=input.value.trim();
 
 
-result.value=
+const keywords = `
 
-`best ${k}
+PRIMARY KEYWORDS
+
+${k}
+best ${k}
+top ${k}
 free ${k}
+premium ${k}
 ${k} online
-${k} tools
-${k} services
-${k} guide
-${k} tips
+${k} website
+${k} tool
+
+
+LONG TAIL KEYWORDS
+
+best ${k} for beginners
+best ${k} in Pakistan
+how to use ${k}
+where to find ${k}
+${k} services online
+${k} tips and guide
+${k} step by step
+
+
+BUYER INTENT KEYWORDS
+
+buy ${k}
+${k} price
+${k} deals
+${k} offers
+cheap ${k}
+affordable ${k}
+${k} discount
+
+
+QUESTION KEYWORDS
+
+what is ${k}
+how does ${k} work
+why use ${k}
+how to choose ${k}
+is ${k} worth it
+
+
+SEO RELATED KEYWORDS
+
 ${k} ideas
-${k} for beginners
-${k} in Pakistan`;
+${k} examples
+${k} guide
+${k} strategy
+${k} alternatives
+${k} comparison
+
+`;
+
+
+result.value = keywords;
+
 
 }
-
-
-
-// Copy Keywords
-
-function copyKeywords(){
-
-const result=document.getElementById("keywordResult");
-
-if(result){
-
-navigator.clipboard.writeText(result.value);
-
-alert("✅ Keywords Copied!");
-
-}
-
 }
