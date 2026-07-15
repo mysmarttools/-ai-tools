@@ -5,6 +5,25 @@ const ctx = canvas.getContext("2d");
 
 // Generate Design
 function generateDesign() {
+    // Alignment
+const align = document.getElementById("align").value;
+
+// Opacity
+const opacity = document.getElementById("opacity").value / 100;
+
+ctx.globalAlpha = opacity;
+
+ctx.textAlign = align;
+
+let x = canvas.width / 2;
+
+if (align === "left") {
+    x = 40;
+}
+
+if (align === "right") {
+    x = canvas.width - 40;
+}
 
     const text = document.getElementById("text").value;
     const color = document.getElementById("textColor").value;
@@ -135,3 +154,13 @@ document.getElementById("position").addEventListener("change", generateDesign);
 
 // First Load
 generateDesign();
+
+document.getElementById("align").addEventListener("change", generateDesign);
+
+document.getElementById("opacity").addEventListener("input", function () {
+
+    document.getElementById("opacityValue").innerHTML = this.value + "%";
+
+    generateDesign();
+
+});
