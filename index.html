@@ -428,53 +428,84 @@ Coming Soon
 
 <section class="stats">
 
-<div class="stat">
+<div class="stats-section">
 
-<h2>50+</h2>
+  <div class="stat-card">
+    <div class="stat-icon">🚀</div>
+    <h2>50+</h2>
+    <p>AI Tools</p>
+  </div>
 
-<p>AI Tools</p>
+  <div class="stat-card">
+    <div class="stat-icon">⭐</div>
+    <h2>100%</h2>
+    <p>Free Access</p>
+  </div>
 
-</div>
-
-
-
-<div class="stat">
-
-<h2>100%</h2>
-
-<p>Free</p>
-
-</div>
-
-
-
-<div class="stat">
-
-<h2>24/7</h2>
-
-<p>Available</p>
+  <div class="stat-card">
+    <div class="stat-icon">⚡</div>
+    <h2>24/7</h2>
+    <p>Available</p>
+  </div>
 
 </div>
 
-</section>
-
-
-
-<footer>
-
-<div class="footer-content">
-
-<h3>
-
-🤖 Best AI Tools Hub
-
-</h3>
-
-<p>
-
-Your one-stop destination for free AI tools, SEO tools, image tools and productivity tools.
-
+<p class="ai-desc">
+🤖 Your one-stop destination for free AI tools, SEO tools, image tools and productivity tools.
 </p>
+
+
+<style>
+.stats-section {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.stat-card {
+    width: 180px;
+    padding: 25px 20px;
+    background: rgba(255,255,255,0.95);
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+}
+
+.stat-icon {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.stat-card h2 {
+    font-size: 38px;
+    margin: 0;
+    color: #111827;
+    font-weight: 800;
+}
+
+.stat-card p {
+    margin-top: 8px;
+    color: #555;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.ai-desc {
+    text-align: center;
+    margin-top: 45px;
+    font-size: 18px;
+    color: white;
+    font-weight: 500;
+}
+</style>
 
 
 
