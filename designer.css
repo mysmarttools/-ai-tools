@@ -73,3 +73,51 @@ background:white;
     color:#a78bfa;
 
 }
+
+.main-header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:18px 40px;
+
+background:#111827;
+
+color:#fff;
+
+}
+
+.logo{
+
+font-size:24px;
+
+font-weight:bold;
+
+}
+
+.main-header nav{
+
+display:flex;
+
+gap:20px;
+
+}
+
+.main-header nav a{
+
+color:#fff;
+
+text-decoration:none;
+
+font-weight:bold;
+
+}
+
+.main-header nav a:hover{
+
+color:#60a5fa;
+
+}
