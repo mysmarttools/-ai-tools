@@ -849,4 +849,8 @@ h2, h3 {
     flex-direction: column;
 }
 
-
+.ai-heading {
+    color: #ffffff;
+    font-weight: 700;
+    text-align: center;
+}
