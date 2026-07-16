@@ -816,3 +816,28 @@ transform:translateY(-8px);
 
 }
 
+/* Fix hidden tool headings */
+.tools-grid .tool-card h2,
+.tools-grid .tool-card h3,
+.tools-grid .tool-card h4,
+.tool-card h2,
+.tool-card h3,
+.tool-card h4 {
+    color: #111827 !important;
+    -webkit-text-fill-color: #111827 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Fix descriptions */
+.tools-grid .tool-card p,
+.tool-card p {
+    color: #374151 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Fix all text inside cards */
+.tools-grid .tool-card * {
+    opacity: 1 !important;
+}
