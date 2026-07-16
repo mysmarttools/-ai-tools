@@ -1,68 +1,328 @@
-<h1>📏 Meta Title & Description Length Checker</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>Meta Title & Description Length Checker | Free SEO Tool</title>
+
+
+<meta name="description" content="Free SEO Meta Title and Description Length Checker tool. Check character limits and optimize your Google search snippets.">
+
+
+<link rel="stylesheet" href="style.css">
+
+
+</head>
+
+
+<body>
+
+
+
+<header>
+
+<div class="logo">
+🤖 Best AI Tools Hub
+</div>
+
+
+<nav>
+
+<a href="index.html">Home</a>
+
+<a href="index.html#tools">AI Tools</a>
+
+<a href="#">Categories</a>
+
+<a href="#">Blog</a>
+
+<a href="#">Contact</a>
+
+
+</nav>
+
+
+</header>
+
+
+
+
+
+<section class="tool-page">
+
+
+<div class="tool-box">
+
+
+
+<h1>
+📏 Meta Title & Description Length Checker
+</h1>
+
+
 
 <p>
-Check the length of your SEO Meta Title and Meta Description instantly.
+
+Check your SEO Meta Title and Meta Description length instantly.
+
 </p>
 
-<br>
 
-<h3>Meta Title</h3>
 
-<textarea
+
+
+<h3>
+Meta Title
+</h3>
+
+
+
+<textarea 
 id="metaTitle"
 rows="3"
 placeholder="Enter your Meta Title here..."
+oninput="checkLength()"
 ></textarea>
 
+
+
 <p>
+
 Characters:
-<span id="titleCount">0</span>/60
+
+<span id="titleCount">
+0
+</span>
+
+/60
+
 </p>
+
+
 
 <p id="titleStatus">
+
 Waiting...
+
 </p>
 
-<br>
 
-<h3>Meta Description</h3>
+
+
+
+
+<h3>
+Meta Description
+</h3>
+
+
+
 
 <textarea
+
 id="metaDescription"
+
 rows="5"
+
 placeholder="Enter your Meta Description here..."
+
+oninput="checkLength()"
+
 ></textarea>
 
+
+
+
 <p>
+
 Characters:
-<span id="descCount">0</span>/160
+
+<span id="descCount">
+
+0
+
+</span>
+
+/160
+
 </p>
+
+
 
 <p id="descStatus">
+
 Waiting...
+
 </p>
 
-<br>
 
-<button onclick="checkLength()">
-✅ Check SEO
-</button>
+
+
+
+<div class="button-area">
+
 
 <button onclick="clearAll()">
+
 🗑 Clear
+
 </button>
+
+
 
 <button onclick="copyText()">
+
 📋 Copy
+
 </button>
-<textarea id="metaTitle"></textarea>
 
-<span id="titleCount">0</span>
 
-<p id="titleStatus"></p>
+</div>
 
-<textarea id="metaDescription"></textarea>
 
-<span id="descCount">0</span>
 
-<p id="descStatus"></p>
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<script>
+
+
+function checkLength(){
+
+
+let title = document.getElementById("metaTitle").value;
+
+
+let desc = document.getElementById("metaDescription").value;
+
+
+
+
+document.getElementById("titleCount").innerHTML = title.length;
+
+
+document.getElementById("descCount").innerHTML = desc.length;
+
+
+
+
+
+if(title.length == 0){
+
+document.getElementById("titleStatus").innerHTML="Waiting...";
+
+}
+
+else if(title.length <= 60){
+
+document.getElementById("titleStatus").innerHTML="✅ Perfect Meta Title Length";
+
+}
+
+else{
+
+document.getElementById("titleStatus").innerHTML="⚠️ Meta Title is too long";
+
+}
+
+
+
+
+
+
+if(desc.length == 0){
+
+document.getElementById("descStatus").innerHTML="Waiting...";
+
+}
+
+else if(desc.length <= 160){
+
+document.getElementById("descStatus").innerHTML="✅ Perfect Meta Description Length";
+
+}
+
+else{
+
+document.getElementById("descStatus").innerHTML="⚠️ Meta Description is too long";
+
+}
+
+
+
+}
+
+
+
+
+
+function clearAll(){
+
+
+document.getElementById("metaTitle").value="";
+
+
+document.getElementById("metaDescription").value="";
+
+
+checkLength();
+
+
+}
+
+
+
+
+
+
+function copyText(){
+
+
+
+let text = 
+
+"Meta Title: " +
+
+document.getElementById("metaTitle").value +
+
+"\n\nMeta Description: " +
+
+document.getElementById("metaDescription").value;
+
+
+
+navigator.clipboard.writeText(text);
+
+
+
+alert("Copied Successfully!");
+
+
+
+}
+
+
+
+</script>
+
+
+
+
+</body>
+
+
+</html>
