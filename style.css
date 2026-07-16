@@ -829,15 +829,7 @@ transform:translateY(-8px);
     visibility: visible !important;
 }
 
-/* Fix descriptions */
-.tools-grid .tool-card p,
-.tool-card p {
-    color: #374151 !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-}
-
-/* Fix all text inside cards */
-.tools-grid .tool-card * {
-    opacity: 1 !important;
+.tool-card h2,
+.tool-card h3 {
+    color: #000000 !important;
 }
