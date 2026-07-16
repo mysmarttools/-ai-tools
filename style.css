@@ -413,3 +413,115 @@ button:hover{
     font-weight:bold;
     color:#4f46e5;
 }
+
+/* Meta Tool Center Layout */
+
+.tool-page {
+    width: 100%;
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+
+.tool-box {
+
+    width: 100%;
+    max-width: 750px;
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    color: #111;
+
+}
+
+
+.tool-box h1 {
+
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 32px;
+
+}
+
+
+.tool-box > p {
+
+    text-align: center;
+    margin-bottom: 25px;
+
+}
+
+
+
+.tool-box h3 {
+
+    margin-top: 20px;
+
+}
+
+
+
+.tool-box textarea {
+
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    resize: vertical;
+    box-sizing: border-box;
+
+}
+
+
+
+.tool-box span {
+
+    font-weight: bold;
+
+}
+
+
+
+.button-area {
+
+    text-align: center;
+    margin-top: 25px;
+
+}
+
+
+
+.button-area button {
+
+    padding: 12px 25px;
+    margin: 5px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+
+}
+
+
+
+@media(max-width:768px){
+
+.tool-box{
+
+padding:20px;
+
+}
+
+
+.tool-box h1{
+
+font-size:24px;
+
+}
+
+}
