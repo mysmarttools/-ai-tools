@@ -815,3 +815,15 @@ transition:0.3s;
 transform:translateY(-8px);
 
 }
+
+.tool-card h2,
+.tool-card h3,
+.tool-card .tool-title {
+    color: #111827 !important;
+    opacity: 1 !important;
+}
+
+.tool-card p {
+    color: #374151 !important;
+    opacity: 1 !important;
+}
