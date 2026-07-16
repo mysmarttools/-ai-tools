@@ -1,1 +1,57 @@
+<h1>📏 Meta Title & Description Length Checker</h1>
 
+<p>
+Check the length of your SEO Meta Title and Meta Description instantly.
+</p>
+
+<br>
+
+<h3>Meta Title</h3>
+
+<textarea
+id="metaTitle"
+rows="3"
+placeholder="Enter your Meta Title here..."
+></textarea>
+
+<p>
+Characters:
+<span id="titleCount">0</span>/60
+</p>
+
+<p id="titleStatus">
+Waiting...
+</p>
+
+<br>
+
+<h3>Meta Description</h3>
+
+<textarea
+id="metaDescription"
+rows="5"
+placeholder="Enter your Meta Description here..."
+></textarea>
+
+<p>
+Characters:
+<span id="descCount">0</span>/160
+</p>
+
+<p id="descStatus">
+Waiting...
+</p>
+
+<br>
+
+<button onclick="checkLength()">
+✅ Check SEO
+</button>
+
+<button onclick="clearAll()">
+🗑 Clear
+</button>
+
+<button onclick="copyText()">
+📋 Copy
+</button>
