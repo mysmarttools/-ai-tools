@@ -842,3 +842,20 @@ transform:translateY(-8px);
 h2, h3 {
     color: #111827 !important;
 }
+
+.tool-card {
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+}
+
+.tool-card button {
+    display: block;
+    margin-top: auto;
+    padding: 12px 25px;
+    border-radius: 8px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
