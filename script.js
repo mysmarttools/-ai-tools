@@ -67,16 +67,3 @@ function checkLength() {
 }
 
 
-// =============================
-// LIVE CHECK
-// =============================
-
-if (metaTitle && metaDescription) {
-
-    metaTitle.addEventListener("input", checkLength);
-
-    metaDescription.addEventListener("input", checkLength);
-
-    checkLength();
-
-}
