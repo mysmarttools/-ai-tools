@@ -603,3 +603,14 @@ function checkLength(){
     }
 
 }
+
+
+// Live Update
+
+metaTitle.addEventListener("input", checkLength);
+
+metaDescription.addEventListener("input", checkLength);
+
+// First Load
+
+checkLength();
