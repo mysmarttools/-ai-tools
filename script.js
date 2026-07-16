@@ -604,4 +604,11 @@ function checkLength(){
 
 }
 
+const metaTitle = document.getElementById("metaTitle");
+const metaDescription = document.getElementById("metaDescription");
 
+if (metaTitle && metaDescription) {
+    metaTitle.addEventListener("input", checkLength);
+    metaDescription.addEventListener("input", checkLength);
+    checkLength();
+}
