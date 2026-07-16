@@ -849,13 +849,4 @@ h2, h3 {
     flex-direction: column;
 }
 
-.tool-card button {
-    display: block;
-    margin-top: auto;
-    padding: 12px 25px;
-    border-radius: 8px;
-    background: #2563eb;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
+
