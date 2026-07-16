@@ -838,3 +838,7 @@ transform:translateY(-8px);
 .card h3 {
     color: #000 !important;
 }
+
+h2, h3 {
+    color: #111827 !important;
+}
