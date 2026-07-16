@@ -12,9 +12,9 @@
 
 </head>
 
-
 <body>
-  <header>
+
+<header class="main-header">
 
 <div class="logo">
 🤖 Best AI Tools Hub
@@ -24,204 +24,115 @@
 
 <a href="index.html">🏠 Home</a>
 
-<a href="index.html#tools">AI Tools</a>
+<a href="index.html#tools">🛠 AI Tools</a>
 
-<a href="contact.html">Contact</a>
+<a href="#">Contact</a>
 
-</nav>
-
-</header>
-<header>
-
-<h1>🎨 Text To Image Designer</h1>
-
-<nav>
-<a href="index.html">🏠 Home</a>
 </nav>
 
 </header>
 
 <div class="container">
 
-
 <h1>🎨 Text To Image Designer</h1>
 
-
-<!-- Text Input -->
-
-<input 
-id="text" 
-type="text" 
+<input
+id="text"
+type="text"
 placeholder="Enter Text"
-value="Your Text"
->
-
+value="Your Text">
 
 <br><br>
-
-
-
-<!-- Text Color -->
 
 <label>Text Color</label>
 
-<input 
-type="color" 
-id="textColor" 
-value="#ffffff"
->
-
+<input
+type="color"
+id="textColor"
+value="#ffffff">
 
 <br><br>
-
-
-
-<!-- Font Size -->
 
 <label>Font Size</label>
 
-<input 
-type="range" 
+<input
+type="range"
 id="fontSize"
 min="20"
 max="120"
-value="40"
->
-
+value="40">
 
 <br><br>
-
-
-
 
 <h3>Choose Font</h3>
 
 <select id="fontFamily">
 
 <option value="Arial">Arial</option>
-
 <option value="Verdana">Verdana</option>
-
 <option value="Georgia">Georgia</option>
-
 <option value="Tahoma">Tahoma</option>
-
 <option value="Impact">Impact</option>
-
 <option value="Courier New">Courier New</option>
-
 <option value="Times New Roman">Times New Roman</option>
 
 </select>
 
-
-
 <br><br>
-
-
 
 <h3>Text Style</h3>
 
+<label><input type="checkbox" id="bold"> Bold</label>
 
-<label>
-<input type="checkbox" id="bold">
-Bold
-</label>
+<label><input type="checkbox" id="italic"> Italic</label>
 
+<label><input type="checkbox" id="shadow"> Shadow</label>
 
-<label>
-<input type="checkbox" id="italic">
-Italic
-</label>
-
-
-<label>
-<input type="checkbox" id="shadow">
-Shadow
-</label>
-
-
-<label>
-<input type="checkbox" id="outline">
-Outline
-</label>
-
-
-
+<label><input type="checkbox" id="outline"> Outline</label>
 
 <br><br>
 
-
-
 <h3>Opacity</h3>
 
-<input 
+<input
 type="range"
 id="opacity"
 min="0"
 max="100"
-value="100"
->
+value="100">
 
-
-<span id="opacityValue">
-100%
-</span>
-
-
+<span id="opacityValue">100%</span>
 
 <br><br>
-
-
-
 
 <h3>Background Image</h3>
 
-
-<input 
+<input
 type="file"
 id="bgUpload"
-accept="image/*"
->
-
-
-
+accept="image/*">
 
 <br><br>
-
-
-
 
 <h3>Gradient Background</h3>
 
-
-<input 
+<input
 type="color"
 id="color1"
-value="#4f46e5"
->
+value="#4f46e5">
 
-
-<input 
+<input
 type="color"
 id="color2"
-value="#9333ea"
->
-
-
-
+value="#9333ea">
 
 <br><br>
 
-
-
-<button onclick="generateDesign()">
+  <button onclick="generateDesign()">
 
 🎨 Generate
 
 </button>
-
-
 
 <button onclick="addText()">
 
@@ -229,38 +140,23 @@ value="#9333ea"
 
 </button>
 
-
-
 <button onclick="downloadImage()">
 
 ⬇ Download
 
 </button>
 
-
-
-
 <br><br>
 
-
-
-
-<canvas 
+<canvas
 id="canvas"
 width="900"
 height="500">
 </canvas>
 
-
-
 </div>
 
-
-
-
-
 <footer class="footer">
-
 
 <h3>🎨 Text To Image Designer</h3>
 
@@ -268,20 +164,13 @@ height="500">
 Create beautiful designs easily.
 </p>
 
-
 <p>
-© 2026 All Rights Reserved
+© 2026 Best AI Tools Hub. All Rights Reserved.
 </p>
-
 
 </footer>
 
-
-
-
-
 <script src="designer.js"></script>
-
 
 </body>
 
