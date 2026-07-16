@@ -833,3 +833,8 @@ transform:translateY(-8px);
 .tool-card h3 {
     color: #000000 !important;
 }
+
+.card h2,
+.card h3 {
+    color: #000 !important;
+}
