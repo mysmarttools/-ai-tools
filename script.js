@@ -605,12 +605,3 @@ function checkLength(){
 }
 
 
-// Live Update
-
-if (metaTitle && metaDescription) {
-    metaTitle.addEventListener("input", checkLength);
-    metaDescription.addEventListener("input", checkLength);
-
-    // First Load
-    checkLength();
-}
