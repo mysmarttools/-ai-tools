@@ -854,3 +854,36 @@ h2, h3 {
     font-weight: 700;
     text-align: center;
 }
+
+.stats{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+    margin:60px auto;
+}
+
+.stat-card{
+    background:#fff;
+    width:240px;
+    padding:30px;
+    text-align:center;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.stat-icon{
+    font-size:45px;
+    margin-bottom:15px;
+}
+
+.stat-card h2{
+    font-size:38px;
+    color:#4f46e5;
+    margin:10px 0;
+}
+
+.stat-card p{
+    color:#666;
+    font-size:18px;
+}
