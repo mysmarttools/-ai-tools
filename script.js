@@ -1208,3 +1208,96 @@ function checkLength(){
 
 } 
 
+/* ==========================================
+   YouTube Title & Description Generator
+========================================== */
+
+function generateYoutube(){
+
+    const keyword = document.getElementById("keyword").value.trim();
+    const topic = document.getElementById("topic").value.trim();
+
+    if(keyword==="" || topic===""){
+
+        alert("Please enter Keyword and Topic");
+
+        return;
+
+    }
+
+    const titles=[
+
+        `🔥 ${topic} | Complete Guide (${keyword})`,
+        `${topic} | Best Tips & Tricks`,
+        `${keyword} Tutorial For Beginners`,
+        `Top 10 ${keyword} You Must Know`,
+        `${topic} Explained Step By Step`,
+        `${keyword} Secrets Nobody Tells You`,
+        `${topic} in 2026 | Latest Guide`,
+        `Best ${keyword} Ideas`,
+        `${topic} | Everything You Need To Know`,
+        `How To Master ${keyword}`,
+        `The Ultimate ${keyword} Guide`,
+        `${topic} Made Easy`,
+        `${keyword} Hacks That Actually Work`,
+        `Avoid These ${keyword} Mistakes`,
+        `${topic} Full Tutorial`
+
+    ];
+
+    const randomTitle=titles[Math.floor(Math.random()*titles.length)];
+
+    document.getElementById("ytTitle").value=randomTitle;
+
+    const description=
+`${randomTitle}
+
+In this video you'll learn everything about ${topic}.
+
+⭐ Main Keyword:
+${keyword}
+
+📌 What You'll Learn
+
+✔ ${topic}
+
+✔ Tips & Tricks
+
+✔ Beginner Guide
+
+✔ Professional Techniques
+
+👍 Like
+💬 Comment
+🔔 Subscribe
+
+#${keyword.replace(/\s+/g,"")}
+#YouTube
+#Tutorial`;
+
+    document.getElementById("ytDescription").value=description;
+
+}
+
+
+function copyYoutube(){
+
+    const title=document.getElementById("ytTitle").value;
+    const desc=document.getElementById("ytDescription").value;
+
+    navigator.clipboard.writeText(title+"\n\n"+desc);
+
+    alert("Copied Successfully!");
+
+}
+
+
+function clearYoutube(){
+
+    document.getElementById("keyword").value="";
+    document.getElementById("topic").value="";
+    document.getElementById("ytTitle").value="";
+    document.getElementById("ytDescription").value="";
+
+}
+
