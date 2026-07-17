@@ -852,10 +852,63 @@ gap:10px;
 
 @media(min-width:1200px){
 
-.tools{
+/* ===========================
+   YouTube Tool Center Layout
+=========================== */
 
-grid-template-columns:repeat(3,1fr);
-
+.tool-page{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:60px 20px;
 }
 
+.tool-box{
+    width:100%;
+    max-width:850px;
+    background:#ffffff;
+    color:#111827;
+    padding:40px;
+    border-radius:18px;
+    box-shadow:0 15px 40px rgba(0,0,0,.15);
+}
+
+.tool-box h1,
+.tool-box p{
+    text-align:center;
+}
+
+.tool-box h3{
+    text-align:left;
+    margin-top:20px;
+    margin-bottom:8px;
+}
+
+.tool-box input,
+.tool-box textarea{
+    width:100%;
+    display:block;
+    margin:0 auto 18px;
+    padding:14px;
+    border:1px solid #d1d5db;
+    border-radius:10px;
+    font-size:16px;
+    box-sizing:border-box;
+}
+
+.tool-box textarea{
+    min-height:180px;
+    resize:vertical;
+}
+
+.button-area{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+    margin:25px 0;
+}
+
+.button-area button{
+    min-width:170px;
 }
