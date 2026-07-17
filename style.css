@@ -979,3 +979,48 @@ gap:10px;
     line-height:1.8;
     font-size:16px;
 }
+
+   .about-section{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:70px 20px;
+}
+
+.about-content{
+    width:100%;
+    max-width:900px;
+    text-align:center;
+    margin:0 auto;
+}
+
+.about-content h2{
+    font-size:38px;
+    font-weight:700;
+    line-height:1.4;
+    margin-bottom:25px;
+}
+
+.about-content p{
+    max-width:850px;
+    margin:0 auto 22px;
+    font-size:18px;
+    line-height:1.9;
+}
+
+.about-content strong{
+    font-weight:700;
+}
+
+@media(max-width:768px){
+
+.about-content h2{
+    font-size:30px;
+}
+
+.about-content p{
+    font-size:16px;
+}
+
+}
