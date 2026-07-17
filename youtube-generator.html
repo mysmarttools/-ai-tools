@@ -1,1 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>YouTube Title & Description Generator</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+🤖 Best AI Tools Hub
+</div>
+
+<nav>
+
+<a href="index.html">🏠 Home</a>
+
+<a href="index.html#tools">AI Tools</a>
+
+</nav>
+
+</header>
+
+<section class="tool-page">
+
+<div class="tool-box">
+
+<h1>🎥 YouTube Title & Description Generator</h1>
+
+<p>
+Generate SEO optimized YouTube titles and descriptions instantly.
+</p>
+
+<h3>Main Keyword</h3>
+
+<input
+type="text"
+id="keyword"
+placeholder="Example: Wooden Toys"
+>
+
+<h3>Video Topic</h3>
+
+<input
+type="text"
+id="topic"
+placeholder="Example: Best Wooden Toys for Kids"
+>
+
+<div class="button-area">
+
+<button onclick="generateYoutube()">
+🚀 Generate
+</button>
+
+<button onclick="copyYoutube()">
+📋 Copy
+</button>
+
+<button onclick="clearYoutube()">
+🗑 Clear
+</button>
+
+</div>
+
+<h3>Generated Title</h3>
+
+<textarea id="ytTitle" readonly></textarea>
+
+<h3>Generated Description</h3>
+
+<textarea id="ytDescription" readonly></textarea>
+
+</div>
+
+</section>
+
+<footer>
+
+<div class="footer-content">
+
+<h3>Best AI Tools Hub</h3>
+
+<p>Free AI & SEO Tools</p>
+
+</div>
+
+</footer>
+
+<script src="youtube-generator.js"></script>
+
+</body>
+
+</html>
