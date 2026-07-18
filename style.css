@@ -1025,4 +1025,72 @@ gap:10px;
 
 }
 
-   
+   /* =========================
+   Professional Button Fix
+========================= */
+
+.button-area{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-top:25px;
+}
+
+
+.button-area button{
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    height:45px;
+    min-width:140px;
+
+    padding:0 25px;
+
+    border:none;
+    border-radius:30px;
+
+    background:linear-gradient(135deg,#667eea,#764ba2);
+
+    color:white;
+
+    font-size:16px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+.button-area button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 25px rgba(102,126,234,.4);
+
+}
+
+
+/* Mobile Fix */
+
+@media(max-width:600px){
+
+.button-area{
+
+    flex-direction:column;
+
+}
+
+.button-area button{
+
+    width:100%;
+    max-width:300px;
+
+}
+
+}
