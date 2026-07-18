@@ -1025,72 +1025,39 @@ gap:10px;
 
 }
 
-   /* =========================
-   Professional Button Fix
-========================= */
+ /* FORCE BUTTON ALIGN FIX */
 
-.button-area{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:12px;
-    flex-wrap:wrap;
-    margin-top:25px;
+.tool-box .button-area{
+    display:flex !important;
+    flex-direction:row !important;
+    justify-content:center !important;
+    align-items:center !important;
+    gap:15px !important;
+    width:100% !important;
 }
 
 
-.button-area button{
-
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-
-    height:45px;
-    min-width:140px;
-
-    padding:0 25px;
-
-    border:none;
-    border-radius:30px;
-
-    background:linear-gradient(135deg,#667eea,#764ba2);
-
-    color:white;
-
-    font-size:16px;
-    font-weight:600;
-
-    cursor:pointer;
-
-    transition:.3s;
-
+.tool-box .button-area button{
+    width:auto !important;
+    height:45px !important;
+    padding:0 30px !important;
+    margin:0 !important;
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    white-space:nowrap !important;
 }
 
 
-.button-area button:hover{
-
-    transform:translateY(-3px);
-
-    box-shadow:0 10px 25px rgba(102,126,234,.4);
-
-}
-
-
-/* Mobile Fix */
-
+/* mobile */
 @media(max-width:600px){
 
-.button-area{
-
-    flex-direction:column;
-
+.tool-box .button-area{
+    flex-direction:column !important;
 }
 
-.button-area button{
-
-    width:100%;
-    max-width:300px;
-
+.tool-box .button-area button{
+    width:90% !important;
 }
 
 }
