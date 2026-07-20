@@ -411,78 +411,87 @@ box-shadow:0 10px 30px rgba(79,70,229,.45);
 
 }
 
-/* ==========================
-   Footer
-========================== */
+<footer class="footer">
 
-footer{
+<div class="footer-container">
 
-    background:#111827;
+<div class="footer-col">
 
-    padding:60px 20px;
+<h2>🤖 Best AI Tools Hub</h2>
 
-    margin-top:70px;
+<p>
+Discover powerful AI tools for SEO, content creation,
+YouTube, images and productivity.
+100% Free & Easy to Use.
+</p>
 
-    text-align:center;
+</div>
 
-}
+<div class="footer-col">
 
-.footer-content{
+<h3>AI Tools</h3>
 
-    max-width:900px;
+<ul>
 
-    margin:auto;
+<li><a href="title-generator.html">AI Title Generator</a></li>
 
-}
+<li><a href="meta-generator.html">Meta Generator</a></li>
 
-.footer-content h3{
+<li><a href="ai-keyword-generator.html">Keyword Generator</a></li>
 
-    font-size:28px;
+<li><a href="youtube-generator.html">YouTube Generator</a></li>
 
-    margin-bottom:15px;
+</ul>
 
-}
+</div>
 
-.footer-content p{
+<div class="footer-col">
 
-    color:#d1d5db;
+<h3>Quick Links</h3>
 
-}
+<ul>
 
-.footer-links{
+<li><a href="about.html">About</a></li>
 
-    margin:25px 0;
+<li><a href="privacy-policy.html">Privacy Policy</a></li>
 
-}
+<li><a href="terms.html">Terms & Conditions</a></li>
 
-.footer-links a{
+<li><a href="contact.html">Contact</a></li>
 
-    color:#fff;
+</ul>
 
-    margin:0 15px;
+</div>
 
-    text-decoration:none;
+<div class="footer-col">
 
-    transition:.3s;
+<h3>Follow Us</h3>
 
-}
+<div class="social-icons">
 
-.footer-links a:hover{
+<a href="#">🌐</a>
 
-    color:#38bdf8;
+<a href="#">📘</a>
 
-}
+<a href="#">📷</a>
 
-.copyright{
+<a href="#">▶️</a>
 
-    margin-top:20px;
+</div>
 
-    color:#9ca3af;
+</div>
 
-    font-size:14px;
+</div>
 
-}
+<hr>
 
+<div class="footer-bottom">
+
+© 2026 Best AI Tools Hub. All Rights Reserved.
+
+</div>
+
+</footer>
 /* ==========================
    Responsive
 ========================== */
