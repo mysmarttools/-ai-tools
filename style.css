@@ -1061,3 +1061,32 @@ gap:10px;
 }
 
 }
+
+.announcement-bar{
+    width:100%;
+    background:linear-gradient(90deg,#4f46e5,#7c3aed);
+    color:#fff;
+    overflow:hidden;
+    white-space:nowrap;
+    padding:12px 0;
+    font-weight:600;
+}
+
+.announcement-track{
+    display:inline-block;
+    padding-left:100%;
+    animation:scrollText 25s linear infinite;
+}
+
+.announcement-bar:hover .announcement-track{
+    animation-play-state:paused;
+}
+
+@keyframes scrollText{
+    from{
+        transform:translateX(0);
+    }
+    to{
+        transform:translateX(-100%);
+    }
+}
