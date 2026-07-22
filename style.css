@@ -1265,8 +1265,9 @@ max-width:360px;
     font-weight:700;
     line-height:1.4;
     margin-bottom:20px;
-    color:#222;
+    color:#ffffff;
     letter-spacing:-0.5px;
+    text-shadow:0 2px 8px rgba(0,0,0,0.25);
 }
 
 .intro-section p{
@@ -1274,10 +1275,10 @@ max-width:360px;
     margin:0 auto 18px;
     font-size:18px;
     line-height:1.9;
-    color:#666;
+    color:rgba(255,255,255,0.92);
 }
 
 .intro-section strong{
-    color:#111;
-    font-weight:600;
+    color:#ffffff;
+    font-weight:700;
 }
