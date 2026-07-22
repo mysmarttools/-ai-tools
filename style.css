@@ -1259,21 +1259,38 @@ max-width:360px;
 }
 
    
-
-.hero-content {
-    max-width: 1000px;
-    margin: 0 auto;
+.hero{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:120px 20px 80px;
 }
 
-.hero-content h1 {
-    text-align: center;
-    margin-bottom: 20px;
+.hero-content{
+    width:100%;
+    max-width:950px;
+    margin:0 auto;
+    text-align:center;
 }
 
-.hero-content p {
-    text-align: center;
-    line-height: 1.8;
-    max-width: 900px;
-    margin: 0 auto;
+.hero-icon{
+    font-size:42px;
+    margin-bottom:20px;
 }
+
+.hero-content h1{
+    font-size:52px;
+    line-height:1.25;
+    font-weight:700;
+    margin-bottom:30px;
+    text-align:center;
+}
+
+.hero-content p{
+    max-width:850px;
+    margin:0 auto 25px;
+    font-size:22px;
+    line-height:1.8;
+    text-align:center;
 }
