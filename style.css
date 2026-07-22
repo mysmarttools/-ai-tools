@@ -1253,3 +1253,30 @@ max-width:360px;
 }
 
 }
+
+   .intro-section{
+    max-width:900px;
+    margin:40px auto;
+    padding:0 20px;
+    text-align:left;
+}
+
+.intro-section h2{
+    font-size:32px;
+    line-height:1.4;
+    margin-bottom:20px;
+    text-align:center;
+}
+
+.intro-section p{
+    font-size:18px;
+    line-height:1.9;
+    margin-bottom:18px;
+    color:#666;
+    text-align:justify;
+}
+
+.intro-section strong{
+    color:#222;
+    font-weight:600;
+}
