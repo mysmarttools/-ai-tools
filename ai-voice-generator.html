@@ -1,1 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>AI Voice Generator - Convert Text to Speech Online Free</title>
+
+<meta name="description" content="Generate realistic AI voice from text with our free AI Voice Generator. Convert text to speech online for videos, YouTube, presentations, and content creation.">
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f8f9fa;
+    margin:0;
+    padding:0;
+}
+
+.container{
+    max-width:800px;
+    margin:50px auto;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+h1{
+    text-align:center;
+    color:#222;
+}
+
+h2{
+    text-align:center;
+    color:#555;
+}
+
+textarea{
+    width:100%;
+    height:150px;
+    padding:15px;
+    font-size:16px;
+    border-radius:10px;
+    border:1px solid #ccc;
+    resize:none;
+}
+
+select{
+    width:100%;
+    padding:12px;
+    margin-top:15px;
+    border-radius:8px;
+}
+
+button{
+    width:100%;
+    padding:14px;
+    margin-top:20px;
+    background:#4f46e5;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-size:18px;
+    cursor:pointer;
+}
+
+button:hover{
+    opacity:0.9;
+}
+
+.info{
+    margin-top:30px;
+    line-height:1.7;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🎙️ AI Voice Generator</h1>
+
+<h2>Convert Text Into Realistic AI Voice Online</h2>
+
+<p>
+Enter your text below and convert it into natural sounding speech using AI voice technology.
+</p>
+
+
+<textarea id="textInput" placeholder="Enter your text here..."></textarea>
+
+
+<select id="voiceSelect">
+<option value="en-US">English Voice</option>
+<option value="ur-PK">Urdu Voice</option>
+<option value="hi-IN">Hindi Voice</option>
+</select>
+
+
+<button onclick="generateVoice()">
+🔊 Generate Voice
+</button>
+
+
+<button onclick="stopVoice()">
+⛔ Stop Voice
+</button>
+
+
+<div class="info">
+
+<h2>What is AI Voice Generator?</h2>
+
+<p>
+AI Voice Generator is a free online tool that converts written text into speech.
+It helps creators, students, marketers, and businesses create voice content quickly.
+</p>
+
+<h2>Features</h2>
+
+<ul>
+<li>✅ Convert text into speech</li>
+<li>✅ Multiple languages support</li>
+<li>✅ Free online voice generator</li>
+<li>✅ No registration required</li>
+</ul>
+
+</div>
+
+
+</div>
+
+
+<script>
+
+function generateVoice(){
+
+let text = document.getElementById("textInput").value;
+
+let lang = document.getElementById("voiceSelect").value;
+
+
+if(text.trim()==""){
+alert("Please enter text first");
+return;
+}
+
+
+let speech = new SpeechSynthesisUtterance();
+
+speech.text = text;
+
+speech.lang = lang;
+
+speech.rate = 1;
+
+speech.pitch = 1;
+
+
+window.speechSynthesis.speak(speech);
+
+}
+
+
+function stopVoice(){
+
+window.speechSynthesis.cancel();
+
+}
+
+</script>
+
+
+</body>
+</html>
