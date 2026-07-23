@@ -16,70 +16,50 @@ export default async function handler(req, res) {
       });
     }
 
+    const response = await fetch(
+      "https://api.groq.com/openai/v1/chat/completions",
+      {
+        method: "POST",
 
-    let result = text.trim();
+        headers: {
+          "Authorization": `Bearer ${process.env.GROQ_API_KEY}`,
+          "Content-Type": "application/json"
+        },
 
+        body: JSON.stringify({
 
-    // Replace AI sounding words
-    const replacements = {
-      "utilize": "use",
-      "utilizing": "using",
-      "furthermore": "also",
-      "moreover": "also",
-      "therefore": "so",
-      "consequently": "as a result",
-      "in addition": "also",
-      "however": "but",
-      "approximately": "around",
-      "numerous": "many",
-      "purchase": "buy",
-      "assist": "help",
-      "assistance": "help",
-      "demonstrate": "show",
-      "commence": "start",
-      "obtain": "get",
-      "require": "need",
-      "individuals": "people",
-      "children": "kids",
-      "significant": "important",
-      "optimize": "improve",
-      "facilitate": "help",
-      "implement": "use"
-    };
+          model: "llama-3.3-70b-versatile",
 
+          messages: [
 
-    Object.entries(replacements).forEach(([oldWord, newWord]) => {
+            {
+              role: "system",
+              content: "Rewrite text in fluent natural human English. Keep the meaning exactly the same."
+            },
 
-      const regex = new RegExp(`\\b${oldWord}\\b`, "gi");
+            {
+              role: "user",
+              content: text
+            }
 
-      result = result.replace(regex, newWord);
+          ],
 
-    });
+          temperature: 0.8
 
+        })
 
-    // Make sentences shorter and natural
-    result = result
-      .replace(/;/g, ".")
-      .replace(/\s+/g, " ")
-      .trim();
+      }
+    );
 
+    const data = await response.json();
 
-    // Random natural phrases
-    const sentences = result.split(/(?<=[.!?])\s+/);
-
-    if (sentences.length > 2) {
-
-      sentences.sort(() => Math.random() - 0.5);
-
-      result = sentences.join(" ");
-
+    if (data.error) {
+      return res.status(500).json(data);
     }
 
-
     res.status(200).json({
-      result
+      result: data.choices[0].message.content
     });
-
 
   } catch (err) {
 
