@@ -16,52 +16,63 @@ export default async function handler(req, res) {
       });
     }
 
-    const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${process.env.GEMINI_API_KEY}`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
 
-          contents: [
-            {
-              parts: [
-                {
-                  text: `Rewrite the following text in fluent, natural, human-like English. Keep the meaning exactly the same. Make it engaging and easy to read.
+    // Simple AI-style Humanizer (No API)
 
-Text:
+    let result = text;
 
-${text}`
-                }
-              ]
-            }
-          ],
+    const replacements = {
+      "utilize": "use",
+      "utilizes": "uses",
+      "approximately": "about",
+      "numerous": "many",
+      "purchase": "buy",
+      "purchased": "bought",
+      "assist": "help",
+      "assistance": "help",
+      "commence": "start",
+      "demonstrate": "show",
+      "therefore": "so",
+      "however": "but",
+      "in order to": "to",
+      "due to the fact that": "because",
+      "a large number of": "many",
+      "very good": "great",
+      "very important": "really important"
+    };
 
-          generationConfig: {
-            temperature: 0.8,
-            topP: 0.95,
-            maxOutputTokens: 2048
-          }
 
-        })
-      }
-    );
+    Object.keys(replacements).forEach(word => {
 
-    const data = await response.json();
+      const regex = new RegExp(word, "gi");
 
-    if (data.error) {
-      return res.status(500).json(data);
+      result = result.replace(
+        regex,
+        replacements[word]
+      );
+
+    });
+
+
+    // Make sentences more natural
+
+    result = result
+      .replace(/\bThis\b/g, "This")
+      .replace(/\s+/g, " ")
+      .trim();
+
+
+    // Add human style ending if short text
+
+    if (result.length < 100) {
+      result += " This makes it easier to understand and more natural for readers.";
     }
 
-    const result =
-      data.candidates?.[0]?.content?.parts?.[0]?.text ||
-      "No response received.";
 
     res.status(200).json({
       result
     });
+
 
   } catch (err) {
 
