@@ -1478,27 +1478,59 @@ async function paraphraseText(){
 
 async function paraphraseText(){
 
-const text=document.getElementById("inputText").value.trim();
+    const input = document.getElementById("inputText");
+    const output = document.getElementById("outputText");
 
-if(text===""){
-alert("Please enter text");
-return;
-}
+    let text = input.value.trim();
 
-document.getElementById("outputText").value="Loading...";
 
-const response=await fetch("/api/paraphrase",{
-method:"POST",
-headers:{
-"Content-Type":"application/json"
-},
-body:JSON.stringify({
-text:text
-})
-});
+    if(text === ""){
 
-const data=await response.json();
+        alert("Please enter text");
 
-document.getElementById("outputText").value=data.result || data.error;
+        return;
+
+    }
+
+
+    output.value = "⏳ Paraphrasing...";
+
+
+    try{
+
+        const response = await fetch("/api/paraphrase",{
+
+            method:"POST",
+
+            headers:{
+                "Content-Type":"application/json"
+            },
+
+            body:JSON.stringify({
+                text:text
+            })
+
+        });
+
+
+        const data = await response.json();
+
+
+        if(data.result){
+
+            output.value = data.result;
+
+        }else{
+
+            output.value = "Error: " + JSON.stringify(data.error);
+
+        }
+
+
+    }catch(error){
+
+        output.value = "Something went wrong: " + error.message;
+
+    }
 
 }
