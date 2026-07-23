@@ -1431,59 +1431,62 @@ function copyHumanized(){
 
 async function paraphraseText(){
 
-    const input = document.getElementById("inputText");
-    const output = document.getElementById("outputText");
+    const input = document.getElementById("paraInputText");
+    const output = document.getElementById("paraOutputText");
 
     let text = input.value.trim();
 
-
     if(text === ""){
-
         alert("Please enter text");
-
         return;
-
     }
 
-
     output.value = "⏳ Paraphrasing...";
-
 
     try{
 
         const response = await fetch("/api/paraphrase",{
-
             method:"POST",
-
             headers:{
                 "Content-Type":"application/json"
             },
-
             body:JSON.stringify({
                 text:text
             })
-
         });
-
 
         const data = await response.json();
 
-
-        if(data.result){
-
-            output.value = data.result;
-
-        }else{
-
-            output.value = "Error: " + JSON.stringify(data.error);
-
-        }
-
+        output.value = data.result || data.error;
 
     }catch(error){
 
-        output.value = "Something went wrong: " + error.message;
+        output.value = error.message;
 
     }
+
+}
+
+
+function clearParaphrase(){
+
+    document.getElementById("paraInputText").value="";
+    document.getElementById("paraOutputText").value="";
+
+}
+
+
+function copyParaphrase(){
+
+    const output=document.getElementById("paraOutputText");
+
+    if(output.value.trim()==""){
+        alert("Nothing to copy");
+        return;
+    }
+
+    navigator.clipboard.writeText(output.value);
+
+    alert("✅ Copied Successfully!");
 
 }
