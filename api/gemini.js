@@ -17,55 +17,62 @@ export default async function handler(req, res) {
     }
 
 
-    // Simple AI-style Humanizer (No API)
+    let result = text.trim();
 
-    let result = text;
 
+    // Replace AI sounding words
     const replacements = {
       "utilize": "use",
-      "utilizes": "uses",
-      "approximately": "about",
+      "utilizing": "using",
+      "furthermore": "also",
+      "moreover": "also",
+      "therefore": "so",
+      "consequently": "as a result",
+      "in addition": "also",
+      "however": "but",
+      "approximately": "around",
       "numerous": "many",
       "purchase": "buy",
-      "purchased": "bought",
       "assist": "help",
       "assistance": "help",
-      "commence": "start",
       "demonstrate": "show",
-      "therefore": "so",
-      "however": "but",
-      "in order to": "to",
-      "due to the fact that": "because",
-      "a large number of": "many",
-      "very good": "great",
-      "very important": "really important"
+      "commence": "start",
+      "obtain": "get",
+      "require": "need",
+      "individuals": "people",
+      "children": "kids",
+      "significant": "important",
+      "optimize": "improve",
+      "facilitate": "help",
+      "implement": "use"
     };
 
 
-    Object.keys(replacements).forEach(word => {
+    Object.entries(replacements).forEach(([oldWord, newWord]) => {
 
-      const regex = new RegExp(word, "gi");
+      const regex = new RegExp(`\\b${oldWord}\\b`, "gi");
 
-      result = result.replace(
-        regex,
-        replacements[word]
-      );
+      result = result.replace(regex, newWord);
 
     });
 
 
-    // Make sentences more natural
-
+    // Make sentences shorter and natural
     result = result
-      .replace(/\bThis\b/g, "This")
+      .replace(/;/g, ".")
       .replace(/\s+/g, " ")
       .trim();
 
 
-    // Add human style ending if short text
+    // Random natural phrases
+    const sentences = result.split(/(?<=[.!?])\s+/);
 
-    if (result.length < 100) {
-      result += " This makes it easier to understand and more natural for readers.";
+    if (sentences.length > 2) {
+
+      sentences.sort(() => Math.random() - 0.5);
+
+      result = sentences.join(" ");
+
     }
 
 
