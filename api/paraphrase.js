@@ -1,90 +1,118 @@
-export default async function handler(req,res){
+// =============================
+// AI Paraphrasing Tool
+// =============================
 
-if(req.method!=="POST"){
+const inputText = document.getElementById("inputText");
+const outputText = document.getElementById("outputText");
+const wordCount = document.getElementById("wordCount");
+const charCount = document.getElementById("charCount");
 
-return res.status(405).json({
-error:"Method Not Allowed"
-});
+// Live Counter
+if (inputText) {
+    inputText.addEventListener("input", updateCounter);
+}
+
+function updateCounter() {
+
+    let text = inputText.value.trim();
+
+    let words = text === "" ? 0 : text.split(/\s+/).length;
+    let chars = text.length;
+
+    if(wordCount){
+        wordCount.innerText = "Words: " + words;
+    }
+
+    if(charCount){
+        charCount.innerText = "Characters: " + chars;
+    }
 
 }
 
-try{
+// =============================
+// Paraphrase
+// =============================
 
-const{text}=req.body;
+async function paraphraseText(){
 
-const response=await fetch(
-"https://api.groq.com/openai/v1/chat/completions",
-{
+    const text = inputText.value.trim();
 
-method:"POST",
+    if(text === ""){
 
-headers:{
+        alert("Please enter some text.");
 
-"Authorization":
-`Bearer ${process.env.GROQ_API_KEY}`,
+        return;
 
-"Content-Type":"application/json"
+    }
 
-},
+    outputText.value = "⏳ Paraphrasing...";
 
-body:JSON.stringify({
+    try{
 
-model:"llama-3.3-70b-versatile",
+        const response = await fetch("/api/paraphrase",{
 
-messages:[
+            method:"POST",
 
-{
+            headers:{
+                "Content-Type":"application/json"
+            },
 
-role:"system",
+            body:JSON.stringify({
+                text:text
+            })
 
-content:`Paraphrase the user's text.
+        });
 
-Rules:
+        const data = await response.json();
 
-- Keep the same meaning.
-- Use different wording.
-- Make it natural.
-- Improve readability.
-- Return only the rewritten text.`
+        if(data.result){
 
-},
+            outputText.value = data.result;
 
-{
+        }else{
 
-role:"user",
+            outputText.value = data.error || "Something went wrong.";
 
-content:text
+        }
 
-}
+    }catch(error){
 
-],
+        outputText.value = error.message;
 
-temperature:0.9
-
-})
+    }
 
 }
 
-);
+// =============================
+// Clear
+// =============================
 
-const data=await response.json();
+function clearParaphrase(){
 
-res.status(200).json({
+    inputText.value = "";
+    outputText.value = "";
 
-result:data.choices[0].message.content
-
-});
-
-}
-
-catch(err){
-
-res.status(500).json({
-
-error:err.message
-
-});
+    wordCount.innerText = "Words: 0";
+    charCount.innerText = "Characters: 0";
 
 }
+
+// =============================
+// Copy
+// =============================
+
+function copyParaphrase(){
+
+    if(outputText.value.trim() === ""){
+
+        alert("Nothing to copy.");
+
+        return;
+
+    }
+
+    navigator.clipboard.writeText(outputText.value);
+
+    alert("✅ Copied Successfully!");
 
 }
