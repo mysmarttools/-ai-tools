@@ -1372,13 +1372,13 @@ async function humanizeText(){
 
         if(data.result){
 
-            outputText.value = data.result;
+    outputText.value = data.result;
 
-        }else{
+}else{
 
-            outputText.value = "Error: " + data.error;
+    outputText.value = "Error: " + JSON.stringify(data.error);
 
-        }
+}
 
 
     } catch(error){
