@@ -1470,23 +1470,15 @@ async function paraphraseText(){
 
 function clearParaphrase(){
 
-    document.getElementById("paraInputText").value="";
-    document.getElementById("paraOutputText").value="";
+    let input = document.getElementById("paraInputText");
+    let output = document.getElementById("paraOutputText");
 
-}
-
-
-function copyParaphrase(){
-
-    const output=document.getElementById("paraOutputText");
-
-    if(output.value.trim()==""){
-        alert("Nothing to copy");
-        return;
+    if(input !== null){
+        input.value = "";
     }
 
-    navigator.clipboard.writeText(output.value);
-
-    alert("✅ Copied Successfully!");
+    if(output !== null){
+        output.value = "";
+    }
 
 }
