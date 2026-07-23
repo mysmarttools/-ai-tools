@@ -1,19 +1,43 @@
-<h1>AI Paraphrasing Tool</h1>
+<div class="tool-container">
 
-<textarea id="inputText"
-placeholder="Paste your text here..."></textarea>
+    <h1>📝 AI Paraphrasing Tool</h1>
 
-<button onclick="paraphraseText()">
-Paraphrase
-</button>
+    <p>Rewrite your text naturally while keeping the original meaning.</p>
 
-<button onclick="clearParaphrase()">
-Clear
-</button>
+    <textarea
+        id="inputText"
+        placeholder="Paste your text here..."
+    ></textarea>
 
-<button onclick="copyParaphrase()">
-Copy
-</button>
+    <div class="counter">
+        <span id="wordCount">Words: 0</span>
+        <span id="charCount">Characters: 0</span>
+    </div>
 
-<textarea id="outputText"
-readonly></textarea>
+    <div class="button-group">
+
+        <button class="btn-primary" onclick="paraphraseText()">
+            ✨ Paraphrase
+        </button>
+
+        <button class="btn-danger" onclick="clearParaphrase()">
+            🗑 Clear
+        </button>
+
+        <button class="btn-success" onclick="copyParaphrase()">
+            📋 Copy
+        </button>
+
+    </div>
+
+    <div class="output-box">
+
+        <textarea
+            id="outputText"
+            placeholder="Your paraphrased text..."
+            readonly
+        ></textarea>
+
+    </div>
+
+</div>
