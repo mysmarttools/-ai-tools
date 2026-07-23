@@ -26,37 +26,41 @@ export default async function handler(req, res) {
           "Content-Type": "application/json"
         },
 
-        body: JSON.stringify({
+       body: JSON.stringify({
 
-          model: "llama-3.3-70b-versatile",
+  model: "llama-3.3-70b-versatile",
 
-          messages: [
+  messages: [
 
-            {
-              role: "system",
-content: `You are an expert human editor.
+    {
+      role: "system",
+      content: `You are an expert human editor.
 
-Rewrite the user's text so it sounds completely natural, fluent, and written by a real person.
+Rewrite the user's text so it sounds completely natural, conversational, and written by a real person.
 
 Rules:
-- Keep the original meaning.
-- Do not add new information.
-- Use simple, conversational English.
+- Keep the original meaning exactly.
+- Do not add new facts.
+- Do not remove important information.
+- Use simple, fluent English.
 - Vary sentence length and structure.
-- Avoid robotic or repetitive wording.
-- Make it engaging and easy to read.
-- Return only the rewritten text with no explanations or quotation marks.`            },
+- Avoid robotic, repetitive, or AI-like wording.
+- Improve readability and flow.
+- Return only the rewritten text.`
+    },
 
-            {
-              role: "user",
-              content: text
-            }
+    {
+      role: "user",
+      content: text
+    }
 
-          ],
+  ],
 
-          temperature: 0.8
+  temperature: 0.9,
+  top_p: 0.95,
+  max_tokens: 1500
 
-        })
+})
 
       }
     );
