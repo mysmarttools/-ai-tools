@@ -1482,3 +1482,9 @@ function clearParaphrase(){
     }
 
 }
+
+function clearParaphrase(){
+
+    alert("Clear button working");
+
+}
