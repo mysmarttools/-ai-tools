@@ -1388,3 +1388,41 @@ async function humanizeText(){
     }
 
 }
+
+function clearHumanizer(){
+
+    document.getElementById("inputText").value = "";
+
+    document.getElementById("outputText").value = "";
+
+    
+    let wordCount = document.getElementById("wordCount");
+    let charCount = document.getElementById("charCount");
+
+    if(wordCount){
+        wordCount.innerText = "Words: 0";
+    }
+
+    if(charCount){
+        charCount.innerText = "Characters: 0";
+    }
+
+}
+
+
+
+function copyHumanized(){
+
+    let outputText = document.getElementById("outputText");
+
+    if(outputText.value.trim() === ""){
+        alert("Nothing to copy.");
+        return;
+    }
+
+
+    navigator.clipboard.writeText(outputText.value);
+
+    alert("Copied Successfully!");
+
+}
