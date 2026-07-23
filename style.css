@@ -1407,3 +1407,118 @@ max-width:360px;
 .home-btn:hover{
     background:#3730a3;
 }
+
+   /* ===========================
+   AI Paraphrasing Tool
+=========================== */
+
+.tool-container{
+    max-width:900px;
+    margin:50px auto;
+    background:#fff;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.tool-container h1{
+    text-align:center;
+    font-size:36px;
+    color:#222;
+    margin-bottom:10px;
+}
+
+.tool-container p{
+    text-align:center;
+    color:#666;
+    margin-bottom:25px;
+    font-size:17px;
+}
+
+.tool-container textarea{
+    width:100%;
+    min-height:220px;
+    padding:15px;
+    border:1px solid #ddd;
+    border-radius:12px;
+    font-size:16px;
+    resize:vertical;
+    outline:none;
+    transition:.3s;
+    box-sizing:border-box;
+}
+
+.tool-container textarea:focus{
+    border-color:#0d6efd;
+    box-shadow:0 0 10px rgba(13,110,253,.15);
+}
+
+.counter{
+    display:flex;
+    justify-content:space-between;
+    margin:12px 0 20px;
+    font-size:14px;
+    color:#666;
+}
+
+.button-group{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    justify-content:center;
+    margin-bottom:20px;
+}
+
+.button-group button{
+    border:none;
+    padding:13px 26px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.button-group button:hover{
+    transform:translateY(-2px);
+}
+
+.btn-primary{
+    background:#0d6efd;
+    color:#fff;
+}
+
+.btn-success{
+    background:#198754;
+    color:#fff;
+}
+
+.btn-danger{
+    background:#dc3545;
+    color:#fff;
+}
+
+.output-box{
+    margin-top:20px;
+}
+
+@media(max-width:768px){
+
+.tool-container{
+    margin:20px;
+    padding:20px;
+}
+
+.tool-container h1{
+    font-size:28px;
+}
+
+.button-group{
+    flex-direction:column;
+}
+
+.button-group button{
+    width:100%;
+}
+
+}
