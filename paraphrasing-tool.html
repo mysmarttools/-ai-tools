@@ -1,64 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Paraphrasing Tool - Best AI Tools Hub</title>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>AI Paraphrasing Tool</title>
-
-<link rel="stylesheet" href="css/style.css">
-
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
+
+<header class="top-header">
+    <div class="container">
+        <h2>🤖 Best AI Tools Hub</h2>
+    </div>
+</header>
+
+<section class="hero">
 
 <div class="tool-container">
 
-    <h1>📝 AI Paraphrasing Tool</h1>
+<h1>📝 AI Paraphrasing Tool</h1>
 
-    <p>Rewrite your text naturally while keeping the original meaning.</p>
+<p>
+Rewrite sentences and paragraphs while keeping the original meaning.
+Improve readability in seconds.
+</p>
 
-    <textarea id="inputText"
-    placeholder="Paste your text here..."></textarea>
+<div class="input-section">
 
-    <div class="counter">
-        <span id="wordCount">Words: 0</span>
-        <span id="charCount">Characters: 0</span>
-    </div>
+<label>Enter Your Text</label>
 
-    <div class="button-group">
+<textarea
+id="inputText"
+placeholder="Paste your text here..."
+></textarea>
 
-        <button class="btn-primary"
-        onclick="paraphraseText()">
-        ✨ Paraphrase
-        </button>
+<div class="counter">
 
-        <button class="btn-danger"
-        onclick="clearParaphrase()">
-        🗑 Clear
-        </button>
+<span id="wordCount">
+Words: 0
+</span>
 
-        <button class="btn-success"
-        onclick="copyParaphrase()">
-        📋 Copy
-        </button>
-
-    </div>
-
-    <div class="output-box">
-
-        <textarea id="outputText"
-        readonly
-        placeholder="Your paraphrased text..."></textarea>
-
-    </div>
+<span id="charCount">
+Characters: 0
+</span>
 
 </div>
+
+</div>
+
+<div class="button-group">
+
+<button
+class="btn btn-primary"
+onclick="paraphraseText()">
+✨ Paraphrase
+</button>
+
+<button
+class="btn btn-danger"
+onclick="clearParaphrase()">
+🗑 Clear
+</button>
+
+<button
+class="btn btn-success"
+onclick="copyParaphrase()">
+📋 Copy
+</button>
+
+</div>
+
+<div class="output-section">
+
+<label>Paraphrased Text</label>
+
+<textarea
+id="outputText"
+readonly
+placeholder="Your rewritten text will appear here..."
+></textarea>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="info">
+
+<div class="container">
+
+<h2>Why Use Our AI Paraphrasing Tool?</h2>
+
+<p>
+
+Rewrite articles, blogs, essays, emails, assignments, and business content while preserving the original meaning. Perfect for bloggers, students, marketers, and professionals.
+
+</p>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>
+
+© 2026 Best AI Tools Hub
+
+</p>
+
+</footer>
 
 <script src="js/script.js"></script>
 
 </body>
-
 </html>
