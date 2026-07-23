@@ -4,7 +4,6 @@
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>AI Paraphrasing Tool</title>
@@ -17,24 +16,12 @@
 
 <div class="tool-container">
 
-
-
-</div>
-
-<script src="js/script.js"></script>
-
-
-
-<div class="tool-container">
-
     <h1>📝 AI Paraphrasing Tool</h1>
 
     <p>Rewrite your text naturally while keeping the original meaning.</p>
 
-    <textarea
-        id="inputText"
-        placeholder="Paste your text here..."
-    ></textarea>
+    <textarea id="inputText"
+    placeholder="Paste your text here..."></textarea>
 
     <div class="counter">
         <span id="wordCount">Words: 0</span>
@@ -43,33 +30,35 @@
 
     <div class="button-group">
 
-        <button class="btn-primary" onclick="paraphraseText()">
-            ✨ Paraphrase
+        <button class="btn-primary"
+        onclick="paraphraseText()">
+        ✨ Paraphrase
         </button>
 
-        <button class="btn-danger" onclick="clearParaphrase()">
-            🗑 Clear
+        <button class="btn-danger"
+        onclick="clearParaphrase()">
+        🗑 Clear
         </button>
 
-        <button class="btn-success" onclick="copyParaphrase()">
-            📋 Copy
+        <button class="btn-success"
+        onclick="copyParaphrase()">
+        📋 Copy
         </button>
 
     </div>
 
     <div class="output-box">
 
-        <textarea
-            id="outputText"
-            placeholder="Your paraphrased text..."
-            readonly>
-            
-        </textarea>
+        <textarea id="outputText"
+        readonly
+        placeholder="Your paraphrased text..."></textarea>
 
     </div>
 
 </div>
-<link rel="stylesheet" href="css/style.css">
-    </body>
+
+<script src="js/script.js"></script>
+
+</body>
 
 </html>
