@@ -1301,3 +1301,142 @@ function clearYoutube(){
 
 }
 
+// =============================
+// AI Humanizer Tool
+// =============================
+
+const inputText = document.getElementById("inputText");
+const outputText = document.getElementById("outputText");
+const wordCount = document.getElementById("wordCount");
+const charCount = document.getElementById("charCount");
+
+if (inputText) {
+    inputText.addEventListener("input", updateCounter);
+}
+
+
+function updateCounter() {
+
+    let text = inputText.value.trim();
+
+    let words = text === "" ? 0 : text.split(/\s+/).length;
+    let chars = text.length;
+
+    if(wordCount){
+        wordCount.innerText = "Words: " + words;
+    }
+
+    if(charCount){
+        charCount.innerText = "Characters: " + chars;
+    }
+}
+
+
+// Humanizer Function
+
+function humanizeText(){
+
+    let text = inputText.value.trim();
+
+    if(text === ""){
+        alert("Please enter some text.");
+        return;
+    }
+
+
+    let replacements = {
+
+        "Furthermore":"Also",
+        "Moreover":"Also",
+        "Additionally":"Plus",
+        "In addition":"Also",
+        "Utilize":"Use",
+        "Utilizes":"Uses",
+        "Therefore":"So",
+        "However":"But",
+        "Consequently":"So",
+        "Individuals":"People",
+        "Numerous":"Many",
+        "Commence":"Start",
+        "Assist":"Help",
+        "Purchase":"Buy",
+        "Obtain":"Get",
+        "Approximately":"About",
+        "Demonstrate":"Show",
+        "Implement":"Apply",
+        "Facilitate":"Help",
+        "Optimal":"Best",
+        "Significant":"Important",
+        "Enhance":"Improve",
+        "Require":"Need",
+        "Provide":"Give",
+        "Initiate":"Start",
+        "In order to":"To"
+    };
+
+
+    Object.keys(replacements).forEach(word=>{
+
+        let regex = new RegExp("\\b"+word+"\\b","gi");
+
+        text = text.replace(regex,replacements[word]);
+
+    });
+
+
+
+    // Remove AI style patterns
+
+    text = text
+    .replace(/It is important to note that/gi,"")
+    .replace(/In today's world/gi,"Today")
+    .replace(/This article will discuss/gi,"")
+    .replace(/As an AI language model/gi,"")
+    .replace(/In conclusion/gi,"Overall")
+    .replace(/\s+/g," ")
+    .trim();
+
+
+
+    // Add natural breaks
+
+    text = text.replace(
+        /(\. )/g,
+        ". "
+    );
+
+
+    outputText.value = text;
+
+}
+
+
+
+// Copy Button
+
+function copyHumanized(){
+
+    if(outputText.value.trim()===""){
+        alert("Nothing to copy.");
+        return;
+    }
+
+
+    navigator.clipboard.writeText(outputText.value);
+
+    alert("Copied Successfully!");
+
+}
+
+
+
+// Clear Button
+
+function clearHumanizer(){
+
+    inputText.value="";
+    outputText.value="";
+
+    updateCounter();
+
+}
