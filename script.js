@@ -1,6 +1,17 @@
-import { pipeline } from 
-"https://cdn.jsdelivr.net/npm/@xenova/transformers";
+import { pipeline } from "https://cdn.jsdelivr.net/npm/@xenova/transformers";
 
+let humanizer;
+
+async function loadAI() {
+  humanizer = await pipeline(
+    "text2text-generation",
+    "Xenova/flan-t5-small"
+  );
+
+  console.log("AI Loaded");
+}
+
+loadAI();
 
 // =============================
 
