@@ -1408,17 +1408,23 @@ max-width:360px;
     background:#3730a3;
 }
 
-   /* ===========================
-   AI Paraphrasing Tool
-=========================== */
+
+   /* ===== AI Tool Layout ===== */
+
+body{
+    margin:0;
+    padding:40px 20px;
+    background:#f4f7fb;
+    font-family:Arial, Helvetica, sans-serif;
+}
 
 .tool-container{
     max-width:900px;
-    margin:50px auto;
+    margin:0 auto;
     background:#fff;
-    padding:30px;
-    border-radius:18px;
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    border-radius:16px;
+    padding:35px;
+    box-shadow:0 10px 30px rgba(0,0,0,.1);
 }
 
 .tool-container h1{
@@ -1431,81 +1437,66 @@ max-width:360px;
 .tool-container p{
     text-align:center;
     color:#666;
-    margin-bottom:25px;
     font-size:17px;
+    margin-bottom:25px;
 }
 
-.tool-container textarea{
+textarea{
     width:100%;
     min-height:220px;
-    padding:15px;
     border:1px solid #ddd;
-    border-radius:12px;
+    border-radius:10px;
+    padding:15px;
     font-size:16px;
-    resize:vertical;
-    outline:none;
-    transition:.3s;
     box-sizing:border-box;
-}
-
-.tool-container textarea:focus{
-    border-color:#0d6efd;
-    box-shadow:0 0 10px rgba(13,110,253,.15);
+    resize:vertical;
 }
 
 .counter{
     display:flex;
     justify-content:space-between;
-    margin:12px 0 20px;
+    margin:15px 0;
+    color:#777;
     font-size:14px;
-    color:#666;
 }
 
 .button-group{
     display:flex;
-    gap:12px;
-    flex-wrap:wrap;
     justify-content:center;
-    margin-bottom:20px;
+    gap:15px;
+    margin:25px 0;
+    flex-wrap:wrap;
 }
 
 .button-group button{
     border:none;
-    padding:13px 26px;
-    border-radius:10px;
+    color:#fff;
+    padding:14px 28px;
+    border-radius:8px;
     cursor:pointer;
     font-size:16px;
-    font-weight:600;
-    transition:.3s;
-}
-
-.button-group button:hover{
-    transform:translateY(-2px);
+    font-weight:bold;
 }
 
 .btn-primary{
     background:#0d6efd;
-    color:#fff;
 }
 
 .btn-success{
     background:#198754;
-    color:#fff;
 }
 
 .btn-danger{
     background:#dc3545;
-    color:#fff;
 }
 
-.output-box{
-    margin-top:20px;
+.button-group button:hover{
+    opacity:.9;
 }
 
 @media(max-width:768px){
 
 .tool-container{
-    margin:20px;
     padding:20px;
 }
 
