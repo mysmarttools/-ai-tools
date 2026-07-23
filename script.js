@@ -1475,3 +1475,30 @@ async function paraphraseText(){
     }
 
 }
+
+async function paraphraseText(){
+
+const text=document.getElementById("inputText").value.trim();
+
+if(text===""){
+alert("Please enter text");
+return;
+}
+
+document.getElementById("outputText").value="Loading...";
+
+const response=await fetch("/api/paraphrase",{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify({
+text:text
+})
+});
+
+const data=await response.json();
+
+document.getElementById("outputText").value=data.result || data.error;
+
+}
