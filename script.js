@@ -1431,53 +1431,6 @@ function copyHumanized(){
 
 async function paraphraseText(){
 
-    const input=document.getElementById("inputText");
-    const output=document.getElementById("outputText");
-
-    const text=input.value.trim();
-
-    if(text===""){
-
-        alert("Please enter text.");
-
-        return;
-
-    }
-
-    output.value="Paraphrasing...";
-
-    try{
-
-        const response=await fetch("/api/paraphrase",{
-
-            method:"POST",
-
-            headers:{
-                "Content-Type":"application/json"
-            },
-
-            body:JSON.stringify({
-                text:text
-            })
-
-        });
-
-        const data=await response.json();
-
-        output.value=data.result;
-
-    }
-
-    catch(err){
-
-        output.value=err.message;
-
-    }
-
-}
-
-async function paraphraseText(){
-
     const input = document.getElementById("inputText");
     const output = document.getElementById("outputText");
 
