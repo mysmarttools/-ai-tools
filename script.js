@@ -1334,7 +1334,10 @@ function updateCounter() {
 
 // Humanizer Function
 
-function humanizeText(){
+async function humanizeText(){
+
+    const inputText = document.getElementById("inputText");
+    const outputText = document.getElementById("outputText");
 
     let text = inputText.value.trim();
 
@@ -1344,99 +1347,44 @@ function humanizeText(){
     }
 
 
-    let replacements = {
-
-        "Furthermore":"Also",
-        "Moreover":"Also",
-        "Additionally":"Plus",
-        "In addition":"Also",
-        "Utilize":"Use",
-        "Utilizes":"Uses",
-        "Therefore":"So",
-        "However":"But",
-        "Consequently":"So",
-        "Individuals":"People",
-        "Numerous":"Many",
-        "Commence":"Start",
-        "Assist":"Help",
-        "Purchase":"Buy",
-        "Obtain":"Get",
-        "Approximately":"About",
-        "Demonstrate":"Show",
-        "Implement":"Apply",
-        "Facilitate":"Help",
-        "Optimal":"Best",
-        "Significant":"Important",
-        "Enhance":"Improve",
-        "Require":"Need",
-        "Provide":"Give",
-        "Initiate":"Start",
-        "In order to":"To"
-    };
+    outputText.value = "Humanizing... Please wait";
 
 
-    Object.keys(replacements).forEach(word=>{
+    try {
 
-        let regex = new RegExp("\\b"+word+"\\b","gi");
+        const response = await fetch("/api/gemini", {
 
-        text = text.replace(regex,replacements[word]);
+            method: "POST",
 
-    });
+            headers: {
+                "Content-Type": "application/json"
+            },
 
+            body: JSON.stringify({
+                text: text
+            })
 
-
-    // Remove AI style patterns
-
-    text = text
-    .replace(/It is important to note that/gi,"")
-    .replace(/In today's world/gi,"Today")
-    .replace(/This article will discuss/gi,"")
-    .replace(/As an AI language model/gi,"")
-    .replace(/In conclusion/gi,"Overall")
-    .replace(/\s+/g," ")
-    .trim();
+        });
 
 
-
-    // Add natural breaks
-
-    text = text.replace(
-        /(\. )/g,
-        ". "
-    );
+        const data = await response.json();
 
 
-    outputText.value = text;
+        if(data.result){
 
-}
+            outputText.value = data.result;
+
+        }else{
+
+            outputText.value = "Error: " + data.error;
+
+        }
 
 
+    } catch(error){
 
-// Copy Button
+        outputText.value = "Something went wrong: " + error.message;
 
-function copyHumanized(){
-
-    if(outputText.value.trim()===""){
-        alert("Nothing to copy.");
-        return;
     }
-
-
-    navigator.clipboard.writeText(outputText.value);
-
-    alert("Copied Successfully!");
-
-}
-
-
-
-// Clear Button
-
-function clearHumanizer(){
-
-    inputText.value="";
-    outputText.value="";
-
-    updateCounter();
 
 }
