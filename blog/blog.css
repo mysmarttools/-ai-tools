@@ -1,84 +1,77 @@
 /* ==========================
-   BLOG CONTENT
+   CENTER BLOG CONTENT
 ========================== */
 
-.blog-section{
-    margin:50px 0;
+.blog-container{
+    max-width:900px;
+    margin:50px auto;
+    padding:40px;
+    background:#fff;
+    border-radius:16px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    text-align:center;   /* Center text */
 }
 
-.blog-section h2{
-    font-size:34px;
-    line-height:1.3;
-    color:#111827;
-    margin-bottom:20px;
-    padding-bottom:12px;
-    border-bottom:3px solid #4f46e5;
-    font-weight:700;
+/* Feature Image */
+
+.blog-feature-image{
+    display:block;
+    width:100%;
+    max-width:700px;
+    height:auto;
+    margin:30px auto;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
 }
 
-.blog-section h3{
-    font-size:24px;
-    color:#1f2937;
-    margin:30px 0 15px;
-    font-weight:600;
+/* Headings */
+
+.blog-container h1{
+    text-align:center;
 }
 
-.blog-section p{
-    font-size:18px;
+.blog-container h2{
+    text-align:center;
+}
+
+.blog-container h3{
+    text-align:center;
+}
+
+/* Paragraphs */
+
+.blog-container p{
+    text-align:center;
+    max-width:800px;
+    margin:0 auto 20px;
     line-height:1.9;
-    color:#4b5563;
-    margin-bottom:18px;
 }
 
-.blog-section ul{
-    margin:20px 0;
+/* Lists */
+
+.blog-container ul{
+    display:inline-block;
+    text-align:left;      /* Bullet points left aligned */
+    margin:20px auto;
     padding-left:25px;
 }
 
-.blog-section li{
-    font-size:18px;
-    line-height:1.9;
+.blog-container li{
     margin-bottom:12px;
-    color:#374151;
+    line-height:1.8;
 }
 
-.blog-section strong{
-    color:#111827;
-}
-
-.blog-section a{
-    color:#2563eb;
-    text-decoration:none;
-}
-
-.blog-section a:hover{
-    text-decoration:underline;
-}
-
-/* FAQ */
-
-.blog-section h3 + p{
-    background:#f8fafc;
-    padding:18px;
-    border-left:4px solid #4f46e5;
-    border-radius:8px;
-}
-
-/* Responsive */
+/* Mobile */
 
 @media(max-width:768px){
 
-.blog-section h2{
-    font-size:28px;
+.blog-container{
+    padding:20px;
 }
 
-.blog-section h3{
-    font-size:22px;
-}
-
-.blog-section p,
-.blog-section li{
-    font-size:16px;
+.blog-feature-image{
+    max-width:100%;
 }
 
 }
