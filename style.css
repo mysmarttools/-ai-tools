@@ -1673,3 +1673,173 @@ gap:5px;
 }
 
 }
+
+   .blog-hero{
+padding:80px 20px;
+text-align:center;
+background:#f5f8ff;
+}
+
+.blog-hero h1{
+font-size:45px;
+margin-bottom:15px;
+}
+
+.blog-hero p{
+max-width:700px;
+margin:auto;
+line-height:1.8;
+}
+
+.search-box{
+margin-top:30px;
+display:flex;
+justify-content:center;
+gap:10px;
+flex-wrap:wrap;
+}
+
+.search-box input{
+padding:14px;
+width:350px;
+border:1px solid #ddd;
+border-radius:8px;
+}
+
+.search-box button{
+padding:14px 25px;
+background:#0077ff;
+color:white;
+border:none;
+border-radius:8px;
+cursor:pointer;
+}
+
+.featured-post{
+padding:70px 20px;
+}
+
+.featured-card{
+display:flex;
+gap:30px;
+align-items:center;
+background:#fff;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+border-radius:12px;
+overflow:hidden;
+}
+
+.featured-card img{
+width:45%;
+height:320px;
+object-fit:cover;
+}
+
+.featured-content{
+padding:30px;
+}
+
+.badge{
+background:#0077ff;
+color:#fff;
+padding:6px 12px;
+border-radius:30px;
+font-size:14px;
+}
+
+.btn{
+display:inline-block;
+margin-top:20px;
+padding:12px 25px;
+background:#0077ff;
+color:#fff;
+text-decoration:none;
+border-radius:6px;
+}
+
+.latest-blogs{
+padding:70px 20px;
+}
+
+.latest-blogs h2{
+text-align:center;
+margin-bottom:40px;
+}
+
+.blog-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:25px;
+}
+
+.blog-card{
+background:#fff;
+border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+overflow:hidden;
+transition:.3s;
+}
+
+.blog-card:hover{
+transform:translateY(-8px);
+}
+
+.blog-card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.blog-card h3{
+padding:20px;
+}
+
+.blog-card p{
+padding:0 20px 20px;
+}
+
+.blog-card a{
+padding:0 20px 20px;
+display:inline-block;
+text-decoration:none;
+font-weight:bold;
+}
+
+.newsletter{
+padding:80px 20px;
+text-align:center;
+background:#f5f8ff;
+}
+
+.newsletter form{
+margin-top:25px;
+display:flex;
+justify-content:center;
+gap:10px;
+flex-wrap:wrap;
+}
+
+.newsletter input{
+padding:14px;
+width:320px;
+border:1px solid #ddd;
+border-radius:8px;
+}
+
+.newsletter button{
+padding:14px 25px;
+background:#0077ff;
+color:#fff;
+border:none;
+border-radius:8px;
+cursor:pointer;
+}
+
+@media(max-width:768px){
+.featured-card{
+flex-direction:column;
+}
+.featured-card img{
+width:100%;
+}
+}
