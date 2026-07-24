@@ -1950,3 +1950,44 @@ font-size:36px;
 .cta-section{
     text-align: left;
 }
+
+   /* ===== ARTICLE CONTENT ===== */
+
+.article-content{
+    max-width:900px;
+    margin:60px auto;
+    padding:0 20px;
+}
+
+.article-content h2{
+    font-size:36px;
+    margin:45px 0 20px;
+    color:#111827;
+    text-align:left;
+}
+
+.article-content h3{
+    font-size:28px;
+    margin:30px 0 12px;
+    color:#111827;
+    text-align:left;
+}
+
+.article-content p{
+    font-size:18px;
+    line-height:1.9;
+    color:#4b5563;
+    text-align:left !important;
+    margin-bottom:22px;
+}
+
+.article-content ul{
+    margin:20px 0;
+    padding-left:28px;
+}
+
+.article-content li{
+    margin-bottom:12px;
+    line-height:1.8;
+    text-align:left;
+}
