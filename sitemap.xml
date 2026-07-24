@@ -4,28 +4,28 @@
 
 <url>
 <loc>https://bestaitoolshub.vercel.app/</loc>
-<lastmod>2026-07-20</lastmod>
+<lastmod>2026-07-24</lastmod>
 <changefreq>Daily </changefreq>
 <priority>1.00</priority>
 </url>
   
 <url>
 <loc>https://bestaitoolshub.vercel.app/ai-keyword-generator</loc>
-<lastmod>2026-07-20</lastmod>
+<lastmod>2026-07-24</lastmod>
 <changefreq>Daily </changefreq>
 <priority>0.9</priority>
 </url>
 
 <url>
 <loc>https://bestaitoolshub.vercel.app/background-remover</loc>
-<lastmod>2026-07-20</lastmod>
+<lastmod>2026-07-24</lastmod>
 <changefreq>Daily </changefreq>
 <priority>0.9</priority>
 </url>
 
 <url>
 <loc>https://bestaitoolshub.vercel.app/faq-generator</loc>
-<lastmod>2026-07-20</lastmod>
+<lastmod>2026-07-24</lastmod>
 <changefreq>Daily </changefreq>
 <priority>0.8</priority>
 </url>
@@ -94,10 +94,16 @@
 </url>
 
 <url>
-<loc>https://bestaitoolshub.vercel.app/about-us</loc>
-<lastmod>2026-07-22</lastmod>
+<loc>https://bestaitoolshub.vercel.app/paraphrasing-tool</loc>
+<lastmod>2026-07-24</lastmod>
 <changefreq>Daily </changefreq>
 <priority>0.9</priority>
 </url>
-  
+
+  <url>
+<loc>https://bestaitoolshub.vercel.app/ai-humanizer</loc>
+<lastmod>2026-07-24</lastmod>
+<changefreq>Daily </changefreq>
+<priority>0.9</priority>
+</url>
 </urlset>
