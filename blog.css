@@ -1,1 +1,215 @@
+/* =========================
+   BLOG MAIN LAYOUT
+========================= */
 
+.blog-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: Arial, sans-serif;
+    color: #222;
+}
+
+
+/* =========================
+   BLOG TITLE
+========================= */
+
+.blog-container h1 {
+    font-size: 42px;
+    line-height: 1.25;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #111;
+}
+
+.blog-meta {
+    color: #777;
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   FEATURE IMAGE
+========================= */
+
+.blog-feature-image {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   ARTICLE TEXT
+========================= */
+
+.blog-content p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+
+.blog-content strong {
+    color: #111;
+}
+
+
+/* =========================
+   HEADINGS
+========================= */
+
+.blog-content h2 {
+    font-size: 30px;
+    margin-top: 45px;
+    margin-bottom: 15px;
+    color: #0b5cff;
+}
+
+.blog-content h3 {
+    font-size: 23px;
+    margin-top: 30px;
+    color: #222;
+}
+
+
+/* =========================
+   LIST STYLE
+========================= */
+
+.blog-content ul {
+    padding-left: 25px;
+    margin-bottom: 25px;
+}
+
+.blog-content li {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 8px;
+}
+
+
+/* =========================
+   INFO BOX
+========================= */
+
+.blog-box {
+    background: #f5f8ff;
+    border-left: 5px solid #0b5cff;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 30px 0;
+}
+
+
+/* =========================
+   TABLE DESIGN
+========================= */
+
+.blog-table {
+    width:100%;
+    border-collapse: collapse;
+    margin:30px 0;
+}
+
+.blog-table th {
+    background:#0b5cff;
+    color:white;
+    padding:14px;
+    text-align:left;
+}
+
+.blog-table td {
+    border:1px solid #ddd;
+    padding:14px;
+    font-size:16px;
+}
+
+
+/* =========================
+   FAQ SECTION
+========================= */
+
+.faq-box {
+    background:#fafafa;
+    border:1px solid #ddd;
+    padding:20px;
+    border-radius:12px;
+    margin-bottom:15px;
+}
+
+.faq-box h3 {
+    margin:0 0 10px;
+    font-size:20px;
+}
+
+
+/* =========================
+   CTA BUTTON
+========================= */
+
+.blog-btn {
+    display:inline-block;
+    background:#0b5cff;
+    color:white;
+    padding:14px 30px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+    margin:20px 0;
+}
+
+.blog-btn:hover {
+    opacity:0.8;
+}
+
+
+/* =========================
+   RELATED POSTS
+========================= */
+
+.related-posts {
+    margin-top:50px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.related-card {
+    border:1px solid #eee;
+    padding:15px;
+    border-radius:12px;
+}
+
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+.blog-container{
+    padding:0 15px;
+}
+
+.blog-container h1{
+    font-size:30px;
+}
+
+.blog-content p,
+.blog-content li{
+    font-size:16px;
+}
+
+.blog-content h2{
+    font-size:25px;
+}
+
+.related-posts{
+    grid-template-columns:1fr;
+}
+
+}
