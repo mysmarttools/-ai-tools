@@ -1,117 +1,251 @@
-/* ===========================
-   PREMIUM BLOG LAYOUT
-=========================== */
+/* ========= BACKGROUND ========= */
+
+body{
+    background:#f5f7fb;
+    margin:0;
+}
+
+/* ========= WRAPPER ========= */
+
+.blog-wrapper{
+
+    max-width:1300px;
+
+    margin:auto;
+
+    padding:60px 20px;
+
+}
+
+/* ========= MAIN CARD ========= */
 
 .blog-container{
-    max-width:850px;
-    margin:60px auto;
+
+    max-width:900px;
+
+    margin:auto;
+
     background:#fff;
-    padding:50px;
-    border-radius:18px;
-    box-shadow:0 15px 45px rgba(0,0,0,.08);
+
+    border-radius:22px;
+
+    padding:60px;
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.08);
+
 }
 
-/* Feature Image */
+/* ========= CATEGORY ========= */
+
+.blog-category{
+
+    display:inline-block;
+
+    background:#eef2ff;
+
+    color:#4f46e5;
+
+    padding:8px 18px;
+
+    border-radius:40px;
+
+    font-size:14px;
+
+    font-weight:bold;
+
+    letter-spacing:1px;
+
+}
+
+/* ========= TITLE ========= */
+
+.blog-header{
+
+    text-align:center;
+
+}
+
+.blog-header h1{
+
+    font-size:52px;
+
+    margin:25px 0;
+
+    color:#111827;
+
+    line-height:1.2;
+
+}
+
+.blog-subtitle{
+
+    max-width:720px;
+
+    margin:auto;
+
+    font-size:22px;
+
+    color:#6b7280;
+
+    line-height:1.7;
+
+}
+
+/* ========= META ========= */
+
+.blog-meta{
+
+    margin-top:30px;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    color:#777;
+
+    flex-wrap:wrap;
+
+}
+
+/* ========= IMAGE ========= */
 
 .blog-feature-image{
-    display:block;
+
     width:100%;
-    max-width:760px;
-    margin:35px auto 45px;
-    border-radius:18px;
-    object-fit:cover;
-    box-shadow:0 12px 35px rgba(0,0,0,.15);
-}
 
-/* Main Title */
+    margin-top:40px;
 
-.blog-container h1{
-    text-align:center;
-    font-size:48px;
-    line-height:1.2;
-    margin-bottom:20px;
-    color:#111827;
-}
+    border-radius:20px;
 
-/* Headings */
-
-.blog-container h2{
-    text-align:center;
-    font-size:34px;
-    margin:60px 0 25px;
-    color:#111827;
-    position:relative;
-}
-
-.blog-container h2::after{
-    content:"";
-    width:70px;
-    height:4px;
-    background:#4f46e5;
     display:block;
-    margin:15px auto 0;
-    border-radius:50px;
+
+    box-shadow:
+
+    0 20px 50px rgba(0,0,0,.15);
+
 }
 
-.blog-container h3{
-    font-size:24px;
-    margin:35px 0 18px;
-    color:#222;
-}
-
-/* Paragraph */
-
-.blog-container p{
-    font-size:18px;
-    line-height:1.9;
-    color:#444;
-    margin-bottom:22px;
-    text-align:left;
-}
-
-/* Lists */
-
-.blog-container ul{
-    margin:25px 0;
-    padding-left:30px;
-}
-
-.blog-container li{
-    font-size:18px;
-    line-height:1.9;
-    margin-bottom:12px;
-}
-
-/* Section */
+/* ========= CONTENT ========= */
 
 .blog-section{
-    margin:70px 0;
+
+    margin-top:70px;
+
 }
 
-/* Mobile */
+.blog-section h2{
+
+    font-size:36px;
+
+    color:#111827;
+
+    margin-bottom:25px;
+
+    text-align:center;
+
+}
+
+.blog-section h2::after{
+
+    content:"";
+
+    width:80px;
+
+    height:5px;
+
+    background:#4f46e5;
+
+    display:block;
+
+    margin:18px auto 0;
+
+    border-radius:20px;
+
+}
+
+.blog-section h3{
+
+    font-size:26px;
+
+    margin:40px 0 15px;
+
+    color:#222;
+
+}
+
+.blog-section p{
+
+    font-size:19px;
+
+    line-height:2;
+
+    color:#4b5563;
+
+}
+
+.blog-section ul{
+
+    padding-left:25px;
+
+}
+
+.blog-section li{
+
+    margin:12px 0;
+
+    font-size:18px;
+
+    line-height:1.9;
+
+}
+
+/* ========= BLOCKQUOTE ========= */
+
+blockquote{
+
+    border-left:5px solid #4f46e5;
+
+    background:#f8fafc;
+
+    padding:25px;
+
+    margin:40px 0;
+
+    border-radius:12px;
+
+    font-size:20px;
+
+}
+
+/* ========= MOBILE ========= */
 
 @media(max-width:768px){
 
 .blog-container{
-    padding:25px;
-    margin:20px;
+
+padding:25px;
+
 }
 
-.blog-container h1{
-    font-size:34px;
+.blog-header h1{
+
+font-size:34px;
+
 }
 
-.blog-container h2{
-    font-size:28px;
+.blog-subtitle{
+
+font-size:18px;
+
 }
 
-.blog-container h3{
-    font-size:22px;
-}
+.blog-section h2{
 
-.blog-container p,
-.blog-container li{
-    font-size:17px;
+font-size:28px;
+
 }
 
 }
