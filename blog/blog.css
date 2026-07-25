@@ -1,29 +1,27 @@
-/* ==========================================================
-   Blog Stylesheet - AI Tools Blog
-   Theme: Violet (#7c3aed)
-   ========================================================== */
-
-/* --- CSS Variables / Design System --- */
+/* ==========================================================================
+   1. RESET & VARIABLES
+   ========================================================================== */
 :root {
-  --primary-color: #7c3aed;       /* Main Violet Color */
-  --primary-hover: #6d28d9;       /* Darker Violet for Hover */
-  --primary-light: #f5f3ff;       /* Light Violet Background */
-  --text-main: #1f2937;           /* Main Text Color (Dark Gray) */
-  --text-muted: #4b5563;          /* Secondary Text Color */
-  --bg-main: #ffffff;             /* Main Background */
-  --bg-card: #ffffff;             /* Card Background */
-  --border-color: #e5e7eb;        /* Light Border */
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 10px 15px -3px rgba(124, 58, 237, 0.1), 0 4px 6px -2px rgba(124, 58, 237, 0.05);
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --primary-light: #e0e7ff;
+  --secondary: #06b6d4;
+  --text-dark: #0f172a;
+  --text-muted: #475569;
+  --text-light: #64748b;
+  --bg-main: #f8fafc;
+  --bg-card: #ffffff;
+  --border-color: #e2e8f0;
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 16px;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
   --transition: all 0.3s ease;
 }
 
-/* --- Global & Typography Reset --- */
-* {
+*, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -32,141 +30,541 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   background-color: var(--bg-main);
-  color: var(--text-main);
+  color: var(--text-dark);
   line-height: 1.6;
-  padding: 0;
-  margin: 0;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* --- Content Wrapper & Layout --- */
-.content-wrapper,
-.blog-container {
-  max-width: 1100px;
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
 }
 
-/* --- Blog Header / Titles --- */
-.blog-title {
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--text-main);
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-.blog-subtitle {
-  font-size: 1.1rem;
-  color: var(--text-muted);
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-/* --- Tool Cards Grid & Item Layout --- */
-.tool-cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 24px;
-  margin: 30px 0;
-}
-
-.tool-card {
-  position: relative;
-  background-color: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+/* ==========================================================================
+   2. BUTTONS & UI ELEMENTS
+   ========================================================================== */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
   transition: var(--transition);
-  box-shadow: var(--shadow-sm);
+  cursor: pointer;
 }
 
-.tool-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--primary-color);
+.btn-primary {
+  background-color: var(--primary);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  border: 2px solid var(--border-color);
+  background-color: transparent;
+  color: var(--text-dark);
+}
+
+.btn-outline:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-title span {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.section-title h2 {
+  font-size: 2.2rem;
+  margin: 8px 0;
+  color: var(--text-dark);
+}
+
+.section-title p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+/* ==========================================================================
+   3. HEADER
+   ========================================================================== */
+.site-header {
+  background-color: var(--bg-card);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.site-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.site-header nav {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.site-header nav a {
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: var(--transition);
+}
+
+.site-header nav a:hover,
+.site-header nav a.active {
+  color: var(--primary);
+}
+
+/* ==========================================================================
+   4. HERO SECTION
+   ========================================================================== */
+.hero {
+  padding: 80px 0 60px;
+  text-align: center;
+  background: linear-gradient(180deg, #ffffff 0%, var(--bg-main) 100%);
+}
+
+.hero-tag {
+  display: inline-block;
+  background-color: var(--primary-light);
+  color: var(--primary);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  color: var(--text-dark);
+}
+
+.hero p {
+  max-width: 650px;
+  margin: 0 auto 32px;
+  color: var(--text-muted);
+  font-size: 1.15rem;
+}
+
+.hero-btns {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+/* ==========================================================================
+   5. FEATURED ARTICLE
+   ========================================================================== */
+.featured {
+  padding: 60px 0;
+}
+
+.featured-card {
+  background-color: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  transition: var(--transition);
+}
+
+.featured-card:hover {
   box-shadow: var(--shadow-lg);
 }
 
-/* --- Numbered Badge --- */
-.tool-badge {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  background-color: var(--primary-light);
-  color: var(--primary-color);
-  font-weight: 700;
-  font-size: 0.85rem;
-  padding: 4px 10px;
-  border-radius: 20px;
-}
-
-/* --- Tool Image / Logo --- */
-.tool-card img,
-.tool-image {
-  max-width: 100%;
-  height: auto;
-  border-radius: var(--radius-sm);
-  margin-bottom: 16px;
+.featured-image img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
-/* --- Tool Content --- */
-.tool-card h3,
-.tool-title {
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: var(--text-main);
-  margin-bottom: 8px;
-  padding-right: 40px; /* Badge space */
+.featured-content {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.tool-card p,
-.tool-description {
-  font-size: 0.95rem;
+.featured-content .category {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+.featured-content h2 {
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+}
+
+.featured-content p {
   color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+.feature-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 24px;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.post-meta {
+  display: flex;
+  gap: 16px;
+  font-size: 0.85rem;
+  color: var(--text-light);
+  margin-bottom: 24px;
+}
+
+.read-btn {
+  display: inline-block;
+  color: var(--primary);
+  font-weight: 700;
+  transition: var(--transition);
+}
+
+.read-btn:hover {
+  color: var(--primary-hover);
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   6. LATEST ARTICLES
+   ========================================================================== */
+.latest-blogs {
+  padding: 60px 0;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.blog-card {
+  background-color: var(--bg-card);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+}
+
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.blog-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.blog-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.blog-category {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+.blog-content h3 {
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+}
+
+.blog-content p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
   margin-bottom: 20px;
   flex-grow: 1;
 }
 
-/* --- Tool Action Button / Link --- */
-.tool-btn,
-.tool-card a.button {
-  display: inline-block;
-  text-align: center;
-  background-color: var(--primary-color);
-  color: #ffffff;
+.blog-meta {
+  display: flex;
+  gap: 12px;
+  font-size: 0.8rem;
+  color: var(--text-light);
+  margin-bottom: 16px;
+}
+
+.read-more {
   font-weight: 600;
-  padding: 10px 18px;
-  border-radius: var(--radius-sm);
-  text-decoration: none;
+  color: var(--primary);
   transition: var(--transition);
 }
 
-.tool-btn:hover,
-.tool-card a.button:hover {
-  background-color: var(--primary-hover);
+.read-more:hover {
+  color: var(--primary-hover);
+}
+
+/* ==========================================================================
+   7. NEWSLETTER
+   ========================================================================== */
+.newsletter {
+  padding: 60px 0;
+}
+
+.newsletter-box {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  border-radius: var(--radius-lg);
+  padding: 60px 40px;
+  text-align: center;
   color: #ffffff;
 }
 
-/* --- Mobile Responsiveness --- */
-@media (max-width: 768px) {
-  .content-wrapper,
-  .blog-container {
-    padding: 15px;
-  }
+.newsletter-box h2 {
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+}
 
-  .blog-title {
-    font-size: 1.6rem;
-  }
+.newsletter-box p {
+  max-width: 600px;
+  margin: 0 auto 32px;
+  opacity: 0.9;
+}
 
-  .tool-cards-grid {
+.newsletter-form {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.newsletter-form input {
+  padding: 14px 20px;
+  border-radius: var(--radius-sm);
+  border: none;
+  width: 100%;
+  outline: none;
+  font-size: 1rem;
+}
+
+.newsletter-form button {
+  padding: 14px 28px;
+  background-color: var(--text-dark);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.newsletter-form button:hover {
+  background-color: #000000;
+}
+
+/* ==========================================================================
+   8. WHY CHOOSE US
+   ========================================================================== */
+.why-us {
+  padding: 60px 0;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.why-card {
+  background-color: var(--bg-card);
+  padding: 32px 24px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  text-align: center;
+  transition: var(--transition);
+}
+
+.why-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.why-icon {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+}
+
+.why-card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+}
+
+.why-card p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   9. CALL TO ACTION & FOOTER
+   ========================================================================== */
+.blog-cta {
+  padding: 80px 0;
+  text-align: center;
+  background-color: #ffffff;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.blog-cta h2 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.blog-cta p {
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+.cta-btn {
+  display: inline-block;
+  padding: 14px 32px;
+  background-color: var(--primary);
+  color: #ffffff;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.cta-btn:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+.footer {
+  background-color: var(--bg-card);
+  padding: 60px 0 30px;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-brand p {
+  color: var(--text-muted);
+  margin-top: 12px;
+  max-width: 320px;
+}
+
+.footer-links h3 {
+  font-size: 1rem;
+  margin-bottom: 16px;
+}
+
+.footer-links a {
+  display: block;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  transition: var(--transition);
+}
+
+.footer-links a:hover {
+  color: var(--primary);
+}
+
+.footer hr {
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin-bottom: 30px;
+}
+
+.footer-bottom {
+  text-align: center;
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   10. RESPONSIVE DESIGN (MEDIA QUERIES)
+   ========================================================================== */
+@media (max-width: 900px) {
+  .featured-card {
     grid-template-columns: 1fr;
+  }
+  
+  .footer-top {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .site-header .container {
+    flex-direction: column;
     gap: 16px;
   }
 
-  .tool-card {
-    padding: 18px;
+  .newsletter-form {
+    flex-direction: column;
+  }
+
+  .feature-list {
+    grid-template-columns: 1fr;
   }
 }
