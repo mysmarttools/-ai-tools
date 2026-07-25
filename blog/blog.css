@@ -1,492 +1,266 @@
-/* ===================================
-   GOOGLE FONT
-=================================== */
+/* ===========================================
+   AI TOOLS BLOG - LAYOUT CSS
+   Apply this to your blog content wrapper
+   e.g. <article class="blog-content"> ... </article>
+=========================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+.blog-content {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 24px 20px 60px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  color: #1f2328;
+  line-height: 1.7;
+  font-size: 16px;
+}
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
+/* ---------- HERO / TITLE ---------- */
+.blog-content h1 {
+  font-size: 2.1rem;
+  font-weight: 800;
+  line-height: 1.25;
+  margin: 8px 0 12px;
+  color: #101828;
+}
+
+.blog-content > p:first-of-type {
+  font-size: 1.05rem;
+  color: #475467;
+  margin-bottom: 20px;
+}
+
+.blog-content img {
+  width: 100%;
+  border-radius: 12px;
+  margin: 16px 0 28px;
+  display: block;
+}
+
+/* ---------- TABLE OF CONTENTS ---------- */
+.toc {
+  background: #f8f9fb;
+  border: 1px solid #e4e7ec;
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin: 28px 0;
+}
+
+.toc h2 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #667085;
+  margin: 0 0 12px;
+  border: none;
+  padding: 0;
+}
+
+.toc ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.toc a {
+  color: #344054;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.toc a::before {
+  content: "→";
+  margin-right: 8px;
+  color: #7c3aed;
+}
+
+.toc a:hover {
+  color: #7c3aed;
+}
+
+/* ---------- SECTION HEADINGS (Category titles) ---------- */
+.blog-content h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 48px 0 8px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #eaecf0;
+  color: #101828;
+}
+
+.blog-content h2:first-of-type {
+  margin-top: 0;
+}
+
+.blog-content > p {
+  margin: 14px 0;
+  color: #344054;
 }
 
-html{
-scroll-behavior:smooth;
+/* ---------- TOOL ENTRIES (h3 blocks) ---------- */
+/* Each tool is an h3 + paragraph + link. We style them as cards
+   using the h3 as the card "trigger" via :has() progressive enhancement,
+   with a safe fallback for older browsers below. */
+
+.blog-content h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0;
+  color: #101828;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-body{
-font-family:'Inter',sans-serif;
-background:#f7f9fc;
-color:#1f2937;
-line-height:1.7;
+/* Numbered badge extracted from "1. ChatGPT" style headings.
+   Works if you wrap the number in a span (see HTML note below). */
+.tool-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #7c3aed;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  flex-shrink: 0;
 }
 
-img{
-max-width:100%;
-display:block;
+/* Card wrapper — recommended: wrap each tool block in
+   <div class="tool-card"> ...h3, p, a... </div> */
+.tool-card {
+  border: 1px solid #eaecf0;
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin: 16px 0;
+  background: #fff;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
 }
 
-a{
-text-decoration:none;
-transition:.3s;
+.tool-card:hover {
+  box-shadow: 0 4px 14px rgba(16, 24, 40, 0.08);
+  transform: translateY(-2px);
 }
 
-.container{
-width:90%;
-max-width:1200px;
-margin:auto;
+.tool-card p {
+  margin: 10px 0 14px;
+  color: #475467;
+  font-size: 0.97rem;
 }
-
-/* ===================================
-HEADER
-=================================== */
-
-.site-header{
-position:sticky;
-top:0;
-background:#fff;
-box-shadow:0 4px 20px rgba(0,0,0,.06);
-z-index:999;
-}
-
-.site-header .container{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:18px 0;
-}
-
-.logo{
-font-size:28px;
-font-weight:800;
-color:#2563eb;
-display:flex;
-align-items:center;
-gap:10px;
-}
-
-nav{
-display:flex;
-gap:35px;
-}
-
-nav a{
-font-size:16px;
-font-weight:600;
-color:#374151;
-}
-
-nav a:hover,
-nav a.active{
-color:#2563eb;
-}
-
-/* ===================================
-HERO
-=================================== */
-
-.hero{
-padding:110px 0;
-background:linear-gradient(135deg,#2563eb,#1d4ed8,#0f172a);
-color:#fff;
-text-align:center;
-}
-
-.hero-tag{
-display:inline-block;
-padding:8px 20px;
-background:rgba(255,255,255,.18);
-border-radius:40px;
-font-size:14px;
-margin-bottom:25px;
-}
-
-.hero h1{
-font-size:60px;
-font-weight:800;
-margin-bottom:25px;
-}
-
-.hero p{
-max-width:780px;
-margin:auto;
-font-size:20px;
-opacity:.9;
-margin-bottom:45px;
-}
-
-.hero-btns{
-display:flex;
-justify-content:center;
-gap:20px;
-flex-wrap:wrap;
-}
-
-.btn{
-padding:15px 35px;
-border-radius:10px;
-font-weight:700;
-}
-
-.btn-primary{
-background:#fff;
-color:#2563eb;
-}
-
-.btn-primary:hover{
-transform:translateY(-3px);
-}
-
-.btn-outline{
-border:2px solid #fff;
-color:#fff;
-}
-
-.btn-outline:hover{
-background:#fff;
-color:#2563eb;
-}
-
-/* ===================================
-SECTION TITLE
-=================================== */
-
-.section-title{
-text-align:center;
-margin-bottom:60px;
-}
-
-.section-title span{
-display:inline-block;
-background:#dbeafe;
-color:#2563eb;
-padding:8px 20px;
-border-radius:30px;
-font-weight:700;
-margin-bottom:18px;
-}
-
-.section-title h2{
-font-size:42px;
-margin-bottom:15px;
-}
-
-.section-title p{
-max-width:700px;
-margin:auto;
-color:#6b7280;
-}
-
-/* ===================================
-FEATURED
-=================================== */
-
-.featured{
-padding:100px 0;
-}
-
-.featured-card{
-display:grid;
-grid-template-columns:1fr 1fr;
-background:#fff;
-border-radius:20px;
-overflow:hidden;
-box-shadow:0 15px 45px rgba(0,0,0,.08);
-}
-
-.featured-image img{
-height:100%;
-width:100%;
-object-fit:cover;
-}
-
-.featured-content{
-padding:55px;
-display:flex;
-flex-direction:column;
-justify-content:center;
-}
-
-.category{
-display:inline-block;
-background:#2563eb;
-color:#fff;
-padding:8px 18px;
-border-radius:30px;
-font-size:13px;
-font-weight:700;
-margin-bottom:20px;
-}
-
-.featured-content h2{
-font-size:38px;
-margin-bottom:20px;
-}
-
-.featured-content p{
-color:#6b7280;
-margin-bottom:25px;
-}
-
-.feature-list{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:15px;
-margin-bottom:30px;
-}
-
-.post-meta{
-display:flex;
-gap:25px;
-margin-bottom:30px;
-color:#6b7280;
-}
-
-.read-btn{
-display:inline-block;
-padding:14px 30px;
-background:#2563eb;
-color:#fff;
-border-radius:10px;
-font-weight:700;
-width:max-content;
-}
-
-.read-btn:hover{
-background:#1d4ed8;
-transform:translateY(-3px);
-}
-
-/* ===================================
-LATEST BLOGS
-=================================== */
-
-.latest-blogs{
-padding:100px 0;
-background:#f7f9fc;
-}
-
-.blog-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:35px;
-margin-top:50px;
-}
-
-.blog-card{
-background:#fff;
-border-radius:18px;
-overflow:hidden;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
-transition:.35s;
-}
-
-.blog-card:hover{
-transform:translateY(-10px);
-box-shadow:0 20px 45px rgba(0,0,0,.15);
-}
-
-.blog-image{
-height:220px;
-overflow:hidden;
-}
-
-.blog-image img{
-width:100%;
-height:100%;
-object-fit:cover;
-transition:.4s;
-}
-
-.blog-card:hover .blog-image img{
-transform:scale(1.08);
-}
-
-.blog-content{
-padding:28px;
-}
-
-.blog-category{
-display:inline-block;
-padding:7px 16px;
-background:#dbeafe;
-color:#2563eb;
-border-radius:30px;
-font-size:13px;
-font-weight:700;
-margin-bottom:15px;
-}
-
-.blog-content h3{
-font-size:24px;
-margin-bottom:15px;
-line-height:1.4;
-}
-
-.blog-content p{
-color:#6b7280;
-margin-bottom:25px;
-}
-
-.blog-meta{
-display:flex;
-justify-content:space-between;
-font-size:14px;
-color:#6b7280;
-margin-bottom:20px;
-}
-
-.read-more{
-display:inline-block;
-font-weight:700;
-color:#2563eb;
-}
-
-.read-more:hover{
-padding-left:8px;
-}
-
-/* ===================================
-NEWSLETTER
-=================================== */
-
-.newsletter{
-padding:90px 0;
-background:linear-gradient(135deg,#2563eb,#1d4ed8);
-}
-
-.newsletter-box{
-background:#fff;
-padding:60px;
-border-radius:20px;
-text-align:center;
-box-shadow:0 15px 40px rgba(0,0,0,.15);
-}
-
-.newsletter-box h2{
-font-size:40px;
-margin-bottom:15px;
-}
-
-.newsletter-box p{
-max-width:700px;
-margin:auto;
-color:#6b7280;
-margin-bottom:35px;
-}
-
-.newsletter-form{
-display:flex;
-justify-content:center;
-gap:15px;
-flex-wrap:wrap;
-}
-
-.newsletter-form input{
-width:420px;
-padding:18px;
-border:1px solid #ddd;
-border-radius:10px;
-font-size:16px;
-outline:none;
-}
-
-.newsletter-form input:focus{
-border-color:#2563eb;
-}
-
-.newsletter-form button{
-padding:18px 35px;
-border:none;
-background:#2563eb;
-color:#fff;
-font-size:16px;
-font-weight:700;
-border-radius:10px;
-cursor:pointer;
-transition:.3s;
-}
-
-.newsletter-form button:hover{
-background:#1d4ed8;
-}
-
-/* ===================================
-WHY US
-=================================== */
-
-.why-us{
-padding:100px 0;
-}
-
-.why-grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:30px;
-margin-top:50px;
-}
-
-.why-card{
-background:#fff;
-padding:40px 30px;
-text-align:center;
-border-radius:18px;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
-transition:.35s;
-}
-
-.why-card:hover{
-transform:translateY(-8px);
-}
-
-.why-icon{
-font-size:48px;
-margin-bottom:20px;
-}
-
-.why-card h3{
-margin-bottom:15px;
-font-size:24px;
-}
-
-.why-card p{
-color:#6b7280;
-}
-
-/* ===================================
-CALL TO ACTION
-=================================== */
-
-.blog-cta{
-padding:100px 0;
-text-align:center;
-background:#0f172a;
-color:#fff;
-}
-
-.blog-cta h2{
-font-size:46px;
-margin-bottom:20px;
-}
-
-.blog-cta p{
-max-width:700px;
-margin:auto;
-opacity:.9;
-margin-bottom:35px;
-}
-
-.cta-btn{
-display:inline-block;
-padding:16px 35px;
-background:#2563eb;
-color:#fff;
-border-radius:10px;
-font-weight:700;
-transition:.3s;
-}
-
-.cta-btn:hover{
-background:#1d4ed8;
-transform:translateY(-4px);
+
+/* ---------- VISIT WEBSITE BUTTON ---------- */
+.tool-card a,
+.visit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #7c3aed;
+  color: #fff !important;
+  text-decoration: none !important;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: background 0.15s ease;
+}
+
+.tool-card a:hover,
+.visit-btn:hover {
+  background: #6425d0;
+}
+
+.tool-card a::after {
+  content: "→";
+}
+
+/* Plain inline links inside intro/FAQ paragraphs should NOT look like buttons */
+.blog-content > p a {
+  display: inline;
+  background: none;
+  color: #7c3aed !important;
+  padding: 0;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.blog-content > p a::after {
+  content: "";
+}
+
+/* ---------- CATEGORY EMOJI HEADINGS SPACING ---------- */
+.blog-content h2 + .tool-card,
+.blog-content h2 + p + .tool-card {
+  margin-top: 20px;
+}
+
+/* ---------- FAQ SECTION ---------- */
+.faq-item {
+  border-bottom: 1px solid #eaecf0;
+  padding: 16px 0;
+}
+
+.faq-item h3 {
+  font-size: 1.02rem;
+  margin-bottom: 8px;
+}
+
+.faq-item p {
+  color: #475467;
+  margin: 0;
+}
+
+/* ---------- BENEFITS LIST ---------- */
+.blog-content ul {
+  padding-left: 20px;
+  margin: 14px 0;
+}
+
+.blog-content ul li {
+  margin-bottom: 8px;
+  color: #344054;
+}
+
+/* ---------- CTA / FOOTER SECTION ---------- */
+.cta-box {
+  background: #f4f0ff;
+  border-radius: 14px;
+  padding: 28px;
+  text-align: center;
+  margin: 40px 0;
+}
+
+.cta-box a {
+  display: inline-block;
+  margin-top: 12px;
+  background: #7c3aed;
+  color: #fff !important;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none !important;
+  font-weight: 600;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 640px) {
+  .blog-content {
+    padding: 16px 14px 40px;
+    font-size: 15px;
+  }
+  .blog-content h1 {
+    font-size: 1.6rem;
+  }
+  .blog-content h2 {
+    font-size: 1.25rem;
+    margin-top: 36px;
+  }
+  .tool-card {
+    padding: 14px 16px;
+  }
+  .toc {
+    padding: 16px 18px;
+  }
 }
