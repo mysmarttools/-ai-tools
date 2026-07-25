@@ -256,3 +256,237 @@ width:max-content;
 background:#1d4ed8;
 transform:translateY(-3px);
 }
+
+/* ===================================
+LATEST BLOGS
+=================================== */
+
+.latest-blogs{
+padding:100px 0;
+background:#f7f9fc;
+}
+
+.blog-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:35px;
+margin-top:50px;
+}
+
+.blog-card{
+background:#fff;
+border-radius:18px;
+overflow:hidden;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+transition:.35s;
+}
+
+.blog-card:hover{
+transform:translateY(-10px);
+box-shadow:0 20px 45px rgba(0,0,0,.15);
+}
+
+.blog-image{
+height:220px;
+overflow:hidden;
+}
+
+.blog-image img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:.4s;
+}
+
+.blog-card:hover .blog-image img{
+transform:scale(1.08);
+}
+
+.blog-content{
+padding:28px;
+}
+
+.blog-category{
+display:inline-block;
+padding:7px 16px;
+background:#dbeafe;
+color:#2563eb;
+border-radius:30px;
+font-size:13px;
+font-weight:700;
+margin-bottom:15px;
+}
+
+.blog-content h3{
+font-size:24px;
+margin-bottom:15px;
+line-height:1.4;
+}
+
+.blog-content p{
+color:#6b7280;
+margin-bottom:25px;
+}
+
+.blog-meta{
+display:flex;
+justify-content:space-between;
+font-size:14px;
+color:#6b7280;
+margin-bottom:20px;
+}
+
+.read-more{
+display:inline-block;
+font-weight:700;
+color:#2563eb;
+}
+
+.read-more:hover{
+padding-left:8px;
+}
+
+/* ===================================
+NEWSLETTER
+=================================== */
+
+.newsletter{
+padding:90px 0;
+background:linear-gradient(135deg,#2563eb,#1d4ed8);
+}
+
+.newsletter-box{
+background:#fff;
+padding:60px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 15px 40px rgba(0,0,0,.15);
+}
+
+.newsletter-box h2{
+font-size:40px;
+margin-bottom:15px;
+}
+
+.newsletter-box p{
+max-width:700px;
+margin:auto;
+color:#6b7280;
+margin-bottom:35px;
+}
+
+.newsletter-form{
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.newsletter-form input{
+width:420px;
+padding:18px;
+border:1px solid #ddd;
+border-radius:10px;
+font-size:16px;
+outline:none;
+}
+
+.newsletter-form input:focus{
+border-color:#2563eb;
+}
+
+.newsletter-form button{
+padding:18px 35px;
+border:none;
+background:#2563eb;
+color:#fff;
+font-size:16px;
+font-weight:700;
+border-radius:10px;
+cursor:pointer;
+transition:.3s;
+}
+
+.newsletter-form button:hover{
+background:#1d4ed8;
+}
+
+/* ===================================
+WHY US
+=================================== */
+
+.why-us{
+padding:100px 0;
+}
+
+.why-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:30px;
+margin-top:50px;
+}
+
+.why-card{
+background:#fff;
+padding:40px 30px;
+text-align:center;
+border-radius:18px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+transition:.35s;
+}
+
+.why-card:hover{
+transform:translateY(-8px);
+}
+
+.why-icon{
+font-size:48px;
+margin-bottom:20px;
+}
+
+.why-card h3{
+margin-bottom:15px;
+font-size:24px;
+}
+
+.why-card p{
+color:#6b7280;
+}
+
+/* ===================================
+CALL TO ACTION
+=================================== */
+
+.blog-cta{
+padding:100px 0;
+text-align:center;
+background:#0f172a;
+color:#fff;
+}
+
+.blog-cta h2{
+font-size:46px;
+margin-bottom:20px;
+}
+
+.blog-cta p{
+max-width:700px;
+margin:auto;
+opacity:.9;
+margin-bottom:35px;
+}
+
+.cta-btn{
+display:inline-block;
+padding:16px 35px;
+background:#2563eb;
+color:#fff;
+border-radius:10px;
+font-weight:700;
+transition:.3s;
+}
+
+.cta-btn:hover{
+background:#1d4ed8;
+transform:translateY(-4px);
+}
