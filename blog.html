@@ -11,8 +11,12 @@
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="description" content="Discover AI tools, ChatGPT guides, SEO strategies, Google Gemini tutorials, Prompt Engineering, Productivity Hacks, and Digital Marketing tips on AI Smart Tools.">
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
     <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="blog.css">
 </head>
 
@@ -20,9 +24,11 @@
 
     <!-- Header / Navbar -->
     <header class="site-header">
-        <div class="container">
-            <a href="https://aismarttools.vercel.app/" class="logo">🤖 AI Smart Tools</a>
-            <nav>
+        <div class="container header-container">
+            <a href="https://aismarttools.vercel.app/" class="logo">
+                <span class="logo-icon">🤖</span> AI Smart Tools
+            </a>
+            <nav class="nav-links">
                 <a href="https://aismarttools.vercel.app/">Home</a>
                 <a href="https://aismarttools.vercel.app/#tools">AI Tools</a>
                 <a href="https://aismarttools.vercel.app/blog" class="active">Blog</a>
@@ -33,14 +39,14 @@
 
     <!-- Announcement Bar -->
     <div class="announcement-bar">
-        <div class="announcement-track">
-            🚀 Explore Latest AI Blog Posts & Guides on AI Smart Tools — 100% Free Resources!
+        <div class="container">
+            <p>🚀 Explore Latest AI Blog Posts & Guides on AI Smart Tools — <strong>100% Free Resources!</strong></p>
         </div>
     </div>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="container">
+        <div class="container hero-container">
             <span class="hero-tag">🚀 Updated Weekly</span>
             <h1>AI Blog & Resources</h1>
             <p>Discover AI tools, ChatGPT guides, SEO strategies, Google Gemini tutorials, Prompt Engineering, Productivity Hacks, and Digital Marketing tips.</p>
@@ -55,14 +61,14 @@
     <section id="featured" class="featured">
         <div class="container">
             <div class="section-title">
-                <span>⭐ Editor's Pick</span>
+                <span class="badge">⭐ Editor's Pick</span>
                 <h2>Featured Article</h2>
                 <p>Our most popular AI guide for beginners and professionals.</p>
             </div>
 
             <div class="featured-card">
                 <div class="featured-image">
-                    <img src="images/blog/best-free-ai-tools-2026.png" alt="Best AI Tools 2026" onerror="this.src='https://via.placeholder.com/600x400?text=Best+AI+Tools+AI+Smart+Tools'">
+                    <img src="images/blog/best-free-ai-tools-2026.png" alt="Best AI Tools 2026" onerror="this.src='https://images.unsplash.com/photo-1677442136019-21780efad99a?auto=format&fit=crop&w=800&q=80'">
                 </div>
                 <div class="featured-content">
                     <span class="category">AI TOOLS</span>
@@ -70,14 +76,15 @@
                     <p>Discover the best AI tools for writing, coding, SEO, image generation, productivity, business, and education. Whether you're a blogger, marketer, student, or developer, these tools will save time and improve your workflow.</p>
 
                     <ul class="feature-list">
-                        <li>✅ 25+ Free AI Tools</li>
-                        <li>✅ ChatGPT & Gemini Alternatives</li>
-                        <li>✅ AI Image & Voice Generators</li>
-                        <li>✅ SEO & Productivity Apps</li>
+                        <li><span class="check">✓</span> 25+ Free AI Tools</li>
+                        <li><span class="check">✓</span> ChatGPT & Gemini Alternatives</li>
+                        <li><span class="check">✓</span> AI Image & Voice Generators</li>
+                        <li><span class="check">✓</span> SEO & Productivity Apps</li>
                     </ul>
 
                     <div class="post-meta">
                         <span>📅 July 2026</span>
+                        <span>•</span>
                         <span>⏱️ 8 min read</span>
                     </div>
 
@@ -91,7 +98,7 @@
     <section id="latest" class="latest-blogs">
         <div class="container">
             <div class="section-title">
-                <span>📌 Latest Articles</span>
+                <span class="badge">📌 Latest Articles</span>
                 <h2>Latest AI Guides & Tutorials</h2>
                 <p>Explore our latest AI tutorials, SEO guides, ChatGPT tips, and productivity resources.</p>
             </div>
@@ -99,9 +106,9 @@
             <div class="blog-grid">
 
                 <!-- Blog Card 1 -->
-                <div class="blog-card">
+                <article class="blog-card">
                     <div class="blog-image">
-                        <img src="images/blog/best-free-ai-tools-2026.png" alt="AI Tools 2026" onerror="this.src='https://via.placeholder.com/400x250?text=Free+AI+Tools'">
+                        <img src="images/blog/best-free-ai-tools-2026.png" alt="AI Tools 2026" onerror="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80'">
                     </div>
                     <div class="blog-content">
                         <span class="blog-category">AI TOOLS</span>
@@ -110,12 +117,12 @@
                         <div class="blog-meta">📅 July 2026 • ⏱️ 8 min read</div>
                         <a href="#" class="read-more">Read Guide →</a>
                     </div>
-                </div>
+                </article>
 
                 <!-- Blog Card 2 -->
-                <div class="blog-card">
+                <article class="blog-card">
                     <div class="blog-image">
-                        <img src="images/blog/chatgpt-prompts-guide.png" alt="ChatGPT Prompts" onerror="this.src='https://via.placeholder.com/400x250?text=ChatGPT+Guide'">
+                        <img src="images/blog/chatgpt-prompts-guide.png" alt="ChatGPT Prompts" onerror="this.src='https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=600&q=80'">
                     </div>
                     <div class="blog-content">
                         <span class="blog-category">PROMPT ENGINEERING</span>
@@ -124,12 +131,12 @@
                         <div class="blog-meta">📅 Coming Soon</div>
                         <span class="read-more disabled">Coming Soon</span>
                     </div>
-                </div>
+                </article>
 
                 <!-- Blog Card 3 -->
-                <div class="blog-card">
+                <article class="blog-card">
                     <div class="blog-image">
-                        <img src="images/blog/ai-seo-strategies-2026.png" alt="AI SEO" onerror="this.src='https://via.placeholder.com/400x250?text=AI+SEO+2026'">
+                        <img src="images/blog/ai-seo-strategies-2026.png" alt="AI SEO" onerror="this.src='https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80'">
                     </div>
                     <div class="blog-content">
                         <span class="blog-category">SEO & MARKETING</span>
@@ -138,7 +145,7 @@
                         <div class="blog-meta">📅 Coming Soon</div>
                         <span class="read-more disabled">Coming Soon</span>
                     </div>
-                </div>
+                </article>
 
             </div>
         </div>
@@ -146,62 +153,63 @@
 
     <!-- Footer Section -->
     <footer class="footer">
-        <div class="footer-top">
-            <div class="footer-logo">
-                <h2>AI Smart <span>Tools</span></h2>
-                <p>Your ultimate destination for free, high-performance AI tools for SEO, content writing, and web development.</p>
-            </div>
-
-            <div class="footer-tags">
-                <span>#AIBlog</span>
-                <span>#SEOTips</span>
-                <span>#AISmartTools</span>
-            </div>
-        </div>
-
-        <div class="footer-divider"></div>
-
-        <div class="footer-grid">
-            <div class="footer-col">
-                <h3>Navigation</h3>
-                <ul>
-                    <li><a href="https://aismarttools.vercel.app/">Home</a></li>
-                    <li><a href="https://aismarttools.vercel.app/blog">Blog</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms & Conditions</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col">
-                <h3>Popular AI Tools</h3>
-                <ul>
-                    <li><a href="#">AI Meta Generator</a></li>
-                    <li><a href="#">YouTube Title Generator</a></li>
-                    <li><a href="#">AI Voice Generator</a></li>
-                    <li><a href="#">AI Keyword Generator</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col follow">
-                <h3>Connect With Us</h3>
-                <div class="social-icons">
-                    <a href="#" aria-label="Website">🌐</a>
-                    <a href="#" aria-label="Twitter">🐤</a>
-                    <a href="#" aria-label="LinkedIn">💼</a>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <h2>🤖 AI Smart <span>Tools</span></h2>
+                    <p>Your ultimate destination for free, high-performance AI tools for SEO, content writing, and web development.</p>
                 </div>
-                <p>Simple & powerful AI tools for everyday tasks.</p>
+
+                <div class="footer-tags">
+                    <span>#AIBlog</span>
+                    <span>#SEOTips</span>
+                    <span>#AISmartTools</span>
+                </div>
             </div>
-        </div>
 
-        <div class="footer-divider"></div>
+            <div class="footer-divider"></div>
 
-        <div class="footer-bottom">
-            <p>© 2026 <strong>AI Smart Tools</strong>. All Rights Reserved.</p>
-            <p>Designed for SEO Experts & Creators</p>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Navigation</h3>
+                    <ul>
+                        <li><a href="https://aismarttools.vercel.app/">Home</a></li>
+                        <li><a href="https://aismarttools.vercel.app/blog">Blog</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Popular AI Tools</h3>
+                    <ul>
+                        <li><a href="#">AI Meta Generator</a></li>
+                        <li><a href="#">YouTube Title Generator</a></li>
+                        <li><a href="#">AI Voice Generator</a></li>
+                        <li><a href="#">AI Keyword Generator</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col follow">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Website" class="social-btn">🌐</a>
+                        <a href="#" aria-label="Twitter" class="social-btn">🐤</a>
+                        <a href="#" aria-label="LinkedIn" class="social-btn">💼</a>
+                    </div>
+                    <p>Simple & powerful AI tools for everyday tasks.</p>
+                </div>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-bottom">
+                <p>© 2026 <strong>AI Smart Tools</strong>. All Rights Reserved.</p>
+                <p>Designed for SEO Experts & Creators</p>
+            </div>
         </div>
     </footer>
 
-    <!-- Global Script Link -->
     <script src="script.js"></script>
 </body>
 
