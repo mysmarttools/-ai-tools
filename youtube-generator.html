@@ -2,107 +2,174 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="canonical" href="https://bestaitoolshub.vercel.app/youtube-generator">
-<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+    <title>Free AI YouTube Title & Description Generator | AI Smart Tools</title>
 
-<title>YouTube Title & Description Generator | Best AI Tools Hub</title>
- <link rel="icon" type="image/png" href="favicon.png">
-<meta name="description" content="Create SEO-friendly YouTube titles and descriptions instantly with the free AI YouTube Title & Description Generator by Best AI Tools Hub. Boost your video rankings, clicks and views.">
-<meta name="keywords" content="YouTube Title Generator, YouTube Description Generator, AI YouTube Generator, Free YouTube SEO Tool, YouTube SEO, Best AI Tools Hub">
+    <link rel="canonical" href="https://aismarttools.vercel.app/youtube-generator">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="description" content="Create SEO-friendly YouTube titles and descriptions instantly with our free AI YouTube Generator on AI Smart Tools. Boost your video rankings, clicks, and views.">
+    <meta name="keywords" content="YouTube Title Generator, YouTube Description Generator, AI YouTube Generator, Free YouTube SEO Tool, YouTube SEO, AI Smart Tools">
 
-<link rel="stylesheet" href="style.css">
-
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
+    <!-- Header / Navbar Section -->
+    <header class="site-header">
+        <div class="container">
+            <a href="https://aismarttools.vercel.app/" class="logo">🤖 AI Smart Tools</a>
+            <nav>
+                <a href="https://aismarttools.vercel.app/">Home</a>
+                <a href="https://aismarttools.vercel.app/#tools">AI Tools</a>
+                <a href="https://aismarttools.vercel.app/blog">Blog</a>
+                <a href="https://aismarttools.vercel.app/#faq">FAQ</a>
+            </nav>
+        </div>
+    </header>
 
-<div class="logo">
-🤖 Best AI Tools Hub
-</div>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="announcement-track">
+            🚀 Boost Your YouTube Video Rankings & Click-Through Rates with AI Smart Tools!
+        </div>
+    </div>
 
-<nav>
+    <!-- Main Tool Container -->
+    <main class="tool-page">
+        <section class="tool-box container">
+            <h1>🎥 YouTube Title & Description Generator</h1>
+            <p>Generate high-CTR, SEO-optimized YouTube titles and rich video descriptions in seconds.</p>
 
-<a href="https://bestaitoolshub.vercel.app/">🏠 Home</a>
+            <div class="tool-inputs" style="margin-top: 25px; text-align: left;">
+                
+                <div class="input-group">
+                    <label for="keyword"><strong>Main Target Keyword</strong></label>
+                    <input type="text" id="keyword" placeholder="Example: Wooden Toys, Digital Marketing" style="width: 100%; margin-top: 8px;">
+                </div>
 
-<a href="index.html#tools">AI Tools</a>
+                <div class="input-group" style="margin-top: 15px;">
+                    <label for="topic"><strong>Video Concept / Specific Topic</strong></label>
+                    <input type="text" id="topic" placeholder="Example: Best Eco-Friendly Wooden Toys for Toddlers in 2026" style="width: 100%; margin-top: 8px;">
+                </div>
 
-</nav>
+                <div class="button-area" style="margin-top: 20px; text-align: center;">
+                    <button class="btn btn-primary" onclick="generateYoutube()">🚀 Generate Video SEO</button>
+                    <button class="btn btn-success" onclick="copyYoutube()">📋 Copy Details</button>
+                    <button class="btn btn-outline" onclick="clearYoutube()">🗑 Clear</button>
+                </div>
 
-</header>
+                <hr style="margin: 25px 0; border: 0; border-top: 1px solid #e5e7eb;">
 
-<section class="tool-page">
+                <div class="output-group">
+                    <label for="ytTitle"><strong>Generated YouTube Title</strong></label>
+                    <textarea id="ytTitle" rows="3" readonly placeholder="Your generated high-CTR title will appear here..." style="width: 100%; margin-top: 8px; background-color: #f9fafb;"></textarea>
+                </div>
 
-<div class="tool-box">
+                <div class="output-group" style="margin-top: 20px;">
+                    <label for="ytDescription"><strong>Generated Video Description</strong></label>
+                    <textarea id="ytDescription" rows="8" readonly placeholder="Your optimized YouTube video description will appear here..." style="width: 100%; margin-top: 8px; background-color: #f9fafb;"></textarea>
+                </div>
 
-<h1>🎥 YouTube Title & Description Generator</h1>
+            </div>
+        </section>
+    </main>
 
-<p>
-Generate SEO optimized YouTube titles and descriptions instantly.
-</p>
+    <!-- SEO Tips Section -->
+    <section class="container shadow" style="margin-top: 40px;">
+        <h2>YouTube SEO Best Practices</h2>
+        <br>
+        <ul style="list-style: none; line-height: 2; padding-left: 0;">
+            <li>✅ <strong>Target High Intent Keywords:</strong> Include your main keyword within the first 3–5 words of your video title.</li>
+            <li>✅ <strong>First 2 Lines Matter:</strong> Search engines and viewers see the first 150 characters of your description before the "Show More" fold.</li>
+            <li>✅ <strong>Use Timestamps & Chapters:</strong> Break long videos into structured sections to rank for specific search queries on Google.</li>
+            <li>✅ <strong>Strategic Hashtags:</strong> Include 3–5 relevant hashtags (#YouTubeSEO, #ContentCreator) at the bottom of your description.</li>
+        </ul>
+    </section>
 
-<h3>Main Keyword</h3>
+    <!-- FAQ Accordion Section -->
+    <section class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq">
+            <details>
+                <summary>How does the YouTube Title & Description Generator work?</summary>
+                <p>It takes your primary keyword and video topic to craft catchy, search-optimized titles along with structured video descriptions designed to rank higher on YouTube and Google Search.</p>
+            </details>
 
-<input
-type="text"
-id="keyword"
-placeholder="Example: Wooden Toys"
->
+            <details>
+                <summary>Why are video titles and descriptions important for YouTube SEO?</summary>
+                <p>YouTube's algorithm relies heavily on metadata (titles, descriptions, tags) to understand video context, classify topics, and recommend your video to the right audience.</p>
+            </details>
 
-<h3>Video Topic</h3>
+            <details>
+                <summary>Is this AI YouTube Generator completely free?</summary>
+                <p>Yes, all YouTube and content creation utilities on <strong>AI Smart Tools</strong> are 100% free with no usage limits or signups required.</p>
+            </details>
+        </div>
+    </section>
 
-<input
-type="text"
-id="topic"
-placeholder="Example: Best Wooden Toys for Kids"
->
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-logo">
+                <h2>AI Smart <span>Tools</span></h2>
+                <p>Your ultimate destination for free, high-performance AI tools for creators, SEO experts, and marketers.</p>
+            </div>
 
-<div class="button-area">
+            <div class="footer-tags">
+                <span>#YouTubeSEOTools</span>
+                <span>#TitleGenerator</span>
+                <span>#AISmartTools</span>
+            </div>
+        </div>
 
-<button onclick="generateYoutube()">
-🚀 Generate
-</button>
+        <div class="footer-divider"></div>
 
-<button onclick="copyYoutube()">
-📋 Copy
-</button>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="https://aismarttools.vercel.app/">Home</a></li>
+                    <li><a href="https://aismarttools.vercel.app/blog">Blog</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
 
-<button onclick="clearYoutube()">
-🗑 Clear
-</button>
+            <div class="footer-col">
+                <h3>Popular AI Tools</h3>
+                <ul>
+                    <li><a href="https://aismarttools.vercel.app/youtube-generator">YouTube Title Generator</a></li>
+                    <li><a href="https://aismarttools.vercel.app/hashtag-generator">AI Hashtag Generator</a></li>
+                    <li><a href="https://aismarttools.vercel.app/meta-generator">AI Meta Generator</a></li>
+                    <li><a href="https://aismarttools.vercel.app/faq-generator">AI FAQ Generator</a></li>
+                </ul>
+            </div>
 
-</div>
+            <div class="footer-col follow">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="#" aria-label="Website">🌐</a>
+                    <a href="#" aria-label="Twitter">🐤</a>
+                    <a href="#" aria-label="LinkedIn">💼</a>
+                </div>
+                <p>Simple & powerful AI tools for everyday tasks.</p>
+            </div>
+        </div>
 
-<h3>Generated Title</h3>
+        <div class="footer-divider"></div>
 
-<textarea id="ytTitle" readonly></textarea>
+        <div class="footer-bottom">
+            <p>© 2026 <strong>AI Smart Tools</strong>. All Rights Reserved.</p>
+            <p>Designed for YouTubers & Content Creators</p>
+        </div>
+    </footer>
 
-<h3>Generated Description</h3>
-
-<textarea id="ytDescription" readonly></textarea>
-
-</div>
-
-</section>
-
-<footer>
-
-<div class="footer-content">
-
-<h3>Best AI Tools Hub</h3>
-
-<p>Free AI & SEO Tools</p>
-
-</div>
-
-</footer>
-
-<script src="script.js"></script>
-
+    <!-- Global External Script Link -->
+    <script src="script.js"></script>
 </body>
 
 </html>
