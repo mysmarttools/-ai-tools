@@ -2,306 +2,203 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="canonical" href="https://bestaitoolshub.vercel.app/hashtag-generator">
-<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+    <title>Free AI Hashtag Generator – Generate Trending Hashtags Online | AI Smart Tools</title>
 
-<title>Free AI Hashtag Generator – Generate Trending Hashtags Online</title>
-<link rel="icon" type="image/png" href="favicon.png">
-<meta name="description" content="Generate trending hashtags instantly with our free AI Hashtag Generator. Create the best hashtags for Instagram, YouTube, TikTok, Facebook and X to boost your reach.">
-<meta name="keywords" content="AI Hashtag Generator, Hashtag Generator, Instagram Hashtags, YouTube Hashtags, TikTok Hashtags, Trending Hashtags, Free Hashtag Generator">
+    <link rel="canonical" href="https://aismarttools.vercel.app/hashtag-generator">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="description" content="Generate trending hashtags instantly with our free AI Hashtag Generator on AI Smart Tools. Create the best hashtags for Instagram, YouTube, TikTok, Facebook, and X to boost your reach.">
+    <meta name="keywords" content="AI Hashtag Generator, Hashtag Generator, Instagram Hashtags, YouTube Hashtags, TikTok Hashtags, Trending Hashtags, Free Hashtag Generator">
 
-
-<style>
-
-body{
-
-font-family:Arial;
-background:#f3f4f6;
-margin:0;
-padding:0;
-
-}
-
-
-.header{
-
-background:#111827;
-color:white;
-padding:20px;
-display:flex;
-justify-content:space-between;
-
-}
-
-
-.header a{
-
-color:white;
-text-decoration:none;
-margin-left:20px;
-
-}
-
-
-.container{
-
-max-width:700px;
-margin:40px auto;
-background:white;
-padding:30px;
-border-radius:15px;
-box-shadow:0 5px 20px #ccc;
-
-}
-
-
-input{
-
-width:100%;
-padding:15px;
-font-size:18px;
-margin-bottom:20px;
-
-}
-
-
-
-button{
-
-padding:12px 20px;
-border:0;
-background:#4f46e5;
-color:white;
-border-radius:8px;
-cursor:pointer;
-margin:5px;
-
-}
-
-
-
-#result{
-
-background:#f9fafb;
-padding:20px;
-min-height:100px;
-border-radius:10px;
-font-size:18px;
-
-}
-
-
-
-.footer{
-
-margin-top:50px;
-background:#111827;
-color:white;
-padding:20px;
-text-align:center;
-
-}
-
-
-</style>
-
-
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
-
-
-<header class="header">
-
-
-<div>
-🔥 Hashtag Generator
-</div>
-
-
-<nav>
-
-<a href="index.html">
-Home
-</a>
-
-
-
-</nav>
-
-
-</header>
-
-
-
-
-
-<div class="container">
-
-
-<h1>
-# Hashtag Generator
-</h1>
-
-
-
-<input 
-id="keyword"
-placeholder="Enter keyword e.g. Kids Toys"
->
-
-
-
-<button onclick="generateHashtags()">
-
-Generate Hashtags
-
-</button>
-
-
-
-<button onclick="copyHashtags()">
-
-Copy
-
-</button>
-
-
-
-
-<h3>
-Generated Hashtags
-</h3>
-
-
-
-<div id="result">
-
-Your hashtags will appear here...
-
-</div>
-
-
-
-</div>
-
-
-
-
-
-
-<footer class="footer">
-
-© 2026 Hashtag Generator Tool
-
-</footer>
-
-
-
-
-
-<script>
-
-
-function generateHashtags(){
-
-
-let keyword =
-document.getElementById("keyword").value;
-
-
-if(keyword==""){
-
-alert("Enter keyword");
-
-return;
-
-}
-
-
-
-let words =
-keyword
-.toLowerCase()
-.split(" ")
-.join("");
-
-
-
-let tags=[
-
-
-"#"+words,
-
-"#"+words+"tips",
-
-"#"+words+"ideas",
-
-"#trending",
-
-"#viral",
-
-"#explore",
-
-"#fyp",
-
-"#creative",
-
-"#popular",
-
-"#2026",
-
-"#instagram",
-
-"#youtube",
-
-"#facebook",
-
-"#socialmedia",
-
-"#contentcreator"
-
-
-];
-
-
-
-document.getElementById("result").innerHTML =
-tags.join(" ");
-
-
-
-}
-
-
-
-
-
-function copyHashtags(){
-
-
-let text =
-document.getElementById("result").innerText;
-
-
-navigator.clipboard.writeText(text);
-
-
-alert("Hashtags Copied!");
-
-}
-
-
-
-</script>
-
-
-
+    <!-- Header / Navbar Section -->
+    <header>
+        <div class="logo">#️⃣ AI Hashtag Generator</div>
+        <nav>
+            <a href="https://aismarttools.vercel.app/">🏠 Home</a>
+        </nav>
+    </header>
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="announcement-track">
+            🚀 Unlimited Free Social Media & SEO AI Tools on AI Smart Tools — No Signup Required!
+        </div>
+    </div>
+
+    <!-- Main Tool Container -->
+    <main class="tool-page">
+        <section class="tool-box container">
+            <h1>AI Hashtag Generator</h1>
+            <p>Generate viral and trending hashtags for Instagram, TikTok, YouTube, and Facebook instantly.</p>
+
+            <div class="tool-inputs" style="margin-top: 25px;">
+                <input id="keyword" type="text" placeholder="Enter keyword (e.g. Digital Marketing, Travel)" />
+
+                <div class="button-area">
+                    <button onclick="generateHashtags()">🚀 Generate Hashtags</button>
+                </div>
+
+                <div class="result-box" style="margin-top: 20px; text-align: left;">
+                    <h3>Generated Hashtags</h3>
+                    <div id="result" style="background: #f9fafb; padding: 15px; border-radius: 8px; border: 1px solid #e5e7eb; min-height: 80px; margin-top: 10px; word-wrap: break-word;">
+                        Your hashtags will appear here...
+                    </div>
+                </div>
+
+                <div class="button-area" style="margin-top: 15px;">
+                    <button onclick="copyHashtags()">📋 Copy Hashtags</button>
+                    <button onclick="generateHashtags()" class="btn-success">🔄 Regenerate</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Social Media Tips Section -->
+    <section class="container shadow">
+        <h2>Hashtag Best Practices for 2026</h2>
+        <br>
+        <ul style="list-style: none; line-height: 2; padding-left: 0;">
+            <li>✅ <strong>Mix Popular & Niche Tags:</strong> Combine broad hashtags (#trending) with specific ones (#digitalmarketingtips) for optimal reach.</li>
+            <li>✅ <strong>Optimal Quantity:</strong> Use 3–5 high-relevance hashtags for TikTok/YouTube Shorts, and 10–15 for Instagram posts.</li>
+            <li>✅ <strong>Target Search Intent:</strong> Use hashtags that potential followers actually search for in your niche.</li>
+            <li>✅ <strong>Avoid Banned Hashtags:</strong> Check hashtags before posting to prevent shadowbanning on social platforms.</li>
+        </ul>
+    </section>
+
+    <!-- FAQ Accordion Section -->
+    <section class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq">
+            <details>
+                <summary>How does the AI Hashtag Generator work?</summary>
+                <p>It takes your primary topic or keyword and instantly constructs high-performing, viral hashtag variations tailored for social media discovery.</p>
+            </details>
+
+            <details>
+                <summary>Which platforms can I use these hashtags for?</summary>
+                <p>You can use these hashtags on Instagram, TikTok, YouTube Shorts, Facebook, X (Twitter), LinkedIn, and Pinterest.</p>
+            </details>
+
+            <details>
+                <summary>Is this AI Hashtag Generator free to use?</summary>
+                <p>Yes, all social media tools on <strong>AI Smart Tools</strong> are 100% free with unlimited usage and zero registration required.</p>
+            </details>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-logo">
+                <h2>AI Smart <span>Tools</span></h2>
+                <p>Your ultimate destination for free, high-performance AI tools for social media, SEO, and content creators.</p>
+            </div>
+
+            <div class="footer-tags">
+                <span>#HashtagGenerator</span>
+                <span>#SocialMediaTools</span>
+                <span>#AISmartTools</span>
+            </div>
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="https://aismarttools.vercel.app/">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Popular AI Tools</h3>
+                <ul>
+                    <li><a href="#">AI Meta Generator</a></li>
+                    <li><a href="#">YouTube Title Generator</a></li>
+                    <li><a href="#">AI Keyword Generator</a></li>
+                    <li><a href="#">AI FAQ Generator</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col follow">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="#" aria-label="Website">🌐</a>
+                    <a href="#" aria-label="Twitter">🐤</a>
+                    <a href="#" aria-label="LinkedIn">💼</a>
+                </div>
+                <p>Simple & powerful AI tools for everyday tasks.</p>
+            </div>
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <div class="footer-bottom">
+            <p>© 2026 <strong>AI Smart Tools</strong>. All Rights Reserved.</p>
+            <p>Designed for SEO Experts & Content Creators</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Execution -->
+    <script>
+        function generateHashtags() {
+            let keyword = document.getElementById("keyword").value;
+
+            if (keyword.trim() === "") {
+                alert("Please enter a keyword first");
+                return;
+            }
+
+            let words = keyword.toLowerCase().split(" ").join("");
+
+            let tags = [
+                "#" + words,
+                "#" + words + "tips",
+                "#" + words + "ideas",
+                "#trending",
+                "#viral",
+                "#explore",
+                "#fyp",
+                "#creative",
+                "#popular",
+                "#2026",
+                "#instagram",
+                "#youtube",
+                "#facebook",
+                "#socialmedia",
+                "#contentcreator"
+            ];
+
+            document.getElementById("result").innerText = tags.join(" ");
+        }
+
+        function copyHashtags() {
+            let text = document.getElementById("result").innerText;
+
+            if (!text || text === "Your hashtags will appear here...") {
+                alert("Please generate hashtags first!");
+                return;
+            }
+
+            navigator.clipboard.writeText(text);
+            alert("✅ Hashtags Copied!");
+        }
+    </script>
+
+    <!-- Global Script Link -->
+    <script src="script.js"></script>
 </body>
 
 </html>
