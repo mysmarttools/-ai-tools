@@ -2,172 +2,152 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>AI Keyword Generator | AI Smart Tools</title>
+    
+    <link rel="canonical" href="https://aismarttools.vercel.app/ai-keyword-generator">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="description" content="Generate SEO keyword ideas instantly with our free AI Keyword Generator. Find related long-tail keywords for better search rankings on AI Smart Tools.">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="canonical" href="https://bestaitoolshub.vercel.app/ai-keyword-generator">
-   <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
-
-
-<title>AI Keyword Generator | Best AI Tools Hub</title>
-<link rel="icon" type="image/x-icon" href="/favicon.ico">
-<meta name="description" content="Generate SEO keyword ideas instantly with our free AI Keyword Generator. Find related keywords for better search rankings.">
-
-<link rel="stylesheet" href="style.css">
-<link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
-
-<header>
-
-<h1>🔑 AI Keyword Generator</h1>
-
-<nav>
-
-<a href="https://bestaitoolshub.vercel.app/">🏠 Home</a>
-
-</nav>
-
-</header>
-
-
-
-<section class="hero">
-
-
-   <h2 style="color:#ffffff !important;">Generate SEO Keywords</h2>
-
-<p>
-Find keyword ideas for your website content and SEO.
-</p>
-
-
-<br>
-
-
-<input id="keywordInput" type="text" placeholder="Enter Main Keyword">
-
-
-<br><br>
-
-
-<button onclick="generateKeywords()">
-🚀 Generate Keywords
-</button>
-
-
-<br><br>
-
-
-<textarea id="keywordResult" rows="10" placeholder="Your keywords will appear here..."></textarea>
-
-
-<br><br>
-
-
-<button onclick="copyKeywords()">📋 Copy</button>
-
-
-<button onclick="generateKeywords()">🔄 Regenerate</button>
-
-
-</section>
-
-
-
-<hr>
-
-
-
-<section>
-
-<h2>SEO Keyword Tips</h2>
-
-<ul>
-
-<li>✅ Target keywords with search intent.</li>
-
-<li>✅ Use long-tail keywords.</li>
-
-<li>✅ Avoid keyword stuffing.</li>
-
-<li>✅ Add keywords naturally in content.</li>
-
-<li>✅ Research competitors keywords.</li>
-
-</ul>
-
-
-</section>
-
-
-
-<hr>
-
-
-
-<section>
-
-<h2>Frequently Asked Questions</h2>
-
-
-<h3>What is a Keyword Generator?</h3>
-
-<p>
-A keyword generator helps find keyword ideas for SEO and content creation.
-</p>
-
-
-<h3>Why are keywords important?</h3>
-
-<p>
-Keywords help search engines understand your content and improve rankings.
-</p>
-
-
-</section>
-
-
-
-<footer>
-
-<div class="footer-content">
-
-<h3>🤖 Best AI Tools Hub</h3>
-
-<p>Your one-stop destination for free AI tools.</p>
-
-
-<div class="footer-links">
-
-<a href="#">About</a>
-
-<a href="#">Privacy Policy</a>
-
-<a href="#">Terms</a>
-
-<a href="#">Contact</a>
-
-</div>
-
-
-<p class="copyright">
-© 2026 Best AI Tools Hub. All Rights Reserved.
-</p>
-
-
-</div>
-
-</footer>
-
-
-
-<script src="script.js"></script>
-
-
+    <!-- Header / Navbar Section -->
+    <header>
+        <div class="logo">🔑 AI Keyword Generator</div>
+        <nav>
+            <a href="https://aismarttools.vercel.app/">🏠 Home</a>
+        </nav>
+    </header>
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="announcement-track">
+            🚀 Unlimited Free SEO Tools on AI Smart Tools — Fast, Instant & No Signup Required!
+        </div>
+    </div>
+
+    <!-- Main Tool Container -->
+    <main class="tool-page">
+        <section class="tool-box container">
+            <h1>AI Keyword Generator</h1>
+            <p>Generate high-ranking SEO keyword ideas and long-tail phrases for your website or blog.</p>
+
+            <div class="tool-inputs" style="margin-top: 25px;">
+                <input id="keywordInput" type="text" placeholder="Enter Main Keyword (e.g. Digital Marketing)" />
+                
+                <div class="button-area">
+                    <button onclick="generateKeywords()">🚀 Generate Keywords</button>
+                </div>
+
+                <textarea id="keywordResult" rows="10" placeholder="Your keywords will appear here..." readonly></textarea>
+
+                <div class="button-area">
+                    <button onclick="copyKeywords()">📋 Copy Keywords</button>
+                    <button onclick="generateKeywords()" class="btn-success">🔄 Regenerate</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- SEO Tips Section -->
+    <section class="container shadow">
+        <h2>SEO Keyword Tips</h2>
+        <br>
+        <ul style="list-style: none; line-height: 2; padding-left: 0;">
+            <li>✅ <strong>Target Search Intent:</strong> Focus on keywords that solve the user's explicit problem.</li>
+            <li>✅ <strong>Use Long-Tail Keywords:</strong> Target 3-4 word phrases for faster ranking and lower competition.</li>
+            <li>✅ <strong>Avoid Keyword Stuffing:</strong> Naturally integrate terms in headings, metadata, and body text.</li>
+            <li>✅ <strong>Placement Strategy:</strong> Include primary keywords in H1 tags, permalinks, and early paragraphs.</li>
+            <li>✅ <strong>Competitor Research:</strong> Analyze competitor keyword density to spot untapped opportunities.</li>
+        </ul>
+    </section>
+
+    <!-- FAQ Accordion Section -->
+    <section class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq">
+            <details>
+                <summary>What is an AI Keyword Generator?</summary>
+                <p>An AI Keyword Generator helps you find instant keyword variations, long-tail search terms, and content ideas to boost your website’s SEO rankings.</p>
+            </details>
+
+            <details>
+                <summary>Why are keywords important for SEO?</summary>
+                <p>Keywords help search engines like Google understand what your content is about and show your website to the right audience searching for related topics.</p>
+            </details>
+
+            <details>
+                <summary>Is this AI Keyword Generator free to use?</summary>
+                <p>Yes, all tools on <strong>AI Smart Tools</strong> are 100% free to use with no daily usage limits or account registration requirements.</p>
+            </details>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-logo">
+                <h2>AI Smart <span>Tools</span></h2>
+                <p>Your ultimate destination for free, high-performance AI tools for SEO, content writing, and web development.</p>
+            </div>
+
+            <div class="footer-tags">
+                <span>#AIKeywordGenerator</span>
+                <span>#SEOTools</span>
+                <span>#AISmartTools</span>
+            </div>
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="https://aismarttools.vercel.app/">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Popular AI Tools</h3>
+                <ul>
+                    <li><a href="#">AI Meta Generator</a></li>
+                    <li><a href="#">YouTube Title Generator</a></li>
+                    <li><a href="#">AI Humanizer</a></li>
+                    <li><a href="#">AI Paraphraser</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col follow">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="#" aria-label="Website">🌐</a>
+                    <a href="#" aria-label="Twitter">🐤</a>
+                    <a href="#" aria-label="LinkedIn">💼</a>
+                </div>
+                <p>Simple & powerful AI tools for everyday tasks.</p>
+            </div>
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <div class="footer-bottom">
+            <p>© 2026 <strong>AI Smart Tools</strong>. All Rights Reserved.</p>
+            <p>Designed for SEO Experts & Creators</p>
+        </div>
+    </footer>
+
+    <!-- Script File -->
+    <script src="script.js"></script>
 </body>
 
 </html>
