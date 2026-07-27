@@ -2,128 +2,161 @@
 <html lang="en">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="canonical" href="https://bestaitoolshub.vercel.app/title-generator">
-    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Best AI Meta Title Generator | AI Smart Tools</title>
 
-<title>Best AI Meta Title Generator | Best AI Tools Hub</title>
-<link rel="icon" type="image/png" href="favicon.png">
-<meta name="description" content="Generate SEO-friendly meta titles instantly with our free AI Meta Title Generator. Improve your website rankings and click-through rate.">
+    <link rel="canonical" href="https://aismarttools.vercel.app/title-generator">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="description" content="Generate SEO-friendly meta titles instantly with our free AI Meta Title Generator on AI Smart Tools. Improve your website rankings and click-through rate (CTR).">
 
-<link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
+    <!-- Header / Navbar Section -->
+    <header class="site-header">
+        <div class="container">
+            <a href="https://aismarttools.vercel.app/" class="logo">🤖 AI Smart Tools</a>
+            <nav>
+                <a href="https://aismarttools.vercel.app/">Home</a>
+                <a href="https://aismarttools.vercel.app/#tools">AI Tools</a>
+                <a href="https://aismarttools.vercel.app/blog">Blog</a>
+                <a href="https://aismarttools.vercel.app/#faq">FAQ</a>
+            </nav>
+        </div>
+    </header>
 
-<h1>🏷 AI Meta Title Generator</h1>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="announcement-track">
+            🚀 Boost Your Organic CTR with Free SEO Meta Title Generation on AI Smart Tools!
+        </div>
+    </div>
 
-<nav>
-<a href="https://bestaitoolshub.vercel.app/">🏠 Home</a>
-</nav>
+    <!-- Main Tool Container -->
+    <main class="tool-page">
+        <section class="tool-box container">
+            <h1>🏷️ AI Meta Title Generator</h1>
+            <p>Create click-worthy, SEO-optimized title tags that rank higher on Google search results.</p>
 
-</header>
+            <div class="tool-inputs" style="margin-top: 25px; text-align: left;">
+                <input id="keyword" type="text" placeholder="Enter Main Keyword (e.g. Best SEO Strategies)" />
 
-<section class="hero">
+                <input id="brand" type="text" placeholder="Website / Brand Name (e.g. TechInsights)" style="margin-top: 15px;" />
 
-    <h2 style="color:#ffffff !important;">Generate SEO Meta Title</h2>
+                <div class="button-area" style="margin-top: 20px; text-align: center;">
+                    <button onclick="generateTitle()">🚀 Generate Meta Title</button>
+                </div>
 
-<p>Create SEO-friendly meta titles for higher Google rankings.</p>
+                <textarea id="titleResult" rows="4" placeholder="Your generated Meta Title will appear here..."></textarea>
 
-<br>
+                <div class="button-area" style="text-align: center;">
+                    <button onclick="copyTitle()">📋 Copy Title</button>
+                    <button onclick="generateTitle()" class="btn-success">🔄 Regenerate</button>
+                </div>
 
-<input id="keyword" type="text" placeholder="Enter Main Keyword">
+                <p id="titleCount" style="margin-top: 10px; text-align: center; font-weight: bold; color: #6b7280;">Characters: 0</p>
+            </div>
+        </section>
+    </main>
 
-<br><br>
+    <!-- SEO Tips Section -->
+    <section class="container shadow" style="margin-top: 40px;">
+        <h2>Meta Title Best Practices</h2>
+        <br>
+        <ul style="list-style: none; line-height: 2; padding-left: 0;">
+            <li>✅ <strong>Optimal Title Length:</strong> Keep your title between 50–60 characters (approx. 580 pixels) to avoid clipping on SERPs.</li>
+            <li>✅ <strong>Keyword Placement:</strong> Place your primary target keyword closer to the beginning of the title tag.</li>
+            <li>✅ <strong>Brand Inclusion:</strong> Add your brand name at the end separated by a pipe (|) or hyphen (-).</li>
+            <li>✅ <strong>Unique Snippets:</strong> Ensure every page on your website has a unique, descriptive meta title.</li>
+            <li>✅ <strong>Avoid Keyword Stuffing:</strong> Focus on clickability and clear communication rather than repeating words.</li>
+        </ul>
+    </section>
 
-<input id="brand" type="text" placeholder="Website Name">
+    <!-- FAQ Accordion Section -->
+    <section class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq">
+            <details>
+                <summary>What is a Meta Title?</summary>
+                <p>A meta title (or title tag) is an HTML element that specifies the title of a web page. It is displayed on search engine results pages (SERPs) as the clickable headline for a given result.</p>
+            </details>
 
-<br><br>
+            <details>
+                <summary>What is the recommended Meta Title length?</summary>
+                <p>The recommended title tag length for desktop and mobile search engine optimization is between 50 and 60 characters.</p>
+            </details>
 
-<button onclick="generateTitle()">🚀 Generate Meta Title</button>
+            <details>
+                <summary>How does a Meta Title impact SEO?</summary>
+                <p>Title tags are a primary direct ranking factor for search engines. Well-crafted titles also increase Click-Through Rates (CTR), driving more organic traffic to your web pages.</p>
+            </details>
+        </div>
+    </section>
 
-<br><br>
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-logo">
+                <h2>AI Smart <span>Tools</span></h2>
+                <p>Your ultimate destination for free, high-performance AI tools for SEO, writing, and digital creation.</p>
+            </div>
 
-<textarea id="titleResult" rows="4" placeholder="Your Meta Title will appear here..."></textarea>
+            <div class="footer-tags">
+                <span>#TitleGenerator</span>
+                <span>#SEOTools</span>
+                <span>#AISmartTools</span>
+            </div>
+        </div>
 
-<br><br>
+        <div class="footer-divider"></div>
 
-<button onclick="copyTitle()">📋 Copy</button>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="https://aismarttools.vercel.app/">Home</a></li>
+                    <li><a href="https://aismarttools.vercel.app/blog">Blog</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
 
-<button onclick="generateTitle()">🔄 Regenerate</button>
+            <div class="footer-col">
+                <h3>Popular AI Tools</h3>
+                <ul>
+                    <li><a href="https://aismarttools.vercel.app/title-generator">AI Title Generator</a></li>
+                    <li><a href="https://aismarttools.vercel.app/meta-generator">AI Meta Generator</a></li>
+                    <li><a href="https://aismarttools.vercel.app/meta-length-checker">Meta Length Checker</a></li>
+                    <li><a href="https://aismarttools.vercel.app/faq-generator">AI FAQ Generator</a></li>
+                </ul>
+            </div>
 
-<p id="titleCount">Characters: 0</p>
+            <div class="footer-col follow">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="#" aria-label="Website">🌐</a>
+                    <a href="#" aria-label="Twitter">🐤</a>
+                    <a href="#" aria-label="LinkedIn">💼</a>
+                </div>
+                <p>Simple & powerful AI tools for everyday tasks.</p>
+            </div>
+        </div>
 
-</section>
+        <div class="footer-divider"></div>
 
-<hr>
+        <div class="footer-bottom">
+            <p>© 2026 <strong>AI Smart Tools</strong>. All Rights Reserved.</p>
+            <p>Designed for SEO Experts & Marketers</p>
+        </div>
+    </footer>
 
-<section>
-
-<h2>SEO Tips</h2>
-
-<ul>
-<li>✅ Keep your title between 50–60 characters.</li>
-<li>✅ Place your primary keyword at the beginning.</li>
-<li>✅ Add your brand name at the end.</li>
-<li>✅ Make every title unique.</li>
-<li>✅ Avoid keyword stuffing.</li>
-</ul>
-
-</section>
-
-<hr>
-
-<section>
-
-<h2>Frequently Asked Questions</h2>
-
-<h3>What is a Meta Title?</h3>
-
-<p>A meta title is the clickable headline that appears in Google search results.</p>
-
-<h3>What is the ideal Meta Title length?</h3>
-
-<p>The recommended title length is between 50 and 60 characters.</p>
-
-<h3>Does Meta Title improve SEO?</h3>
-
-<p>Yes. A well-optimized title can improve search rankings and increase click-through rate (CTR).</p>
-
-</section>
-
-<footer>
-
-<div class="footer-content">
-
-<h3>🤖 Best AI Tools Hub</h3>
-
-<p>Your one-stop destination for free AI tools, SEO tools, image tools and productivity tools.</p>
-
-<div class="footer-links">
-
-<a href="#">About</a>
-
-<a href="#">Privacy Policy</a>
-
-<a href="#">Terms</a>
-
-<a href="#">Contact</a>
-
-</div>
-
-<p class="copyright">
-© 2026 Best AI Tools Hub. All Rights Reserved.
-</p>
-
-</div>
-
-</footer>
-
-<script src="script.js"></script>
-
+    <!-- Global External Script -->
+    <script src="script.js"></script>
 </body>
+
 </html>
