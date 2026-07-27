@@ -2,194 +2,160 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="canonical" href="https://bestaitoolshub.vercel.app/image-prompt-generator">
-<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+    <title>AI Image Prompt Generator | AI Smart Tools</title>
 
-<title>AI Image Prompt Generator | Best AI Tools Hub</title>
-<link rel="icon" type="image/png" href="favicon.png">
-<meta name="description" content="Generate professional AI image prompts instantly with our free AI Image Prompt Generator. Create prompts for Midjourney, DALL-E and AI image tools.">
+    <link rel="canonical" href="https://aismarttools.vercel.app/image-prompt-generator">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="description" content="Generate detailed AI image prompts instantly with our free AI Image Prompt Generator on AI Smart Tools. Perfect for Midjourney, DALL-E, Stable Diffusion, and Leonardo AI.">
 
-<link rel="stylesheet" href="style.css">
-
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
-
-<header>
-
-<h1>🎨 AI Image Prompt Generator</h1>
-
-<nav>
-
-<a href="https://bestaitoolshub.vercel.app/">🏠 Home</a>
-
-</nav>
-
-</header>
-
-
-
-<section class="hero">
-
-
-   <h2 style="color:#ffffff !important;">Create AI Image Prompts</h2>
-
-
-<p>
-Generate detailed prompts for AI image generators.
-</p>
-
-
-<br>
-
-
-<input id="imageTopic" type="text" placeholder="Enter Image Idea">
-
-
-<br><br>
-
-
-<select id="style">
-
-<option value="Realistic">Realistic</option>
-
-<option value="Cartoon">Cartoon</option>
-
-<option value="3D">3D Style</option>
-
-<option value="Fantasy">Fantasy</option>
-
-<option value="Cinematic">Cinematic</option>
-
-</select>
-
-
-<br><br>
-
-
-<button onclick="generatePrompt()">
-🚀 Generate Prompt
-</button>
-
-
-<br><br>
-
-
-<textarea id="promptResult" rows="8" placeholder="Your AI image prompt will appear here..."></textarea>
-
-
-<br><br>
-
-
-<button onclick="copyPrompt()">📋 Copy</button>
-
-
-<button onclick="generatePrompt()">🔄 Regenerate</button>
-
-
-</section>
-
-
-
-<hr>
-
-
-
-<section>
-
-<h2>AI Image Prompt Tips</h2>
-
-
-<ul>
-
-<li>✅ Add detailed descriptions.</li>
-
-<li>✅ Mention image style.</li>
-
-<li>✅ Add lighting and quality words.</li>
-
-<li>✅ Describe colors and background.</li>
-
-<li>✅ Use specific subjects.</li>
-
-</ul>
-
-
-</section>
-
-
-
-<hr>
-
-
-
-<section>
-
-<h2>Frequently Asked Questions</h2>
-
-
-<h3>What is an AI Image Prompt?</h3>
-
-<p>
-An AI image prompt is a text description used to create images with artificial intelligence.
-</p>
-
-
-<h3>Which AI tools use prompts?</h3>
-
-<p>
-Tools like Midjourney, DALL-E and other AI image generators use prompts.
-</p>
-
-
-</section>
-
-
-
-<footer>
-
-<div class="footer-content">
-
-
-<h3>🤖 Best AI Tools Hub</h3>
-
-<p>
-Your one-stop destination for free AI tools.
-</p>
-
-
-<div class="footer-links">
-
-<a href="#">About</a>
-
-<a href="#">Privacy Policy</a>
-
-<a href="#">Terms</a>
-
-<a href="#">Contact</a>
-
-</div>
-
-
-<p class="copyright">
-© 2026 Best AI Tools Hub. All Rights Reserved.
-</p>
-
-
-</div>
-
-</footer>
-
-
-
-<script src="script.js"></script>
-
-
+    <!-- Header / Navbar Section -->
+    <header>
+        <div class="logo">🎨 AI Image Prompt Generator</div>
+        <nav>
+            <a href="https://aismarttools.vercel.app/">🏠 Home</a>
+        </nav>
+    </header>
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="announcement-track">
+            🚀 Unlimited Free AI Prompt & Media Generators on AI Smart Tools — No Registration Required!
+        </div>
+    </div>
+
+    <!-- Main Tool Container -->
+    <main class="tool-page">
+        <section class="tool-box container">
+            <h1>Create AI Image Prompts</h1>
+            <p>Generate highly detailed and descriptive prompts for Midjourney, DALL-E, and Stable Diffusion.</p>
+
+            <div class="tool-inputs" style="margin-top: 25px;">
+                <input id="imageTopic" type="text" placeholder="Enter Image Idea (e.g. Futuristic Cyberpunk City)" />
+
+                <select id="style" style="margin-top: 15px;">
+                    <option value="Realistic">Realistic</option>
+                    <option value="Cartoon">Cartoon</option>
+                    <option value="3D">3D Style</option>
+                    <option value="Fantasy">Fantasy</option>
+                    <option value="Cinematic">Cinematic</option>
+                    <option value="Anime">Anime Style</option>
+                </select>
+
+                <div class="button-area" style="margin-top: 20px;">
+                    <button onclick="generatePrompt()">🚀 Generate Prompt</button>
+                </div>
+
+                <textarea id="promptResult" rows="8" placeholder="Your generated AI image prompt will appear here..." readonly></textarea>
+
+                <div class="button-area">
+                    <button onclick="copyPrompt()">📋 Copy Prompt</button>
+                    <button onclick="generatePrompt()" class="btn-success">🔄 Regenerate</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Tips Section -->
+    <section class="container shadow">
+        <h2>AI Image Prompting Tips</h2>
+        <br>
+        <ul style="list-style: none; line-height: 2; padding-left: 0;">
+            <li>✅ <strong>Detailed Subject:</strong> Clearly describe the central subject, action, or environment.</li>
+            <li>✅ <strong>Art Style:</strong> Explicitly mention styles like <i>Cinematic, 3D Render, Oil Painting, or Anime</i>.</li>
+            <li>✅ <strong>Lighting & Mood:</strong> Use keywords like <i>golden hour, volumetric lighting, dramatic lighting, 8k resolution</i>.</li>
+            <li>✅ <strong>Color Palettes:</strong> Mention preferred tones such as <i>neon vibes, pastel hues, or monochrome</i>.</li>
+        </ul>
+    </section>
+
+    <!-- FAQ Accordion Section -->
+    <section class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq">
+            <details>
+                <summary>What is an AI Image Prompt?</summary>
+                <p>An AI image prompt is a descriptive text instruction used by AI image generators to understand what kind of artwork, photo, or graphic you want to generate.</p>
+            </details>
+
+            <details>
+                <summary>Which AI platforms support these prompts?</summary>
+                <p>These generated prompts work seamlessly with Midjourney, DALL-E 3, Stable Diffusion, Leonardo AI, Bing Image Creator, and Photoshop AI.</p>
+            </details>
+
+            <details>
+                <summary>Is this AI Image Prompt Generator free?</summary>
+                <p>Yes, all tools on <strong>AI Smart Tools</strong> are 100% free with unlimited usage and no account signup required.</p>
+            </details>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-logo">
+                <h2>AI Smart <span>Tools</span></h2>
+                <p>Your ultimate destination for free, high-performance AI tools for creators, designers, and marketers.</p>
+            </div>
+
+            <div class="footer-tags">
+                <span>#AIImagePrompt</span>
+                <span>#MidjourneyPrompts</span>
+                <span>#AISmartTools</span>
+            </div>
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="https://aismarttools.vercel.app/">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Popular AI Tools</h3>
+                <ul>
+                    <li><a href="#">AI Meta Generator</a></li>
+                    <li><a href="#">YouTube Title Generator</a></li>
+                    <li><a href="#">AI Voice Generator</a></li>
+                    <li><a href="#">AI Background Remover</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col follow">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="#" aria-label="Website">🌐</a>
+                    <a href="#" aria-label="Twitter">🐤</a>
+                    <a href="#" aria-label="LinkedIn">💼</a>
+                </div>
+                <p>Simple & powerful AI tools for everyday tasks.</p>
+            </div>
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <div class="footer-bottom">
+            <p>© 2026 <strong>AI Smart Tools</strong>. All Rights Reserved.</p>
+            <p>Designed for Digital Artists & Creators</p>
+        </div>
+    </footer>
+
+    <!-- Script File -->
+    <script src="script.js"></script>
 </body>
 
 </html>
