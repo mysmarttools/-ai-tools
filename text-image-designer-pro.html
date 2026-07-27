@@ -2,182 +2,222 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="canonical" href="https://bestaitoolshub.vercel.app/text-image-designer-pro">
-<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+    <title>Free Text To Image Designer Pro | AI Smart Tools</title>
 
+    <link rel="canonical" href="https://aismarttools.vercel.app/text-image-designer-pro">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="description" content="Create stunning text images online with our free Text To Image Designer Pro on AI Smart Tools. Customize fonts, colors, gradients, custom backgrounds, and download high-quality graphic designs.">
+    <meta name="keywords" content="Text To Image Designer, Text Image Generator, AI Text Designer, Text Banner Maker, Free Text Design Tool, AI Smart Tools">
 
-<title>Free Text To Image Designer | Best AI Tools Hub</title>
- <link rel="icon" type="image/png" href="favicon.png">
-<meta name="description" content="Create stunning text images online with our free Text To Image Designer. Customize fonts, colors, gradients, backgrounds and download high-quality designs at Best AI Tools Hub.">
-<meta name="keywords" content="Text To Image Designer, Text Image Generator, AI Text Designer, Text Banner Maker, Free Text Design Tool, Best AI Tools Hub">
-
-<link rel="stylesheet" href="designer.css">
-
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="designer.css">
 </head>
 
 <body>
 
-<header class="main-header">
+    <!-- Header / Navbar Section -->
+    <header class="site-header">
+        <div class="container">
+            <a href="https://aismarttools.vercel.app/" class="logo">🤖 AI Smart Tools</a>
+            <nav>
+                <a href="https://aismarttools.vercel.app/">Home</a>
+                <a href="https://aismarttools.vercel.app/#tools">AI Tools</a>
+                <a href="https://aismarttools.vercel.app/blog">Blog</a>
+                <a href="https://aismarttools.vercel.app/#faq">FAQ</a>
+            </nav>
+        </div>
+    </header>
 
-<div class="logo">
-🤖 Best AI Tools Hub
-</div>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="announcement-track">
+            🎨 Design Custom Typography Banners & Graphics Online Free on AI Smart Tools!
+        </div>
+    </div>
 
-<nav>
+    <!-- Main Tool Workspace -->
+    <main class="tool-page">
+        <section class="tool-box container">
+            <h1>🎨 Text To Image Designer Pro</h1>
+            <p>Customize typography, apply custom background gradients or images, and generate downloadable high-res banners.</p>
 
-<a href="https://bestaitoolshub.vercel.app/">🏠 Home</a>
+            <div class="designer-workspace" style="margin-top: 25px; text-align: left;">
+                
+                <!-- Text Inputs & Typography -->
+                <div class="input-group">
+                    <label for="text"><strong>Main Text Content</strong></label>
+                    <input id="text" type="text" placeholder="Enter Your Text Here" value="Your Text" style="width: 100%; margin-top: 8px;" />
+                </div>
 
-<a href="index.html#tools">🛠 AI Tools</a>
+                <div class="control-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 20px;">
+                    <div class="control-item">
+                        <label for="textColor"><strong>Text Color</strong></label>
+                        <input type="color" id="textColor" value="#ffffff" style="width: 100%; height: 40px; border: none; cursor: pointer; margin-top: 5px;">
+                    </div>
 
-<a href="#">Contact</a>
+                    <div class="control-item">
+                        <label for="fontFamily"><strong>Choose Font</strong></label>
+                        <select id="fontFamily" style="width: 100%; margin-top: 5px;">
+                            <option value="Arial">Arial</option>
+                            <option value="Verdana">Verdana</option>
+                            <option value="Georgia">Georgia</option>
+                            <option value="Tahoma">Tahoma</option>
+                            <option value="Impact">Impact</option>
+                            <option value="Courier New">Courier New</option>
+                            <option value="Times New Roman">Times New Roman</option>
+                        </select>
+                    </div>
 
-</nav>
+                    <div class="control-item">
+                        <label for="fontSize"><strong>Font Size</strong></label>
+                        <input type="range" id="fontSize" min="20" max="120" value="40" style="width: 100%; margin-top: 10px;">
+                    </div>
 
-</header>
+                    <div class="control-item">
+                        <label for="opacity"><strong>Opacity (<span id="opacityValue">100%</span>)</strong></label>
+                        <input type="range" id="opacity" min="0" max="100" value="100" style="width: 100%; margin-top: 10px;">
+                    </div>
+                </div>
 
-<div class="container">
+                <!-- Text Style Checkboxes -->
+                <div class="style-options" style="margin-top: 20px; display: flex; gap: 20px; flex-wrap: wrap;">
+                    <label style="cursor: pointer;"><input type="checkbox" id="bold"> <strong>Bold</strong></label>
+                    <label style="cursor: pointer;"><input type="checkbox" id="italic"> <strong>Italic</strong></label>
+                    <label style="cursor: pointer;"><input type="checkbox" id="shadow"> <strong>Text Shadow</strong></label>
+                    <label style="cursor: pointer;"><input type="checkbox" id="outline"> <strong>Text Outline</strong></label>
+                </div>
 
-<h1>🎨 Text To Image Designer</h1>
+                <hr style="margin: 25px 0; border: 0; border-top: 1px solid #e5e7eb;">
 
-<input
-id="text"
-type="text"
-placeholder="Enter Text"
-value="Your Text">
+                <!-- Background Options -->
+                <div class="background-controls" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                    <div class="bg-option">
+                        <label for="bgUpload"><strong>Upload Background Image</strong></label>
+                        <input type="file" id="bgUpload" accept="image/*" style="margin-top: 8px;">
+                    </div>
 
-<br><br>
+                    <div class="bg-option">
+                        <label><strong>Gradient Colors</strong></label>
+                        <div style="display: flex; gap: 10px; margin-top: 8px;">
+                            <input type="color" id="color1" value="#4f46e5" style="width: 50%; height: 40px; border: none; cursor: pointer;">
+                            <input type="color" id="color2" value="#9333ea" style="width: 50%; height: 40px; border: none; cursor: pointer;">
+                        </div>
+                    </div>
+                </div>
 
-<label>Text Color</label>
+                <!-- Action Buttons -->
+                <div class="button-area" style="margin-top: 25px; text-align: center;">
+                    <button class="btn btn-primary" onclick="generateDesign()">🎨 Generate Design</button>
+                    <button class="btn btn-outline" onclick="addText()">➕ Add Text Layer</button>
+                    <button class="btn btn-success" onclick="downloadImage()">⬇ Download Image</button>
+                </div>
 
-<input
-type="color"
-id="textColor"
-value="#ffffff">
+                <!-- Canvas Preview Box -->
+                <div class="canvas-wrapper" style="margin-top: 30px; text-align: center; background: #f3f4f6; padding: 15px; border-radius: 10px; border: 1px dashed #d1d5db; overflow-x: auto;">
+                    <canvas id="canvas" width="900" height="500" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); background-color: #ffffff;"></canvas>
+                </div>
 
-<br><br>
+            </div>
+        </section>
+    </main>
 
-<label>Font Size</label>
+    <!-- Design Best Practices Section -->
+    <section class="container shadow" style="margin-top: 40px;">
+        <h2>Text Image Design Tips</h2>
+        <br>
+        <ul style="list-style: none; line-height: 2; padding-left: 0;">
+            <li>✅ <strong>Contrast Focus:</strong> Choose high-contrast text and background colors to ensure legibility across all screens.</li>
+            <li>✅ <strong>Font Hierarchy:</strong> Use heavy bold fonts like <i>Impact</i> or <i>Arial</i> for headers, and clean serif fonts for formal quotes.</li>
+            <li>✅ <strong>Gradients & Shadows:</strong> Enable text shadows or outlines when overlaying typography on complex background images.</li>
+            <li>✅ <strong>Optimal Canvas Resolution:</strong> High-definition default canvas ensures graphics look crisp when posted on social media.</li>
+        </ul>
+    </section>
 
-<input
-type="range"
-id="fontSize"
-min="20"
-max="120"
-value="40">
+    <!-- FAQ Accordion Section -->
+    <section class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq">
+            <details>
+                <summary>Can I upload my own custom background photo?</summary>
+                <p>Yes! Use the "Upload Background Image" file picker to load any custom background graphic onto the canvas before overlaying text.</p>
+            </details>
 
-<br><br>
+            <details>
+                <summary>In what format can I download my generated design?</summary>
+                <p>Clicking the "Download Image" button instantly exports your design canvas as a high-quality PNG graphics file.</p>
+            </details>
 
-<h3>Choose Font</h3>
+            <details>
+                <summary>Is this design tool free to use for commercial projects?</summary>
+                <p>Yes, all utilities on <strong>AI Smart Tools</strong> are 100% free with unlimited usage rights for personal and commercial projects.</p>
+            </details>
+        </div>
+    </section>
 
-<select id="fontFamily">
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-logo">
+                <h2>AI Smart <span>Tools</span></h2>
+                <p>Your ultimate destination for free, high-performance AI tools for creators, designers, and marketers.</p>
+            </div>
 
-<option value="Arial">Arial</option>
-<option value="Verdana">Verdana</option>
-<option value="Georgia">Georgia</option>
-<option value="Tahoma">Tahoma</option>
-<option value="Impact">Impact</option>
-<option value="Courier New">Courier New</option>
-<option value="Times New Roman">Times New Roman</option>
+            <div class="footer-tags">
+                <span>#TextImageDesigner</span>
+                <span>#GraphicDesignTools</span>
+                <span>#AISmartTools</span>
+            </div>
+        </div>
 
-</select>
+        <div class="footer-divider"></div>
 
-<br><br>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="https://aismarttools.vercel.app/">Home</a></li>
+                    <li><a href="https://aismarttools.vercel.app/blog">Blog</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
 
-<h3>Text Style</h3>
+            <div class="footer-col">
+                <h3>Popular AI Tools</h3>
+                <ul>
+                    <li><a href="https://aismarttools.vercel.app/text-image-designer-pro">Text Image Designer</a></li>
+                    <li><a href="https://aismarttools.vercel.app/image-prompt-generator">AI Image Prompt Generator</a></li>
+                    <li><a href="https://aismarttools.vercel.app/meta-generator">AI Meta Generator</a></li>
+                    <li><a href="https://aismarttools.vercel.app/faq-generator">AI FAQ Generator</a></li>
+                </ul>
+            </div>
 
-<label><input type="checkbox" id="bold"> Bold</label>
+            <div class="footer-col follow">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="#" aria-label="Website">🌐</a>
+                    <a href="#" aria-label="Twitter">🐤</a>
+                    <a href="#" aria-label="LinkedIn">💼</a>
+                </div>
+                <p>Simple & powerful AI tools for everyday tasks.</p>
+            </div>
+        </div>
 
-<label><input type="checkbox" id="italic"> Italic</label>
+        <div class="footer-divider"></div>
 
-<label><input type="checkbox" id="shadow"> Shadow</label>
+        <div class="footer-bottom">
+            <p>© 2026 <strong>AI Smart Tools</strong>. All Rights Reserved.</p>
+            <p>Designed for Designers & Content Creators</p>
+        </div>
+    </footer>
 
-<label><input type="checkbox" id="outline"> Outline</label>
-
-<br><br>
-
-<h3>Opacity</h3>
-
-<input
-type="range"
-id="opacity"
-min="0"
-max="100"
-value="100">
-
-<span id="opacityValue">100%</span>
-
-<br><br>
-
-<h3>Background Image</h3>
-
-<input
-type="file"
-id="bgUpload"
-accept="image/*">
-
-<br><br>
-
-<h3>Gradient Background</h3>
-
-<input
-type="color"
-id="color1"
-value="#4f46e5">
-
-<input
-type="color"
-id="color2"
-value="#9333ea">
-
-<br><br>
-
-  <button onclick="generateDesign()">
-
-🎨 Generate
-
-</button>
-
-<button onclick="addText()">
-
-➕ Add Text
-
-</button>
-
-<button onclick="downloadImage()">
-
-⬇ Download
-
-</button>
-
-<br><br>
-
-<canvas
-id="canvas"
-width="900"
-height="500">
-</canvas>
-
-</div>
-
-<footer class="footer">
-
-<h3>🎨 Text To Image Designer</h3>
-
-<p>
-Create beautiful designs easily.
-</p>
-
-<p>
-© 2026 Best AI Tools Hub. All Rights Reserved.
-</p>
-
-</footer>
-
-<script src="designer.js"></script>
-
+    <!-- Script Links -->
+    <script src="designer.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
