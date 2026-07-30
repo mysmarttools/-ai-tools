@@ -1,7 +1,54 @@
+// ==========================================
+// MOBILE & TOUCH EVENT INITIALIZER (CRITICAL FIX)
+// ==========================================
+document.addEventListener("DOMContentLoaded", function () {
+    // Mobile par form auto-submit aur reload ko roknay ke liye
+    const forms = document.querySelectorAll("form");
+    forms.forEach(form => {
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+        });
+    });
+});
+
+// Helper Function for Mobile Safe Clipboard Copy
+function safeCopy(text, successMessage) {
+    if (!text || text.trim() === "") {
+        alert("Nothing to copy!");
+        return;
+    }
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(() => {
+            alert(successMessage);
+        }).catch(() => {
+            fallbackCopy(text, successMessage);
+        });
+    } else {
+        fallbackCopy(text, successMessage);
+    }
+}
+
+function fallbackCopy(text, successMessage) {
+    const textArea = document.createElement("textarea");
+    textArea.value = text;
+    textArea.style.position = "fixed";
+    textArea.style.opacity = "0";
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    try {
+        document.execCommand('copy');
+        alert(successMessage);
+    } catch (err) {
+        alert("Unable to copy automatically.");
+    }
+    document.body.removeChild(textArea);
+}
+
+
 // =============================
 // Background Image Preview
 // =============================
-
 const fileInput = document.querySelector('input[type="file"]');
 const preview = document.getElementById('preview');
 
@@ -19,8 +66,8 @@ if (fileInput && preview) {
 // =============================
 // AI Meta Description Generator
 // =============================
-
-function generateMeta() {
+function generateMeta(e) {
+    if (e) e.preventDefault();
     const keyword = document.getElementById("keyword");
     const brand = document.getElementById("brand");
     const result = document.getElementById("result");
@@ -48,21 +95,18 @@ function generateMeta() {
     }
 }
 
-// Copy Meta
-function copyMeta() {
+function copyMeta(e) {
+    if (e) e.preventDefault();
     const result = document.getElementById("result");
-    if (result && result.value.trim() !== "") {
-        navigator.clipboard.writeText(result.value);
-        alert("✅ Meta Description Copied!");
-    }
+    if (result) safeCopy(result.value, "✅ Meta Description Copied!");
 }
 
 
 // =============================
 // AI Title Generator
 // =============================
-
-function generateTitle() {
+function generateTitle(e) {
+    if (e) e.preventDefault();
     const keyword = document.getElementById("keyword");
     const brand = document.getElementById("brand");
     const result = document.getElementById("titleResult");
@@ -90,21 +134,18 @@ function generateTitle() {
     }
 }
 
-// Copy Title
-function copyTitle() {
+function copyTitle(e) {
+    if (e) e.preventDefault();
     const result = document.getElementById("titleResult");
-    if (result && result.value.trim() !== "") {
-        navigator.clipboard.writeText(result.value);
-        alert("✅ Title Copied!");
-    }
+    if (result) safeCopy(result.value, "✅ Title Copied!");
 }
 
 
 // =============================
 // AI FAQ Generator
 // =============================
-
-function generateFAQ() {
+function generateFAQ(e) {
+    if (e) e.preventDefault();
     const keyword = document.getElementById("faqKeyword");
     const result = document.getElementById("faqResult");
 
@@ -115,8 +156,7 @@ function generateFAQ() {
         return;
     }
 
-    result.value = `
-Q1: What is ${keyword.value}?
+    result.value = `Q1: What is ${keyword.value}?
 A: ${keyword.value} is a useful solution that helps users get better results.
 
 Q2: Why should I use ${keyword.value}?
@@ -126,25 +166,21 @@ Q3: How does ${keyword.value} work?
 A: It provides simple and effective solutions according to user needs.
 
 Q4: Is ${keyword.value} free?
-A: Many options are available online with free features.
-`.trim();
+A: Many options are available online with free features.`.trim();
 }
 
-// Copy FAQ
-function copyFAQ() {
+function copyFAQ(e) {
+    if (e) e.preventDefault();
     const result = document.getElementById("faqResult");
-    if (result && result.value.trim() !== "") {
-        navigator.clipboard.writeText(result.value);
-        alert("✅ FAQs Copied!");
-    }
+    if (result) safeCopy(result.value, "✅ FAQs Copied!");
 }
 
 
 // =============================
 // AI Image Prompt Generator
 // =============================
-
-function generatePrompt() {
+function generatePrompt(e) {
+    if (e) e.preventDefault();
     const topic = document.getElementById("imageTopic");
     const style = document.getElementById("style");
     const result = document.getElementById("promptResult");
@@ -159,21 +195,18 @@ function generatePrompt() {
     result.value = `A ${style.value} image of ${topic.value}, highly detailed, professional quality, cinematic lighting, 4K resolution.`;
 }
 
-// Copy Prompt
-function copyPrompt() {
+function copyPrompt(e) {
+    if (e) e.preventDefault();
     const result = document.getElementById("promptResult");
-    if (result && result.value.trim() !== "") {
-        navigator.clipboard.writeText(result.value);
-        alert("✅ Prompt Copied!");
-    }
+    if (result) safeCopy(result.value, "✅ Prompt Copied!");
 }
 
 
 // =============================
 // AI Image Alt Text Generator
 // =============================
-
-function generateAltText() {
+function generateAltText(e) {
+    if (e) e.preventDefault();
     const input = document.getElementById("altKeyword");
     const style = document.getElementById("altStyle");
     const result = document.getElementById("altResult");
@@ -188,21 +221,18 @@ function generateAltText() {
     result.value = `${input.value} - ${style.value} image description optimized for SEO and accessibility.`;
 }
 
-// Copy Alt Text
-function copyAltText() {
+function copyAltText(e) {
+    if (e) e.preventDefault();
     const result = document.getElementById("altResult");
-    if (result && result.value.trim() !== "") {
-        navigator.clipboard.writeText(result.value);
-        alert("✅ Alt Text Copied!");
-    }
+    if (result) safeCopy(result.value, "✅ Alt Text Copied!");
 }
 
 
 // =============================
 // AI Keyword Generator
 // =============================
-
-function generateKeywords() {
+function generateKeywords(e) {
+    if (e) e.preventDefault();
     const input = document.getElementById("keywordInput");
     const result = document.getElementById("keywordResult");
 
@@ -216,46 +246,29 @@ function generateKeywords() {
     }
 
     const keywords = [
-        "best " + keyword,
-        "free " + keyword,
-        keyword + " online",
-        keyword + " tools",
-        keyword + " services",
-        keyword + " guide",
-        keyword + " tips",
-        keyword + " ideas",
-        keyword + " examples",
-        keyword + " for beginners",
-        keyword + " in Pakistan",
-        "how to use " + keyword,
-        "what is " + keyword,
-        keyword + " alternatives",
-        keyword + " comparison",
-        "buy " + keyword,
-        keyword + " price",
-        keyword + " offers",
-        "top " + keyword,
-        "latest " + keyword
+        "best " + keyword, "free " + keyword, keyword + " online", keyword + " tools",
+        keyword + " services", keyword + " guide", keyword + " tips", keyword + " ideas",
+        keyword + " examples", keyword + " for beginners", keyword + " in Pakistan",
+        "how to use " + keyword, "what is " + keyword, keyword + " alternatives",
+        keyword + " comparison", "buy " + keyword, keyword + " price", keyword + " offers",
+        "top " + keyword, "latest " + keyword
     ];
 
     result.value = keywords.join("\n");
 }
 
-// Copy Keywords
-function copyKeywords() {
+function copyKeywords(e) {
+    if (e) e.preventDefault();
     const result = document.getElementById("keywordResult");
-    if (result && result.value.trim() !== "") {
-        navigator.clipboard.writeText(result.value);
-        alert("✅ Keywords Copied!");
-    }
+    if (result) safeCopy(result.value, "✅ Keywords Copied!");
 }
 
 
 // =============================
 // Text To Image Designer
 // =============================
-
-function createImage() {
+function createImage(e) {
+    if (e) e.preventDefault();
     const textInput = document.getElementById("designText");
     const styleInput = document.getElementById("designStyle");
     const canvas = document.getElementById("canvas");
@@ -266,20 +279,13 @@ function createImage() {
     const style = styleInput.value;
     const ctx = canvas.getContext("2d");
 
-    // Background
-    if (style === "sale") {
-        ctx.fillStyle = "#ff4757";
-    } else if (style === "quote") {
-        ctx.fillStyle = "#2f3542";
-    } else if (style === "social") {
-        ctx.fillStyle = "#3742fa";
-    } else {
-        ctx.fillStyle = "#ffffff";
-    }
+    if (style === "sale") ctx.fillStyle = "#ff4757";
+    else if (style === "quote") ctx.fillStyle = "#2f3542";
+    else if (style === "social") ctx.fillStyle = "#3742fa";
+    else ctx.fillStyle = "#ffffff";
 
     ctx.fillRect(0, 0, 800, 400);
 
-    // Text Style
     ctx.fillStyle = "white";
     ctx.font = "bold 55px Arial";
     ctx.textAlign = "center";
@@ -287,7 +293,8 @@ function createImage() {
     ctx.fillText(text, 400, 200);
 }
 
-function downloadImage() {
+function downloadImage(e) {
+    if (e) e.preventDefault();
     const canvas = document.getElementById("canvas");
     if (!canvas) return;
 
@@ -301,7 +308,6 @@ function downloadImage() {
 // =============================
 // Meta Length Checker
 // =============================
-
 function checkLength() {
     const metaTitle = document.getElementById("metaTitle");
     const metaDescription = document.getElementById("metaDescription");
@@ -310,7 +316,6 @@ function checkLength() {
     const titleStatus = document.getElementById("titleStatus");
     const descStatus = document.getElementById("descStatus");
 
-    // ========= META TITLE =========
     if (metaTitle && titleCount && titleStatus) {
         const titleLength = metaTitle.value.length;
         titleCount.innerHTML = titleLength;
@@ -333,7 +338,6 @@ function checkLength() {
         }
     }
 
-    // ========= META DESCRIPTION =========
     if (metaDescription && descCount && descStatus) {
         const descLength = metaDescription.value.length;
         descCount.innerHTML = descLength;
@@ -361,8 +365,8 @@ function checkLength() {
 // ==========================================
 // YouTube Title & Description Generator
 // ==========================================
-
-function generateYoutube() {
+function generateYoutube(e) {
+    if (e) e.preventDefault();
     const keywordEl = document.getElementById("keyword");
     const topicEl = document.getElementById("topic");
 
@@ -425,17 +429,17 @@ ${keyword}
     if (ytDesc) ytDesc.value = description;
 }
 
-function copyYoutube() {
+function copyYoutube(e) {
+    if (e) e.preventDefault();
     const title = document.getElementById("ytTitle")?.value || "";
     const desc = document.getElementById("ytDescription")?.value || "";
 
     if (!title && !desc) return;
-
-    navigator.clipboard.writeText(title + "\n\n" + desc);
-    alert("Copied Successfully!");
+    safeCopy(title + "\n\n" + desc, "Copied Successfully!");
 }
 
-function clearYoutube() {
+function clearYoutube(e) {
+    if (e) e.preventDefault();
     const keyword = document.getElementById("keyword");
     const topic = document.getElementById("topic");
     const ytTitle = document.getElementById("ytTitle");
@@ -451,7 +455,6 @@ function clearYoutube() {
 // =============================
 // AI Humanizer Tool
 // =============================
-
 const inputText = document.getElementById("inputText");
 if (inputText) {
     inputText.addEventListener("input", updateCounter);
@@ -471,9 +474,8 @@ function updateCounter() {
     if (charCount) charCount.innerText = "Characters: " + chars;
 }
 
-async function humanizeText() {
-
-    alert("Button Clicked");
+async function humanizeText(e) {
+    if (e) e.preventDefault();
 
     const input = document.getElementById("inputText");
     const output = document.getElementById("outputText");
@@ -508,7 +510,8 @@ async function humanizeText() {
     }
 }
 
-function clearHumanizer() {
+function clearHumanizer(e) {
+    if (e) e.preventDefault();
     const input = document.getElementById("inputText");
     const output = document.getElementById("outputText");
     const wordCount = document.getElementById("wordCount");
@@ -520,23 +523,18 @@ function clearHumanizer() {
     if (charCount) charCount.innerText = "Characters: 0";
 }
 
-function copyHumanized() {
+function copyHumanized(e) {
+    if (e) e.preventDefault();
     let outputText = document.getElementById("outputText");
-    if (!outputText || outputText.value.trim() === "") {
-        alert("Nothing to copy.");
-        return;
-    }
-
-    navigator.clipboard.writeText(outputText.value);
-    alert("Copied Successfully!");
+    if (outputText) safeCopy(outputText.value, "Copied Successfully!");
 }
 
 
 // =============================
 // AI Paraphraser Tool
 // =============================
-
-async function paraphraseText() {
+async function paraphraseText(e) {
+    if (e) e.preventDefault();
     const input = document.getElementById("paraInputText");
     const output = document.getElementById("paraOutputText");
 
@@ -565,7 +563,8 @@ async function paraphraseText() {
     }
 }
 
-function clearParaphrase() {
+function clearParaphrase(e) {
+    if (e) e.preventDefault();
     let input = document.getElementById("paraInputText");
     let output = document.getElementById("paraOutputText");
 
