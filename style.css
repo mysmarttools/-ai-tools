@@ -820,3 +820,30 @@ button:hover{
 }
 
 
+/* ==========================================
+   MOBILE CLICK & TOUCH OVERLAY FIX
+   ========================================== */
+
+/* Buttons ko sab se upar laane ke liye */
+button, 
+input[type="button"], 
+input[type="submit"], 
+.btn {
+  position: relative !important;
+  z-index: 99999 !important;
+  pointer-events: auto !important;
+  touch-action: manipulation !important;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+/* Form Inputs Touch Fix */
+input, textarea, select {
+  position: relative !important;
+  z-index: 9999 !important;
+  pointer-events: auto !important;
+}
+
+/* Background overlays ko click block karne se rokna */
+.container, .wrapper, .card, .main-content {
+  overflow: visible !important;
+}
