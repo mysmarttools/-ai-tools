@@ -819,36 +819,4 @@ button:hover{
     }
 }
 
-/* ===================================================
-   MOBILE RESPONSIVE FIX (For Screens under 768px)
-   =================================================== */
-@media screen and (max-width: 768px) {
-  
-  /* Horizontal overflow block karein */
-  body, html {
-    overflow-x: hidden !important;
-    width: 100% !important;
-  }
 
-  /* Tools Layout Grid ko single column banayein */
-  .tools-grid, .grid-container, .card-wrapper {
-    display: flex !important;
-    flex-direction: column !important;
-    grid-template-columns: 1fr !important;
-    gap: 15px !important;
-    padding: 10px !important;
-  }
-
-  /* Input fields aur Buttons full width karein */
-  input, select, textarea, button {
-    width: 100% !important;
-    max-width: 100% !important;
-    font-size: 16px !important; /* Zoom-in issue se bachne ke liye */
-  }
-
-  /* Images & Canvases responsive karein */
-  img, canvas, svg {
-    max-width: 100% !important;
-    height: auto !important;
-  }
-}
