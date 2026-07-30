@@ -472,6 +472,9 @@ function updateCounter() {
 }
 
 async function humanizeText() {
+
+    alert("Button Clicked");
+
     const input = document.getElementById("inputText");
     const output = document.getElementById("outputText");
 
