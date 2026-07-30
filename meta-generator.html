@@ -13,6 +13,16 @@
 
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* Mobile Touch Fixes */
+        button {
+            touch-action: manipulation;
+            cursor: pointer;
+            position: relative;
+            z-index: 10;
+        }
+    </style>
 </head>
 
 <body>
@@ -53,14 +63,14 @@
                 </div>
 
                 <div class="button-area" style="margin-top: 20px;">
-                    <button onclick="generateMeta()">🚀 Generate Meta Description</button>
+                    <button type="button" onclick="generateMeta(event)">🚀 Generate Meta Description</button>
                 </div>
 
-                <textarea id="result" rows="6" placeholder="Your generated meta description will appear here..."></textarea>
+                <textarea id="result" rows="6" placeholder="Your generated meta description will appear here..." readonly style="margin-top: 15px;"></textarea>
 
-                <div class="button-area">
-                    <button onclick="copyMeta()">📋 Copy Description</button>
-                    <button onclick="generateMeta()" class="btn-success">🔄 Regenerate</button>
+                <div class="button-area" style="margin-top: 15px; display: flex; gap: 10px; flex-wrap: wrap;">
+                    <button type="button" onclick="copyMeta(event)">📋 Copy Description</button>
+                    <button type="button" onclick="generateMeta(event)" class="btn-success">🔄 Regenerate</button>
                 </div>
 
                 <p id="count" style="margin-top: 10px; font-weight: bold; color: #6b7280;">Characters: 0</p>
@@ -69,7 +79,7 @@
     </main>
 
     <!-- SEO Tips Section -->
-    <section class="container shadow">
+    <section class="container shadow" style="margin-top: 30px;">
         <h2>SEO Meta Description Best Practices</h2>
         <br>
         <ul style="list-style: none; line-height: 2; padding-left: 0;">
@@ -111,25 +121,19 @@
             <div class="card" style="padding: 20px; border: 1px solid #e5e7eb; border-radius: 10px; background: #fff;">
                 <h3>🏷️ AI Title Generator</h3>
                 <p>Create catchy, click-worthy headlines in seconds.</p>
-                <a href="#" class="btn btn-outline" style="margin-top: 10px; display: inline-block;">Coming Soon</a>
+                <a href="title-generator.html" class="btn btn-primary" style="margin-top: 10px; display: inline-block;">Open Tool →</a>
             </div>
 
             <div class="card" style="padding: 20px; border: 1px solid #e5e7eb; border-radius: 10px; background: #fff;">
                 <h3>❓ AI FAQ Generator</h3>
                 <p>Generate SEO FAQs with JSON-LD schema support.</p>
-                <a href="https://aismarttools.vercel.app/faq-generator" class="btn btn-primary" style="margin-top: 10px; display: inline-block;">Open Tool →</a>
+                <a href="faq-generator.html" class="btn btn-primary" style="margin-top: 10px; display: inline-block;">Open Tool →</a>
             </div>
 
             <div class="card" style="padding: 20px; border: 1px solid #e5e7eb; border-radius: 10px; background: #fff;">
                 <h3>🖼️ AI Background Remover</h3>
                 <p>Remove backgrounds from photos instantly.</p>
                 <a href="background-remover.html" class="btn btn-primary" style="margin-top: 10px; display: inline-block;">Open Tool →</a>
-            </div>
-
-            <div class="card" style="padding: 20px; border: 1px solid #e5e7eb; border-radius: 10px; background: #fff;">
-                <h3>📦 Image Compressor</h3>
-                <p>Compress image sizes without quality loss.</p>
-                <a href="#" class="btn btn-outline" style="margin-top: 10px; display: inline-block;">Coming Soon</a>
             </div>
         </div>
     </section>
@@ -165,10 +169,10 @@
             <div class="footer-col">
                 <h3>Popular AI Tools</h3>
                 <ul>
-                    <li><a href="https://aismarttools.vercel.app/meta-generator">AI Meta Generator</a></li>
-                    <li><a href="#">YouTube Title Generator</a></li>
-                    <li><a href="https://aismarttools.vercel.app/faq-generator">AI FAQ Generator</a></li>
-                    <li><a href="#">AI Keyword Generator</a></li>
+                    <li><a href="meta-generator.html">AI Meta Generator</a></li>
+                    <li><a href="youtube-generator.html">YouTube Title Generator</a></li>
+                    <li><a href="faq-generator.html">AI FAQ Generator</a></li>
+                    <li><a href="ai-keyword-generator.html">AI Keyword Generator</a></li>
                 </ul>
             </div>
 
