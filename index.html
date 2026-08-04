@@ -7,16 +7,14 @@
     <link rel="canonical" href="https://aismarttools.vercel.app/">
     <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
 
-    <title>Best Free AI Tools Online | SEO, Writing, Image & Productivity Tools </title>
+    <title>Best Free AI Tools Online | SEO, Writing, Image & Productivity Tools</title>
 
     <meta name="description" content="Discover the best free AI tools for SEO, content writing, image editing, keyword research, meta descriptions, FAQs, hashtags, and productivity. Fast, free, and easy to use with AI Smart Tools.">
     <meta name="google-site-verification" content="WRGpDVpImF-0j7W4-R46kCK4xEcN7Ti1sP1Z_BGMXEs" />
     <meta name="keywords" content="AI tools, SEO tools, image tools, free AI tools">
 
     <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="stylesheet" href="designer.css">
     <link rel="stylesheet" href="style.css">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 
@@ -29,9 +27,8 @@
         <nav>
             <a href="https://aismarttools.vercel.app/">Home</a>
             <a href="#tools">AI Tools</a>
-            <a href="#">Categories</a>
             <a href="https://aismarttools.vercel.app/blog">Blog</a>
-            <a href="#">Contact</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
 
@@ -42,25 +39,23 @@
     </div>
 
     <section class="hero">
-        <h1>🚀 Best Free AI Tools for SEO, Content & Productivity</h1>
-        <p>
-            Generate SEO Content, Edit Images, Write Titles, Create Faqs And Boost Your Productivity With Our Free AI Tools.
-        </p>
-        <input type="text" placeholder="🔍 Search AI Tools...">
-        <br><br>
-        <a href="#tools">
-            <button type="button">Explore Tools</button>
-        </a>
+        <div class="hero-content">
+            <h1>🚀 Best Free AI Tools for SEO, Content & Productivity</h1>
+            <p>Generate SEO Content, Edit Images, Write Titles, Create FAQs And Boost Your Productivity With Our Free AI Tools.</p>
+            <input type="text" id="toolSearchInput" placeholder="🔍 Search AI Tools..." autocomplete="off" autocorrect="off" enterkeyhint="search">
+            <div class="button-area">
+                <a href="#tools"><button type="button">Explore Tools</button></a>
+            </div>
+        </div>
     </section>
 
-    <section class="featured">
-        <br><br>
+    <section class="featured" id="tools">
         <div align="center">
             <h2>🔥 Featured AI Tools 🔥</h2>
             <p>Explore our most popular free AI tools.</p>
         </div>
 
-        <section class="tools" id="tools">
+        <div class="tools">
             <div class="card">
                 <h3><a href="background-remover.html">🖼 AI Background Remover</a></h3>
                 <p>Remove image backgrounds instantly.</p>
@@ -134,18 +129,6 @@
             </div>
 
             <div class="card">
-                <h3>📢 Google Ads Headline Generator</h3>
-                <p>Generate high-converting Google Ads headlines.</p>
-                <a href="#" class="tool-btn">Coming Soon</a>
-            </div>
-
-            <div class="card">
-                <h3>📷 AI Social Media Caption Generator </h3>
-                <p>Create viral captions for Instagram and Facebook.</p>
-                <a href="#" class="tool-btn">Coming Soon</a>
-            </div>
-
-            <div class="card">
                 <h3>🎙️ AI Voice Generator</h3>
                 <p>Convert text into realistic speech with our free AI Voice Generator</p>
                 <a href="ai-voice-generator.html" class="tool-btn">Open Tool →</a>
@@ -162,130 +145,69 @@
                 <p>Rewrite sentences and paragraphs while keeping the original meaning.</p>
                 <a href="paraphrasing-tool.html" class="tool-btn">Open Tool →</a>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <br><br><br><br>
+    <section class="stats">
+        <div class="stat-card">
+            <div class="stat-icon">🚀</div>
+            <h2>50+</h2>
+            <h3>AI Tools</h3>
+            <p>Powerful AI tools for SEO, Content & Productivity.</p>
+        </div>
 
-        <section class="hero">
-            <div class="hero-content">
-                <div class="hero-icon">🤖</div>
-                <h1>Your One-Stop Hub for Free AI Tools,<br>SEO Tools, Image Tools & Productivity Tools</h1>
-                <p>Welcome to <strong>AI Smart Tools</strong>, your trusted destination for the best free AI tools, SEO tools, image tools, and online productivity solutions...</p>
-                <p>Generate <strong>SEO titles</strong>, <strong>meta descriptions</strong>, keywords, FAQs, hashtags, and AI image prompts in seconds...</p>
+        <div class="stat-card">
+            <div class="stat-icon">⭐</div>
+            <h2>100%</h2>
+            <h3>Free Forever</h3>
+            <p>No signup, no hidden charges. Unlimited free access.</p>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon">⚡</div>
+            <h2>24/7</h2>
+            <h3>Always Available</h3>
+            <p>Access our AI tools anytime, anywhere in the world.</p>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <h2>❓ Frequently Asked Questions</h2>
+        <div class="faq">
+            <details open>
+                <summary>What is AI Smart Tools?</summary>
+                <p>AI Smart Tools provides free AI, SEO, Image and Productivity tools that help creators, marketers and businesses save time.</p>
+            </details>
+
+            <details>
+                <summary>Are all AI tools free?</summary>
+                <p>Yes. Most tools are completely free to use without registration.</p>
+            </details>
+
+            <details>
+                <summary>Do I need to create an account?</summary>
+                <p>No. You can use our tools instantly without signing up.</p>
+            </details>
+        </div>
+    </section>
+
+    <footer class="footer" id="contact">
+        <div class="footer-top">
+            <div class="footer-logo">
+                <h2>🤖 <span>AI Smart</span> Tools</h2>
+                <p>Discover powerful AI tools for SEO, content creation, image editing, marketing, productivity, and business growth.</p>
             </div>
-        </section>
+        </div>
 
-        <section class="stats">
-            <div class="stat-card">
-                <div class="stat-icon">🚀</div>
-                <h2 class="counter" data-target="50">50+</h2>
-                <h3>AI Tools</h3>
-                <p>Powerful AI tools for SEO, Content & Productivity.</p>
-            </div>
+        <div class="footer-divider"></div>
 
-            <div class="stat-card">
-                <div class="stat-icon">⭐</div>
-                <h2>100%</h2>
-                <h3>Free Forever</h3>
-                <p>No signup, no hidden charges. Unlimited free access.</p>
-            </div>
+        <div class="footer-bottom">
+            <div><i class="fa-solid fa-shield-check"></i> Trusted by thousands of users worldwide</div>
+            <div>© 2026 <strong>AI Smart Tools</strong>. All Rights Reserved.</div>
+            <div>⚡ Fast • Free • Easy</div>
+        </div>
+    </footer>
 
-            <div class="stat-card">
-                <div class="stat-icon">⚡</div>
-                <h2>24/7</h2>
-                <h3>Always Available</h3>
-                <p>Access our AI tools anytime, anywhere in the world.</p>
-            </div>
-        </section>
-
-        <section class="faq-section">
-            <h2>❓ Frequently Asked Questions</h2>
-            <div class="faq">
-                <details open>
-                    <summary>What is AI Smart Tools?</summary>
-                    <p>AI Smart Tools provides free AI, SEO, Image and Productivity tools that help creators, marketers and businesses save time.</p>
-                </details>
-
-                <details>
-                    <summary>Are all AI tools free?</summary>
-                    <p>Yes. Most tools are completely free to use without registration.</p>
-                </details>
-
-                <details>
-                    <summary>Do I need to create an account?</summary>
-                    <p>No. You can use our tools instantly without signing up.</p>
-                </details>
-
-                <details>
-                    <summary>Can I use these tools for commercial work?</summary>
-                    <p>Yes, our tools can help with personal and commercial projects.</p>
-                </details>
-
-                <details>
-                    <summary>Will more AI tools be added?</summary>
-                    <p>Yes. We regularly add new AI and SEO tools to our website.</p>
-                </details>
-            </div>
-        </section>
-
-        <footer class="footer">
-            <div class="footer-top">
-                <div class="footer-logo">
-                    <h2>🤖 <span>AI Smart</span> Tools</h2>
-                    <p>Discover powerful AI tools for SEO, content creation, image editing, marketing, productivity, and business growth.</p>
-                    <div class="footer-tags">
-                        <span>100% Free</span>
-                        <span>Fast</span>
-                        <span>Easy to Use</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="footer-divider"></div>
-
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h3>AI Tools</h3>
-                    <ul>
-                        <li><i class="fa-regular fa-pen-to-square"></i> <a href="title-generator.html">AI Title Generator</a> <i class="fa-solid fa-angle-right arrow"></i></li>
-                        <li><i class="fa-regular fa-file-lines"></i> <a href="meta-generator.html">Meta Generator</a> <i class="fa-solid fa-angle-right arrow"></i></li>
-                        <li><i class="fa-solid fa-magnifying-glass"></i> <a href="ai-keyword-generator.html">Keyword Generator</a> <i class="fa-solid fa-angle-right arrow"></i></li>
-                        <li><i class="fa-brands fa-youtube"></i> <a href="youtube-generator.html">YouTube Generator</a> <i class="fa-solid fa-angle-right arrow"></i></li>
-                    </ul>
-                </div>
-
-                <div class="footer-col">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><i class="fa-regular fa-user"></i> <a href="about-us.html">About</a> <i class="fa-solid fa-angle-right arrow"></i></li>
-                        <li><i class="fa-regular fa-newspaper"></i> <a href="blog.html">Blog</a> <i class="fa-solid fa-angle-right arrow"></i></li>
-                        <li><i class="fa-solid fa-shield-halved"></i> <a href="#">Privacy Policy</a> <i class="fa-solid fa-angle-right arrow"></i></li>
-                        <li><i class="fa-regular fa-envelope"></i> <a href="#">Contact</a> <i class="fa-solid fa-angle-right arrow"></i></li>
-                    </ul>
-                </div>
-
-                <div class="footer-col follow">
-                    <h3>Follow Us</h3>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-x-twitter"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                    <p>Stay connected with us on social media for the latest AI tools and updates.</p>
-                </div>
-            </div>
-
-            <div class="footer-divider"></div>
-
-            <div class="footer-bottom">
-                <div><i class="fa-solid fa-shield-check"></i> Trusted by thousands of users worldwide</div>
-                <div>© 2026 <strong>AI Smart Tools</strong>. All Rights Reserved.</div>
-                <div>⚡ Fast • Free • Easy</div>
-            </div>
-        </footer>
-
-        <!-- Scripts Mobile Optimized -->
-        <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
