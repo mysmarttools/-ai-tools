@@ -571,3 +571,12 @@ function clearParaphrase(e) {
     if (input) input.value = "";
     if (output) output.value = "";
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("generateBtn");
+
+    if (btn) {
+        btn.addEventListener("click", generateTitle);
+        btn.addEventListener("touchstart", generateTitle);
+    }
+});
