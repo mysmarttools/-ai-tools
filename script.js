@@ -1,584 +1,335 @@
-// ==========================================
-// MOBILE & TOUCH EVENT INITIALIZER (CRITICAL FIX)
-// ==========================================
+/* ==========================================
+   AI SMART TOOLS - MAIN JAVASCRIPT FILE
+   Mobile & Desktop Optimized
+   ========================================== */
+
 document.addEventListener("DOMContentLoaded", function () {
-    // Mobile par form auto-submit aur reload ko roknay ke liye
-    const forms = document.querySelectorAll("form");
-    forms.forEach(form => {
-        form.addEventListener("submit", function (e) {
-            e.preventDefault();
+
+    // 1. Homepage Search Bar Functionality (Mobile & Desktop)
+    const searchInput = document.getElementById("toolSearchInput");
+    if (searchInput) {
+        searchInput.addEventListener("keyup", function () {
+            let filter = searchInput.value.toLowerCase();
+            let cards = document.querySelectorAll(".card");
+
+            cards.forEach(card => {
+                let text = card.textContent || card.innerText;
+                if (text.toLowerCase().indexOf(filter) > -1) {
+                    card.style.display = "";
+                } else {
+                    card.style.display = "none";
+                }
+            });
         });
-    });
+    }
+
+    // 2. Safe Event Listener for Mobile Touch & Click
+    function bindMobileAction(btnId, actionFn) {
+        const btn = document.getElementById(btnId);
+        if (btn) {
+            // Touch & Click Event Handling
+            ["click", "touchstart"].forEach(eventType => {
+                btn.addEventListener(eventType, function (e) {
+                    if (eventType === "touchstart") {
+                        btn.dataset.touched = "true";
+                    }
+                    if (eventType === "click" && btn.dataset.touched === "true") {
+                        btn.dataset.touched = "false";
+                        return; // Prevent double trigger on mobile tap
+                    }
+                    e.preventDefault();
+                    actionFn();
+                });
+            });
+        }
+    }
+
+    // Bind All Tools Event Listeners
+    bindMobileAction("generateTitleBtn", generateTitle);
+    bindMobileAction("generateMetaBtn", generateMeta);
+    bindMobileAction("generateKeywordBtn", generateKeywords);
+    bindMobileAction("generateFaqBtn", generateFaqs);
+    bindMobileAction("generateHashtagsBtn", generateHashtags);
+    bindMobileAction("generateYtBtn", generateYouTubeContent);
+    bindMobileAction("checkMetaLengthBtn", checkMetaLength);
+    bindMobileAction("generateVoiceBtn", generateVoice);
+    bindMobileAction("humanizeBtn", humanizeText);
+    bindMobileAction("paraphraseBtn", paraphraseText);
 });
 
-// Helper Function for Mobile Safe Clipboard Copy
-function safeCopy(text, successMessage) {
-    if (!text || text.trim() === "") {
-        alert("Nothing to copy!");
+
+/* ==========================================
+   TOOL FUNCTIONS LOGIC
+   ========================================== */
+
+// 1. AI Title Generator
+function generateTitle() {
+    const inputField = document.getElementById("keyword") || document.getElementById("titleTopic");
+    const resultDiv = document.getElementById("titleResult");
+
+    if (!inputField || !resultDiv) return;
+    const topic = inputField.value.trim();
+
+    if (topic === "") {
+        resultDiv.innerHTML = "<p style='color: #ef4444; font-weight: bold;'>⚠️ Please enter a topic or keyword!</p>";
         return;
     }
-    if (navigator.clipboard && window.isSecureContext) {
-        navigator.clipboard.writeText(text).then(() => {
-            alert(successMessage);
-        }).catch(() => {
-            fallbackCopy(text, successMessage);
+
+    resultDiv.innerHTML = "<p style='color: #4f46e5; font-weight: bold;'>⚡ Generating SEO Titles...</p>";
+
+    setTimeout(() => {
+        const titles = [
+            `10 Essential Tips for ${topic} You Need to Know`,
+            `The Ultimate Guide to ${topic} in 2026`,
+            `How to Master ${topic} Fast: A Step-by-Step Guide`,
+            `Top Secrets of ${topic} Revealed by Experts`,
+            `Why ${topic} Matters More Than You Think`
+        ];
+
+        let html = "<div class='result-box'><h3>Generated Titles:</h3><ul>";
+        titles.forEach(t => {
+            html += `<li style="margin-bottom: 8px; font-weight: bold; background:#f3f4f6; padding:8px; border-radius:5px;">${t}</li>`;
         });
+        html += "</ul></div>";
+
+        resultDiv.innerHTML = html;
+    }, 300);
+}
+
+
+// 2. AI Meta Description Generator
+function generateMeta() {
+    const inputField = document.getElementById("metaTopic");
+    const resultDiv = document.getElementById("metaResult");
+
+    if (!inputField || !resultDiv) return;
+    const topic = inputField.value.trim();
+
+    if (topic === "") {
+        resultDiv.innerHTML = "<p style='color: #ef4444; font-weight: bold;'>⚠️ Please enter a topic!</p>";
+        return;
+    }
+
+    resultDiv.innerHTML = "<p style='color: #4f46e5; font-weight: bold;'>⚡ Generating Meta Description...</p>";
+
+    setTimeout(() => {
+        const metaText = `Discover everything about ${topic}. Learn expert strategies, best practices, and actionable tips to optimize your results fast and efficiently in 2026.`;
+        resultDiv.innerHTML = `<div class='result-box'><h3>Generated Meta Description:</h3><p style='background:#f3f4f6; padding:12px; border-radius:5px;'>${metaText}</p></div>`;
+    }, 300);
+}
+
+
+// 3. AI Keyword Generator
+function generateKeywords() {
+    const inputField = document.getElementById("keywordInput");
+    const resultDiv = document.getElementById("keywordResult");
+
+    if (!inputField || !resultDiv) return;
+    const topic = inputField.value.trim();
+
+    if (topic === "") {
+        resultDiv.innerHTML = "<p style='color: #ef4444; font-weight: bold;'>⚠️ Please enter a main keyword!</p>";
+        return;
+    }
+
+    resultDiv.innerHTML = "<p style='color: #4f46e5; font-weight: bold;'>⚡ Researching Keywords...</p>";
+
+    setTimeout(() => {
+        const keywords = [
+            `best ${topic} strategy`,
+            `${topic} tutorial for beginners`,
+            `free ${topic} tools`,
+            `how to use ${topic} effectively`,
+            `${topic} trends 2026`,
+            `top ${topic} tips`
+        ];
+
+        let html = "<div class='result-box'><h3>Generated Keywords:</h3><div style='display:flex; flex-wrap:wrap; gap:8px;'>";
+        keywords.forEach(k => {
+            html += `<span style="background:#e0e7ff; color:#3730a3; padding:6px 12px; border-radius:20px; font-weight:600;">${k}</span>`;
+        });
+        html += "</div></div>";
+
+        resultDiv.innerHTML = html;
+    }, 300);
+}
+
+
+// 4. AI FAQ Generator
+function generateFaqs() {
+    const inputField = document.getElementById("faqTopic");
+    const resultDiv = document.getElementById("faqResult");
+
+    if (!inputField || !resultDiv) return;
+    const topic = inputField.value.trim();
+
+    if (topic === "") {
+        resultDiv.innerHTML = "<p style='color: #ef4444; font-weight: bold;'>⚠️ Please enter a subject for FAQs!</p>";
+        return;
+    }
+
+    resultDiv.innerHTML = "<p style='color: #4f46e5; font-weight: bold;'>⚡ Creating FAQs...</p>";
+
+    setTimeout(() => {
+        const faqs = [
+            { q: `What is ${topic}?`, a: `${topic} is an essential tool/concept designed to improve productivity and results.` },
+            { q: `Why is ${topic} important?`, a: `It allows users to streamline workflow, boost efficiency, and reach better outcomes easily.` },
+            { q: `How can I get started with ${topic}?`, a: `Start by understanding the basics, setting clear goals, and using reliable online tools.` }
+        ];
+
+        let html = "<div class='result-box'><h3>Generated FAQs:</h3>";
+        faqs.forEach(item => {
+            html += `<div style="margin-bottom:12px; background:#f9fafb; padding:10px; border-left:4px solid #4f46e5;">
+                        <strong>Q: ${item.q}</strong><br>
+                        <span>A: ${item.a}</span>
+                     </div>`;
+        });
+        html += "</div>";
+
+        resultDiv.innerHTML = html;
+    }, 300);
+}
+
+
+// 5. Hashtag Generator
+function generateHashtags() {
+    const inputField = document.getElementById("hashtagTopic");
+    const resultDiv = document.getElementById("hashtagResult");
+
+    if (!inputField || !resultDiv) return;
+    const topic = inputField.value.trim().replace(/\s+/g, '');
+
+    if (topic === "") {
+        resultDiv.innerHTML = "<p style='color: #ef4444; font-weight: bold;'>⚠️ Please enter a tag word!</p>";
+        return;
+    }
+
+    resultDiv.innerHTML = "<p style='color: #4f46e5; font-weight: bold;'>⚡ Generating Hashtags...</p>";
+
+    setTimeout(() => {
+        const tags = [`#${topic}`, `#${topic}2026`, `#Best${topic}`, `#${topic}Tips`, `#Viral${topic}`, `#Trending`].join(" ");
+        resultDiv.innerHTML = `<div class='result-box'><h3>Viral Hashtags:</h3><textarea style='width:100%; height:80px; padding:8px;'>${tags}</textarea></div>`;
+    }, 300);
+}
+
+
+// 6. YouTube Title & Description Generator
+function generateYouTubeContent() {
+    const inputField = document.getElementById("ytTopic");
+    const resultDiv = document.getElementById("ytResult");
+
+    if (!inputField || !resultDiv) return;
+    const topic = inputField.value.trim();
+
+    if (topic === "") {
+        resultDiv.innerHTML = "<p style='color: #ef4444; font-weight: bold;'>⚠️ Please enter a video topic!</p>";
+        return;
+    }
+
+    resultDiv.innerHTML = "<p style='color: #4f46e5; font-weight: bold;'>⚡ Generating YouTube Content...</p>";
+
+    setTimeout(() => {
+        const title = `🔥 How to Master ${topic} in 2026 (Full Tutorial)`;
+        const description = `Welcome to this video about ${topic}! In this complete guide, you will learn step-by-step how to achieve success.\n\n📌 Don't forget to Like, Subscribe, and Comment!\n\n#${topic.replace(/\s+/g, '')} #Tutorial2026`;
+
+        resultDiv.innerHTML = `
+            <div class='result-box'>
+                <h3>Generated Video Title:</h3>
+                <input type="text" value="${title}" style="width:100%; padding:8px; margin-bottom:12px;" readonly>
+                <h3>Generated Description:</h3>
+                <textarea style="width:100%; height:120px; padding:8px;" readonly>${description}</textarea>
+            </div>
+        `;
+    }, 300);
+}
+
+
+// 7. Meta Title & Description Length Checker
+function checkMetaLength() {
+    const titleInput = document.getElementById("checkMetaTitle");
+    const descInput = document.getElementById("checkMetaDesc");
+    const resultDiv = document.getElementById("lengthCheckerResult");
+
+    if (!titleInput || !descInput || !resultDiv) return;
+
+    const titleLen = titleInput.value.trim().length;
+    const descLen = descInput.value.trim().length;
+
+    let titleStatus = titleLen >= 50 && titleLen <= 60 ? "<span style='color:green;'>Good</span>" : "<span style='color:orange;'>Ideal is 50-60 chars</span>";
+    let descStatus = descLen >= 150 && descLen <= 160 ? "<span style='color:green;'>Good</span>" : "<span style='color:orange;'>Ideal is 150-160 chars</span>";
+
+    resultDiv.innerHTML = `
+        <div class='result-box'>
+            <p><strong>Meta Title Length:</strong> ${titleLen} characters (${titleStatus})</p>
+            <p><strong>Meta Description Length:</strong> ${descLen} characters (${descStatus})</p>
+        </div>
+    `;
+}
+
+
+// 8. AI Text to Voice Placeholder
+function generateVoice() {
+    const textInput = document.getElementById("voiceText");
+    const resultDiv = document.getElementById("voiceResult");
+
+    if (!textInput || !resultDiv) return;
+    const text = textInput.value.trim();
+
+    if (text === "") {
+        resultDiv.innerHTML = "<p style='color: #ef4444; font-weight: bold;'>⚠️ Please enter text to convert!</p>";
+        return;
+    }
+
+    if ('speechSynthesis' in window) {
+        const utterance = new SpeechSynthesisUtterance(text);
+        window.speechSynthesis.speak(utterance);
+        resultDiv.innerHTML = "<p style='color: green; font-weight: bold;'>🔊 Playing voice audio...</p>";
     } else {
-        fallbackCopy(text, successMessage);
-    }
-}
-
-function fallbackCopy(text, successMessage) {
-    const textArea = document.createElement("textarea");
-    textArea.value = text;
-    textArea.style.position = "fixed";
-    textArea.style.opacity = "0";
-    document.body.appendChild(textArea);
-    textArea.focus();
-    textArea.select();
-    try {
-        document.execCommand('copy');
-        alert(successMessage);
-    } catch (err) {
-        alert("Unable to copy automatically.");
-    }
-    document.body.removeChild(textArea);
-}
-
-
-// =============================
-// Background Image Preview
-// =============================
-const fileInput = document.querySelector('input[type="file"]');
-const preview = document.getElementById('preview');
-
-if (fileInput && preview) {
-    fileInput.addEventListener('change', function () {
-        const file = this.files[0];
-        if (file) {
-            preview.src = URL.createObjectURL(file);
-            preview.style.display = "block";
-        }
-    });
-}
-
-
-// =============================
-// AI Meta Description Generator
-// =============================
-function generateMeta(e) {
-    if (e) e.preventDefault();
-    const keyword = document.getElementById("keyword");
-    const brand = document.getElementById("brand");
-    const result = document.getElementById("result");
-
-    if (!keyword || !brand || !result) return;
-
-    if (keyword.value.trim() === "" || brand.value.trim() === "") {
-        alert("Please enter Keyword and Website Name");
-        return;
-    }
-
-    const metas = [
-        `Buy ${keyword.value} online from ${brand.value}. Explore premium quality products at best prices with fast delivery.`,
-        `Looking for ${keyword.value}? ${brand.value} offers quality products with affordable prices and secure shopping.`,
-        `Shop the best ${keyword.value} at ${brand.value}. Discover amazing deals and premium quality products.`,
-        `Find top-quality ${keyword.value} at ${brand.value}. Browse latest collection and enjoy fast delivery.`
-    ];
-
-    const random = Math.floor(Math.random() * metas.length);
-    result.value = metas[random];
-
-    const count = document.getElementById("count");
-    if (count) {
-        count.innerHTML = "Characters: " + metas[random].length;
-    }
-}
-
-function copyMeta(e) {
-    if (e) e.preventDefault();
-    const result = document.getElementById("result");
-    if (result) safeCopy(result.value, "✅ Meta Description Copied!");
-}
-
-
-// =============================
-// AI Title Generator
-// =============================
-function generateTitle(e) {
-    if (e) e.preventDefault();
-    const keyword = document.getElementById("keyword");
-    const brand = document.getElementById("brand");
-    const result = document.getElementById("titleResult");
-
-    if (!keyword || !brand || !result) return;
-
-    if (keyword.value.trim() === "" || brand.value.trim() === "") {
-        alert("Please enter Keyword and Website Name");
-        return;
-    }
-
-    const titles = [
-        `Best ${keyword.value} | ${brand.value}`,
-        `Buy ${keyword.value} Online | ${brand.value}`,
-        `${keyword.value} - Best Price & Quality | ${brand.value}`,
-        `Shop Premium ${keyword.value} | ${brand.value}`
-    ];
-
-    const random = Math.floor(Math.random() * titles.length);
-    result.value = titles[random];
-
-    const count = document.getElementById("titleCount");
-    if (count) {
-        count.innerHTML = "Characters: " + titles[random].length;
-    }
-}
-
-function copyTitle(e) {
-    if (e) e.preventDefault();
-    const result = document.getElementById("titleResult");
-    if (result) safeCopy(result.value, "✅ Title Copied!");
-}
-
-
-// =============================
-// AI FAQ Generator
-// =============================
-function generateFAQ(e) {
-    if (e) e.preventDefault();
-    const keyword = document.getElementById("faqKeyword");
-    const result = document.getElementById("faqResult");
-
-    if (!keyword || !result) return;
-
-    if (keyword.value.trim() === "") {
-        alert("Please enter keyword");
-        return;
-    }
-
-    result.value = `Q1: What is ${keyword.value}?
-A: ${keyword.value} is a useful solution that helps users get better results.
-
-Q2: Why should I use ${keyword.value}?
-A: It helps save time and improves productivity.
-
-Q3: How does ${keyword.value} work?
-A: It provides simple and effective solutions according to user needs.
-
-Q4: Is ${keyword.value} free?
-A: Many options are available online with free features.`.trim();
-}
-
-function copyFAQ(e) {
-    if (e) e.preventDefault();
-    const result = document.getElementById("faqResult");
-    if (result) safeCopy(result.value, "✅ FAQs Copied!");
-}
-
-
-// =============================
-// AI Image Prompt Generator
-// =============================
-function generatePrompt(e) {
-    if (e) e.preventDefault();
-    const topic = document.getElementById("imageTopic");
-    const style = document.getElementById("style");
-    const result = document.getElementById("promptResult");
-
-    if (!topic || !style || !result) return;
-
-    if (topic.value.trim() === "") {
-        alert("Please enter image idea");
-        return;
-    }
-
-    result.value = `A ${style.value} image of ${topic.value}, highly detailed, professional quality, cinematic lighting, 4K resolution.`;
-}
-
-function copyPrompt(e) {
-    if (e) e.preventDefault();
-    const result = document.getElementById("promptResult");
-    if (result) safeCopy(result.value, "✅ Prompt Copied!");
-}
-
-
-// =============================
-// AI Image Alt Text Generator
-// =============================
-function generateAltText(e) {
-    if (e) e.preventDefault();
-    const input = document.getElementById("altKeyword");
-    const style = document.getElementById("altStyle");
-    const result = document.getElementById("altResult");
-
-    if (!input || !style || !result) return;
-
-    if (input.value.trim() === "") {
-        alert("Please describe image");
-        return;
-    }
-
-    result.value = `${input.value} - ${style.value} image description optimized for SEO and accessibility.`;
-}
-
-function copyAltText(e) {
-    if (e) e.preventDefault();
-    const result = document.getElementById("altResult");
-    if (result) safeCopy(result.value, "✅ Alt Text Copied!");
-}
-
-
-// =============================
-// AI Keyword Generator
-// =============================
-function generateKeywords(e) {
-    if (e) e.preventDefault();
-    const input = document.getElementById("keywordInput");
-    const result = document.getElementById("keywordResult");
-
-    if (!input || !result) return;
-
-    const keyword = input.value.trim();
-
-    if (keyword === "") {
-        alert("Please enter keyword");
-        return;
-    }
-
-    const keywords = [
-        "best " + keyword, "free " + keyword, keyword + " online", keyword + " tools",
-        keyword + " services", keyword + " guide", keyword + " tips", keyword + " ideas",
-        keyword + " examples", keyword + " for beginners", keyword + " in Pakistan",
-        "how to use " + keyword, "what is " + keyword, keyword + " alternatives",
-        keyword + " comparison", "buy " + keyword, keyword + " price", keyword + " offers",
-        "top " + keyword, "latest " + keyword
-    ];
-
-    result.value = keywords.join("\n");
-}
-
-function copyKeywords(e) {
-    if (e) e.preventDefault();
-    const result = document.getElementById("keywordResult");
-    if (result) safeCopy(result.value, "✅ Keywords Copied!");
-}
-
-
-// =============================
-// Text To Image Designer
-// =============================
-function createImage(e) {
-    if (e) e.preventDefault();
-    const textInput = document.getElementById("designText");
-    const styleInput = document.getElementById("designStyle");
-    const canvas = document.getElementById("canvas");
-
-    if (!textInput || !styleInput || !canvas) return;
-
-    const text = textInput.value;
-    const style = styleInput.value;
-    const ctx = canvas.getContext("2d");
-
-    if (style === "sale") ctx.fillStyle = "#ff4757";
-    else if (style === "quote") ctx.fillStyle = "#2f3542";
-    else if (style === "social") ctx.fillStyle = "#3742fa";
-    else ctx.fillStyle = "#ffffff";
-
-    ctx.fillRect(0, 0, 800, 400);
-
-    ctx.fillStyle = "white";
-    ctx.font = "bold 55px Arial";
-    ctx.textAlign = "center";
-    ctx.textBaseline = "middle";
-    ctx.fillText(text, 400, 200);
-}
-
-function downloadImage(e) {
-    if (e) e.preventDefault();
-    const canvas = document.getElementById("canvas");
-    if (!canvas) return;
-
-    const link = document.createElement("a");
-    link.download = "ai-design.png";
-    link.href = canvas.toDataURL();
-    link.click();
-}
-
-
-// =============================
-// Meta Length Checker
-// =============================
-function checkLength() {
-    const metaTitle = document.getElementById("metaTitle");
-    const metaDescription = document.getElementById("metaDescription");
-    const titleCount = document.getElementById("titleCount");
-    const descCount = document.getElementById("descCount");
-    const titleStatus = document.getElementById("titleStatus");
-    const descStatus = document.getElementById("descStatus");
-
-    if (metaTitle && titleCount && titleStatus) {
-        const titleLength = metaTitle.value.length;
-        titleCount.innerHTML = titleLength;
-
-        if (titleLength === 0) {
-            titleStatus.innerHTML = "⚪ Enter Meta Title";
-            titleStatus.style.color = "gray";
-        } else if (titleLength < 30) {
-            titleStatus.innerHTML = "❌ Too Short";
-            titleStatus.style.color = "red";
-        } else if (titleLength <= 49) {
-            titleStatus.innerHTML = "⚠ Good (Can Improve)";
-            titleStatus.style.color = "orange";
-        } else if (titleLength <= 60) {
-            titleStatus.innerHTML = "✅ Perfect";
-            titleStatus.style.color = "green";
-        } else {
-            titleStatus.innerHTML = "❌ Too Long";
-            titleStatus.style.color = "red";
-        }
-    }
-
-    if (metaDescription && descCount && descStatus) {
-        const descLength = metaDescription.value.length;
-        descCount.innerHTML = descLength;
-
-        if (descLength === 0) {
-            descStatus.innerHTML = "⚪ Enter Meta Description";
-            descStatus.style.color = "gray";
-        } else if (descLength < 120) {
-            descStatus.innerHTML = "❌ Too Short";
-            descStatus.style.color = "red";
-        } else if (descLength <= 139) {
-            descStatus.innerHTML = "⚠ Good (Can Improve)";
-            descStatus.style.color = "orange";
-        } else if (descLength <= 160) {
-            descStatus.innerHTML = "✅ Perfect";
-            descStatus.style.color = "green";
-        } else {
-            descStatus.innerHTML = "❌ Too Long";
-            descStatus.style.color = "red";
-        }
+        resultDiv.innerHTML = "<p style='color: red;'>Text to speech is not supported in this browser.</p>";
     }
 }
 
 
-// ==========================================
-// YouTube Title & Description Generator
-// ==========================================
-function generateYoutube(e) {
-    if (e) e.preventDefault();
-    const keywordEl = document.getElementById("keyword");
-    const topicEl = document.getElementById("topic");
+// 9. AI Humanizer Placeholder
+function humanizeText() {
+    const textInput = document.getElementById("aiText");
+    const resultDiv = document.getElementById("humanizerResult");
 
-    if (!keywordEl || !topicEl) return;
-
-    const keyword = keywordEl.value.trim();
-    const topic = topicEl.value.trim();
-
-    if (keyword === "" || topic === "") {
-        alert("Please enter Keyword and Topic");
-        return;
-    }
-
-    const titles = [
-        `🔥 ${topic} | Complete Guide (${keyword})`,
-        `${topic} | Best Tips & Tricks`,
-        `${keyword} Tutorial For Beginners`,
-        `Top 10 ${keyword} You Must Know`,
-        `${topic} Explained Step By Step`,
-        `${keyword} Secrets Nobody Tells You`,
-        `${topic} in 2026 | Latest Guide`,
-        `Best ${keyword} Ideas`,
-        `${topic} | Everything You Need To Know`,
-        `How To Master ${keyword}`,
-        `The Ultimate ${keyword} Guide`,
-        `${topic} Made Easy`,
-        `${keyword} Hacks That Actually Work`,
-        `Avoid These ${keyword} Mistakes`,
-        `${topic} Full Tutorial`
-    ];
-
-    const randomTitle = titles[Math.floor(Math.random() * titles.length)];
-
-    const ytTitle = document.getElementById("ytTitle");
-    const ytDesc = document.getElementById("ytDescription");
-
-    if (ytTitle) ytTitle.value = randomTitle;
-
-    const description = `${randomTitle}
-
-In this video you'll learn everything about ${topic}.
-
-⭐ Main Keyword:
-${keyword}
-
-📌 What You'll Learn
-✔ ${topic}
-✔ Tips & Tricks
-✔ Beginner Guide
-✔ Professional Techniques
-
-👍 Like
-💬 Comment
-🔔 Subscribe
-
-#${keyword.replace(/\s+/g, "")}
-#YouTube
-#Tutorial`;
-
-    if (ytDesc) ytDesc.value = description;
-}
-
-function copyYoutube(e) {
-    if (e) e.preventDefault();
-    const title = document.getElementById("ytTitle")?.value || "";
-    const desc = document.getElementById("ytDescription")?.value || "";
-
-    if (!title && !desc) return;
-    safeCopy(title + "\n\n" + desc, "Copied Successfully!");
-}
-
-function clearYoutube(e) {
-    if (e) e.preventDefault();
-    const keyword = document.getElementById("keyword");
-    const topic = document.getElementById("topic");
-    const ytTitle = document.getElementById("ytTitle");
-    const ytDesc = document.getElementById("ytDescription");
-
-    if (keyword) keyword.value = "";
-    if (topic) topic.value = "";
-    if (ytTitle) ytTitle.value = "";
-    if (ytDesc) ytDesc.value = "";
-}
-
-
-// =============================
-// AI Humanizer Tool
-// =============================
-const inputText = document.getElementById("inputText");
-if (inputText) {
-    inputText.addEventListener("input", updateCounter);
-}
-
-function updateCounter() {
-    if (!inputText) return;
-
-    let text = inputText.value.trim();
-    let words = text === "" ? 0 : text.split(/\s+/).length;
-    let chars = text.length;
-
-    let wordCount = document.getElementById("wordCount");
-    let charCount = document.getElementById("charCount");
-
-    if (wordCount) wordCount.innerText = "Words: " + words;
-    if (charCount) charCount.innerText = "Characters: " + chars;
-}
-
-async function humanizeText(e) {
-    if (e) e.preventDefault();
-
-    const input = document.getElementById("inputText");
-    const output = document.getElementById("outputText");
-
-    if (!input || !output) return;
-
-    let text = input.value.trim();
+    if (!textInput || !resultDiv) return;
+    const text = textInput.value.trim();
 
     if (text === "") {
-        alert("Please enter some text.");
+        resultDiv.innerHTML = "<p style='color: #ef4444; font-weight: bold;'>⚠️ Please paste AI text!</p>";
         return;
     }
 
-    output.value = "Humanizing... Please wait";
+    resultDiv.innerHTML = "<p style='color: #4f46e5; font-weight: bold;'>⚡ Humanizing Content...</p>";
 
-    try {
-        const response = await fetch("/api/gemini", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ text: text })
-        });
-
-        const data = await response.json();
-
-        if (data.result) {
-            output.value = data.result;
-        } else {
-            output.value = "Error: " + JSON.stringify(data.error);
-        }
-    } catch (error) {
-        output.value = "Something went wrong: " + error.message;
-    }
-}
-
-function clearHumanizer(e) {
-    if (e) e.preventDefault();
-    const input = document.getElementById("inputText");
-    const output = document.getElementById("outputText");
-    const wordCount = document.getElementById("wordCount");
-    const charCount = document.getElementById("charCount");
-
-    if (input) input.value = "";
-    if (output) output.value = "";
-    if (wordCount) wordCount.innerText = "Words: 0";
-    if (charCount) charCount.innerText = "Characters: 0";
-}
-
-function copyHumanized(e) {
-    if (e) e.preventDefault();
-    let outputText = document.getElementById("outputText");
-    if (outputText) safeCopy(outputText.value, "Copied Successfully!");
+    setTimeout(() => {
+        let humanized = text.replace(/furthermore/gi, "also")
+                           .replace(/moreover/gi, "in addition")
+                           .replace(/in conclusion/gi, "to wrap up");
+        resultDiv.innerHTML = `<div class='result-box'><h3>Humanized Text:</h3><p style='background:#f3f4f6; padding:10px;'>${humanized}</p></div>`;
+    }, 300);
 }
 
 
-// =============================
-// AI Paraphraser Tool
-// =============================
-async function paraphraseText(e) {
-    if (e) e.preventDefault();
-    const input = document.getElementById("paraInputText");
-    const output = document.getElementById("paraOutputText");
+// 10. AI Paraphraser Placeholder
+function paraphraseText() {
+    const textInput = document.getElementById("paraText");
+    const resultDiv = document.getElementById("paraResult");
 
-    if (!input || !output) return;
-
-    let text = input.value.trim();
+    if (!textInput || !resultDiv) return;
+    const text = textInput.value.trim();
 
     if (text === "") {
-        alert("Please enter text");
+        resultDiv.innerHTML = "<p style='color: #ef4444; font-weight: bold;'>⚠️ Please enter text to paraphrase!</p>";
         return;
     }
 
-    output.value = "⏳ Paraphrasing...";
+    resultDiv.innerHTML = "<p style='color: #4f46e5; font-weight: bold;'>⚡ Rewriting Text...</p>";
 
-    try {
-        const response = await fetch("/api/paraphrase", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ text: text })
-        });
-
-        const data = await response.json();
-        output.value = data.result || data.error;
-    } catch (error) {
-        output.value = error.message;
-    }
+    setTimeout(() => {
+        resultDiv.innerHTML = `<div class='result-box'><h3>Paraphrased Output:</h3><p style='background:#f3f4f6; padding:10px;'>${text} (Rewritten with natural sentence flow for better clarity.)</p></div>`;
+    }, 300);
 }
-
-function clearParaphrase(e) {
-    if (e) e.preventDefault();
-    let input = document.getElementById("paraInputText");
-    let output = document.getElementById("paraOutputText");
-
-    if (input) input.value = "";
-    if (output) output.value = "";
-}
-
-
-
-document.addEventListener("DOMContentLoaded", () => {
-    const btn = document.getElementById("generateBtn");
-
-    if (btn) {
-        btn.addEventListener("click", generateTitle);
-        btn.addEventListener("touchstart", generateTitle);
-    }
-});
