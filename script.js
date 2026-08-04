@@ -580,3 +580,11 @@ function generateTitle(event) {
     // const input = document.getElementById('...');
     // fetch(...)...
 }
+
+// Mobile touch & click support binding
+const btn = document.querySelector('button'); // ya document.getElementById('your-button-id')
+if (btn) {
+    btn.addEventListener('touchstart', function(e) {
+        generateTitle(e);
+    }, {passive: true});
+}
