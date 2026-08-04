@@ -572,13 +572,11 @@ function clearParaphrase(e) {
     if (output) output.value = "";
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll("button[onclick*='generateTitle']").forEach(btn => {
-        btn.removeAttribute("onclick");
+function generateTitle(event) {
+    // 1. Sab se pehle yeh line add karein
+    alert("Mobile Touch Working!"); 
 
-        btn.addEventListener("click", generateTitle);
-        btn.addEventListener("touchstart", generateTitle, {
-            passive: true
-        });
-    });
-});
+    // 2. Iske niche aapka baaqi purana code waise hi rahega:
+    // const input = document.getElementById('...');
+    // fetch(...)...
+}
