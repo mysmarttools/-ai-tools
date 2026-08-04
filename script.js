@@ -573,18 +573,7 @@ function clearParaphrase(e) {
 }
 
 function generateTitle(event) {
-    // 1. Sab se pehle yeh line add karein
-    alert("Mobile Touch Working!"); 
-
-    // 2. Iske niche aapka baaqi purana code waise hi rahega:
-    // const input = document.getElementById('...');
-    // fetch(...)...
-}
-
-// Mobile touch & click support binding
-const btn = document.querySelector('button'); // ya document.getElementById('your-button-id')
-if (btn) {
-    btn.addEventListener('touchstart', function(e) {
-        generateTitle(e);
-    }, {passive: true});
-}
+   document.getElementById('your-form-id').addEventListener('submit', function(e) {
+    e.preventDefault(); // Stop page reload on mobile
+    generateTitles();   // Main function
+});
