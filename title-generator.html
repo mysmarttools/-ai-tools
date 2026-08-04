@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Header / Navbar Section -->
-    
+
     <title>Best AI Meta Title Generator | AI Smart Tools</title>
 
     <link rel="canonical" href="https://aismarttools.vercel.app/title-generator">
@@ -15,19 +14,19 @@
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="style.css">
 </head>
-<header>
+
+<body>
+
+    <!-- Header / Navbar Section (Now inside body) -->
+    <header>
         <div>
             <a href="https://aismarttools.vercel.app/" class="logo">🤖 AI Smart Tools</a>
             <nav>
                 <a href="https://aismarttools.vercel.app/">Home</a>
-                
             </nav>
         </div>
     </header>
 
-<body>
-
-    
     <!-- Announcement Bar -->
     <div class="announcement-bar">
         <div class="announcement-track">
@@ -47,15 +46,14 @@
                 <input id="brand" type="text" placeholder="Website / Brand Name (e.g. TechInsights)" style="margin-top: 15px;" />
 
                 <div class="button-area" style="margin-top: 20px; text-align: center;">
-           
-               <button onclick="generateTitle()">🚀 Generate Meta Title</button>
+                    <button type="button" onclick="generateTitle()">🚀 Generate Meta Title</button>
                 </div>
 
                 <textarea id="titleResult" rows="4" placeholder="Your generated Meta Title will appear here..."></textarea>
 
                 <div class="button-area" style="text-align: center;">
-                    <button onclick="copyTitle()">📋 Copy Title</button>
-                    <button onclick="generateTitle()" class="btn-success">🔄 Regenerate</button>
+                    <button type="button" onclick="copyTitle()">📋 Copy Title</button>
+                    <button type="button" onclick="generateTitle()" class="btn-success">🔄 Regenerate</button>
                 </div>
 
                 <p id="titleCount" style="margin-top: 10px; text-align: center; font-weight: bold; color: #6b7280;">Characters: 0</p>
