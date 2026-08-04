@@ -572,8 +572,13 @@ function clearParaphrase(e) {
     if (output) output.value = "";
 }
 
-function generateTitle(event) {
-   document.getElementById('your-form-id').addEventListener('submit', function(e) {
-    e.preventDefault(); // Stop page reload on mobile
-    generateTitles();   // Main function
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("generateBtn");
+
+    if (btn) {
+        btn.addEventListener("click", generateTitle);
+        btn.addEventListener("touchstart", generateTitle);
+    }
 });
