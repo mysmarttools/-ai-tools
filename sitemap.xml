@@ -1,119 +1,125 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <!-- Homepage -->
     <url>
         <loc>https://aismarttools.vercel.app/</loc>
-        <lastmod>2026-07-27</lastmod>
+        <lastmod>2026-08-04</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.00</priority>
     </url>
+
+    <!-- AI Tools Pages -->
     <url>
-        <loc>https://aismarttools.vercel.app/ai-keyword-generator</loc>
-        <lastmod>2026-07-27</lastmod>
-        <changefreq>daily</changefreq>
+        <loc>https://aismarttools.vercel.app/ai-keyword-generator.html</loc>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>weekly</changefreq>
         <priority>0.90</priority>
     </url>
 
     <url>
-        <loc>https://aismarttools.vercel.app/background-remover</loc>
-        <lastmod>2026-07-27</lastmod>
-        <changefreq>daily</changefreq>
+        <loc>https://aismarttools.vercel.app/background-remover.html</loc>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>weekly</changefreq>
         <priority>0.90</priority>
     </url>
 
     <url>
-        <loc>https://aismarttools.vercel.app/faq-generator</loc>
-        <lastmod>2026-07-27</lastmod>
-        <changefreq>daily</changefreq>
+        <loc>https://aismarttools.vercel.app/faq-generator.html</loc>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
 
     <url>
-        <loc>https://aismarttools.vercel.app/hashtag-generator</loc>
-        <lastmod>2026-07-27</lastmod>
-        <changefreq>daily</changefreq>
+        <loc>https://aismarttools.vercel.app/hashtag-generator.html</loc>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
 
     <url>
-        <loc>https://aismarttools.vercel.app/image-prompt-generator</loc>
-        <lastmod>2026-07-27</lastmod>
-        <changefreq>daily</changefreq>
+        <loc>https://aismarttools.vercel.app/image-prompt-generator.html</loc>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>weekly</changefreq>
         <priority>0.90</priority>
     </url>
 
     <url>
-        <loc>https://aismarttools.vercel.app/meta-generator</loc>
-        <lastmod>2026-07-27</lastmod>
-        <changefreq>daily</changefreq>
+        <loc>https://aismarttools.vercel.app/meta-generator.html</loc>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>weekly</changefreq>
         <priority>0.90</priority>
     </url>
 
     <url>
-        <loc>https://aismarttools.vercel.app/meta-length-checker</loc>
-        <lastmod>2026-07-27</lastmod>
-        <changefreq>daily</changefreq>
+        <loc>https://aismarttools.vercel.app/meta-length-checker.html</loc>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
 
     <url>
-        <loc>https://aismarttools.vercel.app/text-image-designer-pro</loc>
-        <lastmod>2026-07-27</lastmod>
-        <changefreq>daily</changefreq>
+        <loc>https://aismarttools.vercel.app/text-image-designer-pro.html</loc>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>weekly</changefreq>
         <priority>0.90</priority>
     </url>
 
     <url>
-        <loc>https://aismarttools.vercel.app/title-generator</loc>
-        <lastmod>2026-07-27</lastmod>
-        <changefreq>daily</changefreq>
+        <loc>https://aismarttools.vercel.app/title-generator.html</loc>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>weekly</changefreq>
         <priority>0.90</priority>
     </url>
 
     <url>
-        <loc>https://aismarttools.vercel.app/youtube-generator</loc>
-        <lastmod>2026-07-27</lastmod>
-        <changefreq>daily</changefreq>
+        <loc>https://aismarttools.vercel.app/youtube-generator.html</loc>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>weekly</changefreq>
         <priority>0.90</priority>
     </url>
 
     <url>
-        <loc>https://aismarttools.vercel.app/ai-voice-generator</loc>
-        <lastmod>2026-07-27</lastmod>
-        <changefreq>daily</changefreq>
+        <loc>https://aismarttools.vercel.app/ai-voice-generator.html</loc>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>weekly</changefreq>
         <priority>0.90</priority>
     </url>
 
     <url>
-        <loc>https://aismarttools.vercel.app/paraphrasing-tool</loc>
-        <lastmod>2026-07-27</lastmod>
-        <changefreq>daily</changefreq>
+        <loc>https://aismarttools.vercel.app/paraphrasing-tool.html</loc>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>weekly</changefreq>
         <priority>0.90</priority>
     </url>
 
     <url>
-        <loc>https://aismarttools.vercel.app/ai-humanizer</loc>
-        <lastmod>2026-07-27</lastmod>
-        <changefreq>daily</changefreq>
+        <loc>https://aismarttools.vercel.app/ai-humanizer.html</loc>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>weekly</changefreq>
         <priority>0.90</priority>
     </url>
+
+    <!-- Information & Blog Pages -->
     <url>
-        <loc>https://aismarttools.vercel.app/about-us</loc>
-        <lastmod>2026-07-27</lastmod>
-        <changefreq>daily</changefreq>
+        <loc>https://aismarttools.vercel.app/about-us.html</loc>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.70</priority>
     </url>
 
     <url>
         <loc>https://aismarttools.vercel.app/blog/</loc>
-        <lastmod>2026-07-27</lastmod>
+        <lastmod>2026-08-04</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.90</priority>
     </url>
 
     <url>
-        <loc>https://aismarttools.vercel.app/blog/best-free-ai-tools-2026</loc>
-        <lastmod>2026-07-27</lastmod>
-        <changefreq>daily</changefreq>
+        <loc>https://aismarttools.vercel.app/blog/best-free-ai-tools-2026.html</loc>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.80</priority>
     </url>
 
