@@ -1,5 +1,5 @@
 /* ==========================================
-   AI SMART TOOLS - ORIGINAL CLEAN DESIGN
+   AI SMART TOOLS - ORIGINAL CLEAN LAYOUT
    ========================================== */
 
 * {
@@ -89,12 +89,12 @@ nav a:hover {
     font-size: 1.05rem;
 }
 
-/* Mobile-Safe Input Field */
+/* Inputs & Textareas */
 input[type="text"], textarea {
     width: 100%;
     max-width: 500px;
     padding: 14px 18px;
-    font-size: 16px !important; /* Mobile zoom fix */
+    font-size: 16px !important;
     border: 1px solid #ccc;
     border-radius: 6px;
     outline: none;
@@ -107,7 +107,6 @@ input[type="text"]:focus, textarea:focus {
 
 /* Buttons */
 button, .tool-btn {
-    touch-action: manipulation;
     cursor: pointer;
     background-color: #000000;
     color: #ffffff;
@@ -125,7 +124,7 @@ button:hover, .tool-btn:hover {
     background-color: #333333;
 }
 
-/* Featured Tools Grid (Original Card Style) */
+/* Featured Tools Grid */
 .featured {
     padding: 50px 20px;
     max-width: 1200px;
@@ -245,7 +244,7 @@ footer {
     gap: 10px;
 }
 
-/* Result Output Box */
+/* Output Box */
 .result-box {
     background: #fafafa;
     border: 1px solid #ddd;
@@ -255,7 +254,7 @@ footer {
     text-align: left;
 }
 
-/* Responsive Mobile Layout */
+/* Mobile Adjustments */
 @media (max-width: 600px) {
     header {
         flex-direction: column;
