@@ -1,10 +1,10 @@
 /* ==========================================
-   AI SMART TOOLS - MAIN SCRIPT (FIXED)
+   AI SMART TOOLS - SCRIPT FILE
    ========================================== */
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    // 1. Homepage Search Bar Filter (Desktop + Mobile)
+    // 1. Homepage Search Bar Filter
     const searchInput = document.getElementById("toolSearchInput");
     if (searchInput) {
         searchInput.addEventListener("keyup", function () {
@@ -22,28 +22,29 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // 2. Button Event Click Bindings
+    // 2. Safe Event Binding for Buttons
+    function bindClick(btnId, actionFn) {
+        const btn = document.getElementById(btnId);
+        if (btn) {
+            btn.addEventListener("click", function (e) {
+                e.preventDefault();
+                actionFn();
+            });
+        }
+    }
+
+    // Bind Tools
     bindClick("generateTitleBtn", generateTitle);
     bindClick("generateMetaBtn", generateMeta);
     bindClick("generateKeywordBtn", generateKeywords);
 });
 
-// Helper function to handle clicks safely
-function bindClick(btnId, actionFn) {
-    const btn = document.getElementById(btnId);
-    if (btn) {
-        btn.addEventListener("click", function (e) {
-            e.preventDefault();
-            actionFn();
-        });
-    }
-}
 
 /* ==========================================
-   TOOL FUNCTIONS
+   FUNCTIONS
    ========================================== */
 
-// 1. Title Generator Function
+// 1. Title Generator
 function generateTitle() {
     const inputField = document.getElementById("keyword") || document.getElementById("titleTopic");
     const resultDiv = document.getElementById("titleResult");
@@ -52,7 +53,7 @@ function generateTitle() {
     const topic = inputField.value.trim();
 
     if (topic === "") {
-        resultDiv.innerHTML = "<p style='color: red; font-weight: bold;'>⚠️ Please enter a topic or keyword!</p>";
+        resultDiv.innerHTML = "<p style='color: red; font-weight: bold;'>⚠️ Please enter a topic!</p>";
         return;
     }
 
@@ -77,7 +78,7 @@ function generateTitle() {
     }, 300);
 }
 
-// 2. Meta Generator Function
+// 2. Meta Description Generator
 function generateMeta() {
     const inputField = document.getElementById("metaTopic");
     const resultDiv = document.getElementById("metaResult");
@@ -98,7 +99,7 @@ function generateMeta() {
     }, 300);
 }
 
-// 3. Keyword Generator Function
+// 3. Keyword Generator
 function generateKeywords() {
     const inputField = document.getElementById("keywordInput");
     const resultDiv = document.getElementById("keywordResult");
