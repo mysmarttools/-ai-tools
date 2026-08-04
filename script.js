@@ -573,10 +573,12 @@ function clearParaphrase(e) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    const btn = document.getElementById("generateBtn");
+    document.querySelectorAll("button[onclick*='generateTitle']").forEach(btn => {
+        btn.removeAttribute("onclick");
 
-    if (btn) {
         btn.addEventListener("click", generateTitle);
-        btn.addEventListener("touchstart", generateTitle);
-    }
+        btn.addEventListener("touchstart", generateTitle, {
+            passive: true
+        });
+    });
 });
