@@ -582,3 +582,536 @@ function clearParaphrase(e) {
     if (output) output.value = "";
 }
 
+/* =========================================================
+   AI PRODUCT DESCRIPTION GENERATOR
+   Add this code at the END of your existing script.js
+========================================================= */
+
+(function () {
+
+  const generateBtn = document.getElementById("generateBtn");
+  const clearBtn = document.getElementById("clearBtn");
+  const copyBtn = document.getElementById("copyBtn");
+
+  const productName = document.getElementById("productName");
+  const category = document.getElementById("category");
+  const features = document.getElementById("features");
+  const audience = document.getElementById("audience");
+  const keywords = document.getElementById("keywords");
+  const tone = document.getElementById("tone");
+
+  const emptyResult = document.getElementById("emptyResult");
+  const generatedContent =
+    document.getElementById("generatedContent");
+
+  const descriptionOutput =
+    document.getElementById("descriptionOutput");
+
+  const featuresOutput =
+    document.getElementById("featuresOutput");
+
+  const metaTitleOutput =
+    document.getElementById("metaTitleOutput");
+
+  const metaDescriptionOutput =
+    document.getElementById("metaDescriptionOutput");
+
+  const ctaOutput =
+    document.getElementById("ctaOutput");
+
+
+  /* -----------------------------------------
+     CHECK THAT THIS TOOL EXISTS ON PAGE
+  ----------------------------------------- */
+
+  if (!generateBtn || !productName) {
+    return;
+  }
+
+
+  /* -----------------------------------------
+     GENERATE BUTTON
+  ----------------------------------------- */
+
+  generateBtn.addEventListener("click", function () {
+
+    const name = productName.value.trim();
+    const productCategory = category.value.trim();
+    const featureText = features.value.trim();
+    const targetAudience = audience.value.trim();
+    const seoKeywords = keywords.value.trim();
+    const selectedTone = tone.value;
+
+
+    /* Validation */
+
+    if (!name) {
+      productName.focus();
+      alert("Please enter a product name.");
+      return;
+    }
+
+    if (!featureText) {
+      features.focus();
+      alert("Please enter your product features.");
+      return;
+    }
+
+
+    /* Loading */
+
+    generateBtn.disabled = true;
+    generateBtn.textContent = "⏳ Generating...";
+
+
+    setTimeout(function () {
+
+      generateProductDescription(
+        name,
+        productCategory,
+        featureText,
+        targetAudience,
+        seoKeywords,
+        selectedTone
+      );
+
+      generateBtn.disabled = false;
+      generateBtn.textContent =
+        "✨ Generate Product Description";
+
+    }, 600);
+
+  });
+
+
+  /* -----------------------------------------
+     GENERATE PRODUCT DESCRIPTION
+  ----------------------------------------- */
+
+  function generateProductDescription(
+    name,
+    productCategory,
+    featureText,
+    targetAudience,
+    seoKeywords,
+    selectedTone
+  ) {
+
+    let featureList = featureText
+      .split(/[,;\n]+/)
+      .map(function (item) {
+        return item.trim();
+      })
+      .filter(function (item) {
+        return item.length > 0;
+      });
+
+
+    if (featureList.length === 0) {
+      featureList = [featureText];
+    }
+
+
+    const categoryText =
+      productCategory || "quality product";
+
+    const audienceText =
+      targetAudience || "customers looking for quality products";
+
+
+    /* -----------------------------------------
+       INTRODUCTION
+    ----------------------------------------- */
+
+    let introduction;
+
+
+    if (selectedTone === "Friendly") {
+
+      introduction =
+        name +
+        " is a great choice for " +
+        audienceText +
+        ". Designed with quality, convenience and everyday enjoyment in mind, this " +
+        categoryText.toLowerCase() +
+        " combines useful features with an appealing design.";
+
+    }
+
+
+    else if (selectedTone === "Persuasive") {
+
+      introduction =
+        "Upgrade your shopping experience with " +
+        name +
+        ". Created for " +
+        audienceText +
+        ", this " +
+        categoryText.toLowerCase() +
+        " offers an excellent combination of quality, functionality and value.";
+
+    }
+
+
+    else if (selectedTone === "Luxury") {
+
+      introduction =
+        "Discover the refined quality of " +
+        name +
+        ", thoughtfully designed for " +
+        audienceText +
+        ". This premium " +
+        categoryText.toLowerCase() +
+        " brings together elegant design, dependable quality and impressive functionality.";
+
+    }
+
+
+    else if (selectedTone === "Simple") {
+
+      introduction =
+        name +
+        " is a useful and enjoyable " +
+        categoryText.toLowerCase() +
+        " made for " +
+        audienceText +
+        ". It offers practical features and an easy-to-use design.";
+
+    }
+
+
+    else {
+
+      introduction =
+        name +
+        " is a professionally designed " +
+        categoryText.toLowerCase() +
+        " created for " +
+        audienceText +
+        ". It combines practical functionality, quality and an engaging design for a reliable product experience.";
+
+    }
+
+
+    /* -----------------------------------------
+       FEATURES
+    ----------------------------------------- */
+
+    let featureSentence;
+
+
+    if (featureList.length === 1) {
+
+      featureSentence =
+        "It features " +
+        featureList[0].toLowerCase() +
+        ".";
+
+    }
+
+    else {
+
+      const lastFeature =
+        featureList[featureList.length - 1];
+
+      const firstFeatures =
+        featureList
+          .slice(0, -1)
+          .join(", ");
+
+
+      featureSentence =
+        "Key features include " +
+        firstFeatures.toLowerCase() +
+        ", and " +
+        lastFeature.toLowerCase() +
+        ".";
+
+    }
+
+
+    /* -----------------------------------------
+       SEO KEYWORDS
+    ----------------------------------------- */
+
+    let seoSentence = "";
+
+    if (seoKeywords) {
+
+      const keywordList =
+        seoKeywords
+          .split(",")
+          .map(function (item) {
+            return item.trim();
+          })
+          .filter(Boolean)
+          .slice(0, 3);
+
+
+      if (keywordList.length > 0) {
+
+        seoSentence =
+          " If you are looking for " +
+          keywordList.join(", ") +
+          ", " +
+          name +
+          " can be a practical addition to your collection.";
+
+      }
+
+    }
+
+
+    /* -----------------------------------------
+       FINAL DESCRIPTION
+    ----------------------------------------- */
+
+    const description =
+      introduction +
+      "\n\n" +
+      featureSentence +
+      " Whether you are purchasing it for personal use or as a thoughtful choice for someone else, " +
+      name +
+      " offers a convenient and enjoyable option." +
+      seoSentence;
+
+
+    descriptionOutput.textContent =
+      description;
+
+
+    /* -----------------------------------------
+       FEATURES LIST
+    ----------------------------------------- */
+
+    featuresOutput.innerHTML = "";
+
+
+    featureList.forEach(function (feature) {
+
+      const li =
+        document.createElement("li");
+
+      li.textContent = feature;
+
+      featuresOutput.appendChild(li);
+
+    });
+
+
+    /* -----------------------------------------
+       META TITLE
+    ----------------------------------------- */
+
+    let metaTitle =
+      name +
+      " | " +
+      (productCategory || "Quality Product");
+
+
+    if (metaTitle.length > 60) {
+
+      metaTitle =
+        metaTitle.substring(0, 57) +
+        "...";
+
+    }
+
+
+    metaTitleOutput.textContent =
+      metaTitle;
+
+
+    /* -----------------------------------------
+       META DESCRIPTION
+    ----------------------------------------- */
+
+    let metaDescription =
+      "Shop " +
+      name +
+      ", a quality " +
+      categoryText.toLowerCase() +
+      " designed for " +
+      audienceText.toLowerCase() +
+      ". Explore its key features and enjoy quality, convenience and great value.";
+
+
+    if (metaDescription.length > 160) {
+
+      metaDescription =
+        metaDescription.substring(0, 157) +
+        "...";
+
+    }
+
+
+    metaDescriptionOutput.textContent =
+      metaDescription;
+
+
+    /* -----------------------------------------
+       CTA
+    ----------------------------------------- */
+
+    ctaOutput.textContent =
+      "Shop " +
+      name +
+      " today and discover quality, convenience and great value. Order now!";
+
+
+    /* -----------------------------------------
+       SHOW RESULT
+    ----------------------------------------- */
+
+    if (emptyResult) {
+      emptyResult.style.display = "none";
+    }
+
+    if (generatedContent) {
+      generatedContent.classList.add("active");
+    }
+
+
+    /* Mobile scroll */
+
+    if (window.innerWidth < 900) {
+
+      const resultSection =
+        document.getElementById("resultSection");
+
+      if (resultSection) {
+
+        resultSection.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+
+      }
+
+    }
+
+  }
+
+
+  /* -----------------------------------------
+     COPY BUTTON
+  ----------------------------------------- */
+
+  if (copyBtn) {
+
+    copyBtn.addEventListener("click", async function () {
+
+      if (
+        !generatedContent ||
+        !generatedContent.classList.contains("active")
+      ) {
+        return;
+      }
+
+
+      const description =
+        descriptionOutput.textContent;
+
+
+      const featuresText =
+        Array.from(
+          featuresOutput.querySelectorAll("li")
+        )
+        .map(function (item) {
+          return "• " + item.textContent;
+        })
+        .join("\n");
+
+
+      const fullText =
+`Product Description
+
+${description}
+
+Key Features
+
+${featuresText}
+
+SEO Meta Title
+
+${metaTitleOutput.textContent}
+
+Meta Description
+
+${metaDescriptionOutput.textContent}
+
+Call To Action
+
+${ctaOutput.textContent}`;
+
+
+      try {
+
+        await navigator.clipboard.writeText(
+          fullText
+        );
+
+        copyBtn.textContent =
+          "✓ Copied!";
+
+
+        setTimeout(function () {
+
+          copyBtn.textContent =
+            "📋 Copy";
+
+        }, 1500);
+
+      }
+
+      catch (error) {
+
+        alert(
+          "Unable to copy. Please copy the text manually."
+        );
+
+      }
+
+    });
+
+  }
+
+
+  /* -----------------------------------------
+     CLEAR BUTTON
+  ----------------------------------------- */
+
+  if (clearBtn) {
+
+    clearBtn.addEventListener("click", function () {
+
+      productName.value = "";
+      category.value = "";
+      features.value = "";
+      audience.value = "";
+      keywords.value = "";
+
+      tone.value = "Professional";
+
+
+      if (emptyResult) {
+        emptyResult.style.display = "flex";
+      }
+
+
+      if (generatedContent) {
+        generatedContent.classList.remove("active");
+      }
+
+
+      descriptionOutput.textContent = "";
+      featuresOutput.innerHTML = "";
+      metaTitleOutput.textContent = "";
+      metaDescriptionOutput.textContent = "";
+      ctaOutput.textContent = "";
+
+    });
+
+  }
+
+})();
