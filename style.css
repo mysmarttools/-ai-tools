@@ -1699,3 +1699,568 @@ input, textarea, select {
 
 
 }
+
+/* =========================================================
+   AI PRODUCT DESCRIPTION GENERATOR
+   Add at the END of your existing style.css
+========================================================= */
+
+.pdg-page {
+  width: 100%;
+  min-height: 100vh;
+  color: #fff;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.pdg-hero {
+  width: min(900px, 92%);
+  margin: 0 auto;
+  padding: 65px 20px 40px;
+  text-align: center;
+}
+
+.pdg-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 15px;
+  margin-bottom: 18px;
+
+  border: 1px solid rgba(118, 87, 255, 0.4);
+  border-radius: 50px;
+
+  background: rgba(118, 87, 255, 0.1);
+  color: #b8adff;
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.pdg-hero h1 {
+  margin: 0 0 15px;
+
+  font-size: clamp(38px, 5vw, 62px);
+  line-height: 1.05;
+  letter-spacing: -2px;
+  font-weight: 900;
+
+  color: #fff;
+}
+
+.pdg-hero p {
+  max-width: 680px;
+  margin: 0 auto;
+
+  color: #929db7;
+
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+
+/* =========================
+   MAIN TOOL
+========================= */
+
+.pdg-container {
+  width: min(1150px, 92%);
+  margin: 0 auto;
+  padding-bottom: 80px;
+}
+
+.pdg-tool {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 22px;
+  align-items: start;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.pdg-card {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(16, 24, 39, 0.98),
+      rgba(10, 16, 29, 0.98)
+    );
+
+  border: 1px solid #27324a;
+  border-radius: 18px;
+
+  padding: 25px;
+
+  box-shadow:
+    0 15px 45px rgba(0, 0, 0, 0.18);
+}
+
+.pdg-card h2 {
+  margin: 0 0 7px;
+
+  color: #fff;
+
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.pdg-card-subtitle {
+  margin: 0 0 25px;
+
+  color: #7f8aa5;
+
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.pdg-field {
+  margin-bottom: 18px;
+}
+
+.pdg-field label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #dce2f0;
+
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.pdg-field label span {
+  color: #ff6b81;
+}
+
+.pdg-field label small {
+  color: #68738d;
+  font-weight: 500;
+}
+
+.pdg-field input,
+.pdg-field textarea,
+.pdg-field select {
+  width: 100%;
+
+  padding: 12px 13px;
+
+  border: 1px solid #2a354d;
+  border-radius: 9px;
+
+  outline: none;
+
+  background: #0a1120;
+  color: #fff;
+
+  font-family: inherit;
+  font-size: 13px;
+
+  transition: 0.2s;
+
+  box-sizing: border-box;
+}
+
+.pdg-field input::placeholder,
+.pdg-field textarea::placeholder {
+  color: #56617a;
+}
+
+.pdg-field input:focus,
+.pdg-field textarea:focus,
+.pdg-field select:focus {
+  border-color: #7657ff;
+
+  box-shadow:
+    0 0 0 3px rgba(118, 87, 255, 0.1);
+}
+
+.pdg-field textarea {
+  min-height: 115px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.pdg-field select {
+  cursor: pointer;
+}
+
+
+/* =========================
+   GENERATE BUTTON
+========================= */
+
+.pdg-generate {
+  width: 100%;
+
+  padding: 13px 16px;
+
+  border: 0;
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #7657ff,
+      #573ed0
+    );
+
+  color: #fff;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 25px rgba(118, 87, 255, 0.2);
+
+  transition: 0.25s;
+}
+
+.pdg-generate:hover {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 12px 30px rgba(118, 87, 255, 0.3);
+}
+
+.pdg-generate:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+
+/* =========================
+   CLEAR BUTTON
+========================= */
+
+.pdg-clear {
+  width: 100%;
+
+  margin-top: 9px;
+
+  padding: 11px;
+
+  border: 1px solid #303a50;
+  border-radius: 9px;
+
+  background: transparent;
+
+  color: #8994ad;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.pdg-clear:hover {
+  color: #fff;
+  border-color: #536079;
+}
+
+
+/* =========================
+   RESULT HEADER
+========================= */
+
+.pdg-result-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-bottom: 20px;
+}
+
+.pdg-result-header h2 {
+  margin-bottom: 5px;
+}
+
+.pdg-result-header p {
+  margin: 0;
+
+  color: #707b95;
+
+  font-size: 11px;
+}
+
+
+/* =========================
+   COPY BUTTON
+========================= */
+
+.pdg-copy {
+  flex-shrink: 0;
+
+  padding: 8px 11px;
+
+  border: 1px solid #303a51;
+  border-radius: 8px;
+
+  background: #111a2b;
+
+  color: #b5bfd5;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.pdg-copy:hover {
+  color: #fff;
+  border-color: #7657ff;
+}
+
+
+/* =========================
+   EMPTY RESULT
+========================= */
+
+.pdg-empty {
+  min-height: 470px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 30px;
+}
+
+.pdg-empty-icon {
+  width: 62px;
+  height: 62px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 17px;
+
+  border-radius: 17px;
+
+  background: rgba(118, 87, 255, 0.1);
+
+  border: 1px solid rgba(118, 87, 255, 0.2);
+
+  font-size: 28px;
+}
+
+.pdg-empty h3 {
+  margin: 0 0 8px;
+
+  color: #fff;
+
+  font-size: 17px;
+}
+
+.pdg-empty p {
+  max-width: 330px;
+
+  margin: 0;
+
+  color: #68738e;
+
+  font-size: 12px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================
+   GENERATED CONTENT
+========================= */
+
+.pdg-generated {
+  display: none;
+}
+
+.pdg-generated.active {
+  display: block;
+}
+
+.pdg-output {
+  margin-bottom: 16px;
+
+  padding: 16px;
+
+  background: #0a1120;
+
+  border: 1px solid #222d43;
+
+  border-radius: 11px;
+}
+
+.pdg-output-title {
+  margin-bottom: 10px;
+
+  color: #a99cff;
+
+  font-size: 11px;
+  font-weight: 850;
+
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.pdg-description {
+  color: #c6cede;
+
+  font-size: 13px;
+  line-height: 1.75;
+
+  white-space: pre-line;
+}
+
+.pdg-output ul {
+  margin: 0;
+  padding-left: 19px;
+}
+
+.pdg-output li {
+  margin-bottom: 7px;
+
+  color: #b9c2d5;
+
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+
+/* =========================
+   META OUTPUT
+========================= */
+
+.pdg-output-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 14px;
+}
+
+.pdg-small-output {
+  color: #b9c2d5;
+
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+
+/* =========================
+   SEO CONTENT
+========================= */
+
+.pdg-info {
+  max-width: 850px;
+
+  margin: 65px auto 0;
+}
+
+.pdg-info h2 {
+  margin: 30px 0 12px;
+
+  color: #fff;
+
+  font-size: 25px;
+  font-weight: 850;
+}
+
+.pdg-info h2:first-child {
+  margin-top: 0;
+}
+
+.pdg-info p {
+  margin: 0;
+
+  color: #8792aa;
+
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 900px) {
+
+  .pdg-tool {
+    grid-template-columns: 1fr;
+  }
+
+  .pdg-empty {
+    min-height: 300px;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .pdg-hero {
+    width: 94%;
+    padding: 42px 10px 30px;
+  }
+
+  .pdg-hero h1 {
+    font-size: 40px;
+    letter-spacing: -1.3px;
+  }
+
+  .pdg-hero p {
+    font-size: 13px;
+  }
+
+  .pdg-container {
+    width: 94%;
+  }
+
+  .pdg-card {
+    padding: 19px;
+    border-radius: 15px;
+  }
+
+  .pdg-output-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pdg-result-header {
+    align-items: center;
+  }
+
+}
+
+
+@media (max-width: 380px) {
+
+  .pdg-hero h1 {
+    font-size: 34px;
+  }
+
+}
