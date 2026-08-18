@@ -1,1 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>AI Product Description Generator - Free SEO Tool</title>
+
+  <meta
+    name="description"
+    content="Create SEO-friendly product descriptions instantly with our free AI Product Description Generator for Shopify, eCommerce stores and online shops."
+  >
+
+  <meta
+    name="keywords"
+    content="AI product description generator, product description generator, SEO product description, Shopify product description"
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header class="header">
+
+    <a href="/" class="logo">
+      <span class="logo-icon">🤖</span>
+      <span>AI Smart Tool</span>
+    </a>
+
+    <a href="/" class="back-btn">
+      ← All Tools
+    </a>
+
+  </header>
+
+
+  <!-- MAIN -->
+
+  <main class="container">
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+      <div class="badge">
+        ✨ FREE AI TOOL
+      </div>
+
+      <h1>
+        AI Product Description Generator
+      </h1>
+
+      <p>
+        Create engaging, SEO-friendly product descriptions
+        for your online store in seconds.
+      </p>
+
+    </section>
+
+
+    <!-- TOOL -->
+
+    <section class="tool-box">
+
+      <div class="form-section">
+
+        <h2>🛍️ Product Information</h2>
+
+        <p class="section-text">
+          Enter your product details and generate a professional
+          product description.
+        </p>
+
+
+        <!-- PRODUCT NAME -->
+
+        <div class="field">
+
+          <label for="productName">
+            Product Name <span>*</span>
+          </label>
+
+          <input
+            type="text"
+            id="productName"
+            placeholder="e.g. Wooden Puzzle Board for Kids"
+          >
+
+        </div>
+
+
+        <!-- CATEGORY -->
+
+        <div class="field">
+
+          <label for="category">
+            Product Category
+          </label>
+
+          <input
+            type="text"
+            id="category"
+            placeholder="e.g. Educational Toys"
+          >
+
+        </div>
+
+
+        <!-- FEATURES -->
+
+        <div class="field">
+
+          <label for="features">
+            Key Features <span>*</span>
+          </label>
+
+          <textarea
+            id="features"
+            rows="5"
+            placeholder="e.g. Durable wooden material, colorful design, educational, improves problem-solving skills..."
+          ></textarea>
+
+        </div>
+
+
+        <!-- AUDIENCE -->
+
+        <div class="field">
+
+          <label for="audience">
+            Target Audience
+          </label>
+
+          <input
+            type="text"
+            id="audience"
+            placeholder="e.g. Kids aged 3-6 years"
+          >
+
+        </div>
+
+
+        <!-- KEYWORDS -->
+
+        <div class="field">
+
+          <label for="keywords">
+            SEO Keywords
+            <small>(Optional)</small>
+          </label>
+
+          <input
+            type="text"
+            id="keywords"
+            placeholder="e.g. wooden puzzle, educational toys, kids toys"
+          >
+
+        </div>
+
+
+        <!-- TONE -->
+
+        <div class="field">
+
+          <label for="tone">
+            Writing Tone
+          </label>
+
+          <select id="tone">
+
+            <option value="Professional">
+              Professional
+            </option>
+
+            <option value="Friendly">
+              Friendly
+            </option>
+
+            <option value="Persuasive">
+              Persuasive
+            </option>
+
+            <option value="Luxury">
+              Luxury
+            </option>
+
+            <option value="Simple">
+              Simple & Easy
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <!-- GENERATE -->
+
+        <button
+          type="button"
+          id="generateBtn"
+          class="generate-btn"
+        >
+          ✨ Generate Product Description
+        </button>
+
+        <button
+          type="button"
+          id="clearBtn"
+          class="clear-btn"
+        >
+          Clear All
+        </button>
+
+      </div>
+
+
+      <!-- RESULT -->
+
+      <div
+        class="result-section"
+        id="resultSection"
+      >
+
+        <div class="result-header">
+
+          <div>
+            <h2>📝 Generated Description</h2>
+
+            <p>
+              Your product content will appear here.
+            </p>
+          </div>
+
+          <button
+            type="button"
+            id="copyBtn"
+            class="copy-btn"
+          >
+            📋 Copy
+          </button>
+
+        </div>
+
+
+        <!-- EMPTY STATE -->
+
+        <div
+          class="empty-result"
+          id="emptyResult"
+        >
+
+          <div class="empty-icon">
+            ✨
+          </div>
+
+          <h3>
+            Ready to Generate
+          </h3>
+
+          <p>
+            Enter your product information and click
+            "Generate Product Description".
+          </p>
+
+        </div>
+
+
+        <!-- GENERATED CONTENT -->
+
+        <div
+          class="generated-content"
+          id="generatedContent"
+        >
+
+          <div class="output-block">
+
+            <div class="output-title">
+              Product Description
+            </div>
+
+            <div
+              id="descriptionOutput"
+              class="output-text"
+            ></div>
+
+          </div>
+
+
+          <div class="output-block">
+
+            <div class="output-title">
+              ⭐ Key Features
+            </div>
+
+            <ul id="featuresOutput"></ul>
+
+          </div>
+
+
+          <div class="output-grid">
+
+            <div class="output-block">
+
+              <div class="output-title">
+                🔍 SEO Meta Title
+              </div>
+
+              <div
+                id="metaTitleOutput"
+                class="small-output"
+              ></div>
+
+            </div>
+
+
+            <div class="output-block">
+
+              <div class="output-title">
+                📄 Meta Description
+              </div>
+
+              <div
+                id="metaDescriptionOutput"
+                class="small-output"
+              ></div>
+
+            </div>
+
+          </div>
+
+
+          <div class="output-block">
+
+            <div class="output-title">
+              🛒 Call To Action
+            </div>
+
+            <div
+              id="ctaOutput"
+              class="small-output"
+            ></div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- SEO CONTENT -->
+
+    <section class="info-section">
+
+      <h2>
+        What is an AI Product Description Generator?
+      </h2>
+
+      <p>
+        An AI Product Description Generator helps online store
+        owners create clear, engaging and SEO-friendly product
+        descriptions. Instead of writing every product description
+        manually, you can enter basic product information and
+        generate optimized content quickly.
+      </p>
+
+      <h2>
+        Who Can Use This Tool?
+      </h2>
+
+      <p>
+        This free tool can be useful for Shopify stores,
+        eCommerce businesses, online sellers, marketers,
+        bloggers and product owners who need better product
+        content.
+      </p>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer class="footer">
+
+    <p>
+      © 2026 AI Smart Tool. Free AI Tools Online.
+    </p>
+
+  </footer>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
