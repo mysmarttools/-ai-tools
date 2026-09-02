@@ -1,183 +1,289 @@
-.image-compressor-tool {
-width: 100%;
-max-width: 1000px;
-margin: 0 auto;
-padding: 50px 20px;
-box-sizing: border-box;
-}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  }
 
-.compressor-heading {
-text-align: center;
-margin-bottom: 30px;
-}
-
-.compressor-icon {
-font-size: 52px;
-margin-bottom: 10px;
-}
-
-.compressor-heading h1 {
-margin: 0;
-font-size: 40px;
-font-weight: 800;
+body {
+font-family: Arial, Helvetica, sans-serif;
+background: #f8fafc;
 color: #111827;
+line-height: 1.6;
 }
 
-.compressor-heading p {
-margin: 12px auto 0;
-max-width: 650px;
-color: #64748b;
-font-size: 16px;
-}
+/* =========================
+HEADER
+========================= */
 
-/* Main Box */
-
-.compressor-box {
+.site-header {
 width: 100%;
 background: #ffffff;
-border: 1px solid #e5e7eb;
-border-radius: 20px;
-padding: 25px;
-box-sizing: border-box;
-box-shadow: 0 10px 35px rgba(0,0,0,0.07);
+border-bottom: 1px solid #e5e7eb;
 }
 
-/* Upload */
+.header-container {
+max-width: 1150px;
+margin: auto;
+min-height: 70px;
+padding: 0 20px;
 
-.compress-upload {
-width: 100%;
-min-height: 350px;
-border: 2px dashed #cbd5e1;
-border-radius: 16px;
 display: flex;
-flex-direction: column;
 align-items: center;
-justify-content: center;
+justify-content: space-between;
+}
+
+.logo {
+text-decoration: none;
+color: #4f46e5;
+font-size: 22px;
+font-weight: 800;
+}
+
+.main-nav {
+display: flex;
+gap: 25px;
+}
+
+.main-nav a {
+text-decoration: none;
+color: #374151;
+font-size: 15px;
+font-weight: 600;
+}
+
+.main-nav a:hover {
+color: #4f46e5;
+}
+
+/* =========================
+HERO
+========================= */
+
+.hero {
 text-align: center;
-padding: 35px 20px;
-box-sizing: border-box;
-transition: 0.25s ease;
+max-width: 750px;
+margin: 0 auto;
+padding: 55px 20px 35px;
 }
 
-.compress-upload.dragging {
-border-color: #4f46e5;
-background: #f5f3ff;
-}
-
-.upload-cloud {
+.tool-emoji {
 font-size: 55px;
 margin-bottom: 12px;
 }
 
-.compress-upload h2 {
-margin: 0;
-font-size: 25px;
-color: #111827;
+.hero h1 {
+font-size: 42px;
+line-height: 1.2;
+margin-bottom: 14px;
+font-weight: 800;
 }
 
-.compress-upload p {
+.hero p {
 color: #64748b;
-margin: 10px 0 20px;
+font-size: 17px;
 }
 
-.compress-upload input {
+/* =========================
+TOOL CONTAINER
+========================= */
+
+.tool-container {
+width: 100%;
+max-width: 950px;
+margin: 0 auto;
+padding: 0 20px 50px;
+}
+
+.compressor-card {
+background: #ffffff;
+border: 1px solid #e5e7eb;
+border-radius: 20px;
+padding: 28px;
+
+box-shadow:
+0 10px 35px rgba(0, 0, 0, 0.07);
+}
+
+/* =========================
+UPLOAD
+========================= */
+
+.upload-area {
+min-height: 360px;
+
+border: 2px dashed #cbd5e1;
+border-radius: 17px;
+
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+
+text-align: center;
+
+padding: 35px 20px;
+
+transition: 0.25s ease;
+}
+
+.upload-area.dragging {
+border-color: #4f46e5;
+background: #f5f3ff;
+}
+
+.upload-icon {
+font-size: 60px;
+margin-bottom: 15px;
+}
+
+.upload-area h2 {
+font-size: 25px;
+margin-bottom: 8px;
+}
+
+.upload-area p {
+color: #64748b;
+margin-bottom: 22px;
+}
+
+#imageInput {
 display: none;
 }
 
-.choose-image {
-display: inline-block;
+.upload-button {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+
 background: #4f46e5;
-color: white;
+color: #ffffff;
+
 padding: 13px 25px;
+
 border-radius: 10px;
+
+font-size: 15px;
 font-weight: 700;
+
 cursor: pointer;
-transition: 0.2s;
+
+transition: 0.2s ease;
 }
 
-.choose-image:hover {
+.upload-button:hover {
 background: #4338ca;
 transform: translateY(-1px);
 }
 
-.compress-upload small {
+.upload-note {
+display: block;
 margin-top: 15px;
+
 color: #94a3b8;
+font-size: 13px;
 }
 
-/* Result */
+/* =========================
+RESULT
+========================= */
 
-.compress-result {
+.result-area {
 display: none;
 }
 
-.preview-wrapper {
+/* =========================
+PREVIEW
+========================= */
+
+.preview-box {
 width: 100%;
-min-height: 300px;
+min-height: 320px;
+
 background: #f8fafc;
+
 border-radius: 15px;
+
 display: flex;
 align-items: center;
 justify-content: center;
+
 padding: 20px;
-box-sizing: border-box;
 }
 
-.preview-wrapper img {
+.preview-box img {
 display: block;
+
 max-width: 100%;
-max-height: 420px;
+max-height: 430px;
+
 object-fit: contain;
+
 border-radius: 10px;
 }
 
-/* File Details */
+/* =========================
+FILE INFO
+========================= */
 
-.file-details {
+.file-info {
 display: grid;
 grid-template-columns: repeat(3, 1fr);
+
 gap: 15px;
-margin: 20px 0;
+
+margin: 22px 0;
 }
 
-.file-details > div {
+.info-box {
 background: #f8fafc;
+
 border-radius: 12px;
-padding: 16px;
+
+padding: 17px;
+
 text-align: center;
 }
 
-.file-details span {
+.info-box span {
 display: block;
+
 color: #64748b;
+
 font-size: 13px;
-margin-bottom: 6px;
+
+margin-bottom: 5px;
 }
 
-.file-details strong {
+.info-box strong {
+display: block;
+
 color: #111827;
+
 font-size: 20px;
 }
 
-/* Quality */
+/* =========================
+QUALITY
+========================= */
 
-.quality-area {
-margin: 25px 0;
+.quality-section {
+margin: 28px 0;
 }
 
-.quality-top {
+.quality-header {
 display: flex;
 justify-content: space-between;
 align-items: center;
+
 margin-bottom: 12px;
 }
 
-.quality-top label {
+.quality-header label {
+font-size: 15px;
 font-weight: 700;
-color: #111827;
 }
 
-.quality-top strong {
+.quality-header strong {
 color: #4f46e5;
 }
 
@@ -186,90 +292,206 @@ width: 100%;
 cursor: pointer;
 }
 
-/* Buttons */
+.quality-labels {
+display: flex;
+justify-content: space-between;
 
-.compress-actions {
+margin-top: 5px;
+
+font-size: 12px;
+color: #94a3b8;
+}
+
+/* =========================
+BUTTONS
+========================= */
+
+.buttons {
 display: flex;
 gap: 12px;
 flex-wrap: wrap;
 }
 
-.compress-actions button {
-border: 0;
-border-radius: 10px;
+.buttons button {
+border: none;
+
 padding: 14px 20px;
+
+border-radius: 10px;
+
 font-size: 15px;
 font-weight: 700;
+
 cursor: pointer;
-transition: 0.2s;
+
+transition: 0.2s ease;
 }
 
-.compress-main {
+.compress-button {
 flex: 2;
+
 background: #4f46e5;
-color: #fff;
+color: #ffffff;
 }
 
-.compress-main:hover {
+.compress-button:hover {
 background: #4338ca;
 }
 
-.download-main {
+.download-button {
 flex: 1;
+
 background: #16a34a;
-color: #fff;
+color: #ffffff;
 }
 
-.download-main:hover:not(:disabled) {
+.download-button:hover:not(:disabled) {
 background: #15803d;
 }
 
-.download-main:disabled {
-opacity: 0.5;
+.download-button:disabled {
+opacity: 0.45;
 cursor: not-allowed;
 }
 
-.reset-main {
+.reset-button {
 flex: 1;
+
 background: #f1f5f9;
 color: #334155;
 }
 
-.reset-main:hover {
+.reset-button:hover {
 background: #e2e8f0;
 }
 
-/* Mobile */
+/* =========================
+SEO CONTENT
+========================= */
+
+.seo-content {
+max-width: 950px;
+
+margin: 0 auto;
+
+padding: 10px 20px 60px;
+}
+
+.seo-content h2 {
+font-size: 26px;
+
+margin-top: 30px;
+margin-bottom: 12px;
+}
+
+.seo-content p {
+color: #4b5563;
+
+font-size: 16px;
+
+line-height: 1.8;
+}
+
+.seo-content ul,
+.seo-content ol {
+padding-left: 25px;
+
+color: #4b5563;
+}
+
+.seo-content li {
+margin: 8px 0;
+}
+
+/* =========================
+FOOTER
+========================= */
+
+.site-footer {
+text-align: center;
+
+padding: 25px 20px;
+
+background: #ffffff;
+
+border-top: 1px solid #e5e7eb;
+
+color: #64748b;
+
+font-size: 14px;
+}
+
+/* =========================
+MOBILE
+========================= */
 
 @media (max-width: 700px) {
 
-.image-compressor-tool {
-padding: 30px 12px;
+.header-container {
+min-height: 60px;
 }
 
-.compressor-heading h1 {
-font-size: 30px;
+.logo {
+font-size: 19px;
 }
 
-.compressor-box {
+.main-nav {
+gap: 12px;
+}
+
+.main-nav a {
+font-size: 13px;
+}
+
+.hero {
+padding: 35px 15px 25px;
+}
+
+.hero h1 {
+font-size: 31px;
+}
+
+.hero p {
+font-size: 15px;
+}
+
+.tool-container {
+padding: 0 12px 35px;
+}
+
+.compressor-card {
 padding: 15px;
+border-radius: 16px;
 }
 
-.compress-upload {
-min-height: 300px;
+.upload-area {
+min-height: 310px;
+padding: 25px 15px;
 }
 
-.file-details {
+.upload-icon {
+font-size: 50px;
+}
+
+.upload-area h2 {
+font-size: 22px;
+}
+
+.file-info {
 grid-template-columns: 1fr;
 }
 
-.compress-actions {
+.buttons {
 flex-direction: column;
 }
 
-.compress-actions button {
+.buttons button {
 width: 100%;
 flex: none;
+}
+
+.preview-box {
+min-height: 240px;
 }
 
 }
