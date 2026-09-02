@@ -1,160 +1,102 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<section class="image-compressor-tool">
 
-  <title>Image Compressor Online Free | AI Smart Tools</title>
-  <meta name="description" content="Compress images online for free with our fast Image Compressor. Reduce JPG, PNG and WebP image size while maintaining good quality.">
-  <meta name="keywords" content="image compressor, compress image online, image compressor online, reduce image size, compress jpg, compress png">
+  <div class="compressor-heading">
+    <div class="compressor-icon">🗜️</div>
+    <h1>Image Compressor</h1>
+    <p>Compress JPG, PNG and WebP images online for free.</p>
+  </div>
 
-  <link rel="stylesheet" href="css/style.css">
-</head>
+  <div class="compressor-box">
 
-<body>
+```
+<div class="compress-upload" id="uploadArea">
 
-  <main class="tool-page">
+  <div class="upload-cloud">☁️</div>
 
-    <section class="tool-header">
-      <div class="tool-icon">🗜️</div>
+  <h2>Upload Your Image</h2>
 
-      <h1>Image Compressor</h1>
+  <p>Drag & drop your image here or browse from your device</p>
 
-      <p>
-        Compress JPG, PNG and WebP images online for free.
-        Reduce image file size while maintaining good image quality.
-      </p>
-    </section>
+  <input
+    type="file"
+    id="imageInput"
+    accept=".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp"
+  >
 
+  <label for="imageInput" class="choose-image">
+    📁 Choose Image
+  </label>
 
-    <section class="compressor-card">
+  <small>JPG, PNG or WebP • Maximum 20MB</small>
 
-      <div class="upload-area" id="uploadArea">
-
-        <div class="upload-icon">📤</div>
-
-        <h2>Upload Your Image</h2>
-
-        <p>Drag & drop your image here or click to browse</p>
-
-        <input
-          type="file"
-          id="imageInput"
-          accept="image/jpeg,image/png,image/webp"
-          hidden
-        >
-
-        <button class="upload-btn" id="uploadBtn">
-          Choose Image
-        </button>
-
-        <span class="supported">
-          JPG, PNG, WebP • Max 20MB
-        </span>
-
-      </div>
+</div>
 
 
-      <div class="preview-section" id="previewSection">
+<div class="compress-result" id="compressResult">
 
-        <div class="preview-image-box">
-          <img id="previewImage" alt="Image preview">
-        </div>
+  <div class="preview-wrapper">
+    <img id="previewImage" alt="Uploaded image preview">
+  </div>
 
-        <div class="image-info">
+  <div class="file-details">
 
-          <div class="info-item">
-            <span>Original Size</span>
-            <strong id="originalSize">0 KB</strong>
-          </div>
+    <div>
+      <span>Original Size</span>
+      <strong id="originalSize">-</strong>
+    </div>
 
-          <div class="info-item">
-            <span>Compressed Size</span>
-            <strong id="compressedSize">0 KB</strong>
-          </div>
+    <div>
+      <span>Compressed Size</span>
+      <strong id="compressedSize">-</strong>
+    </div>
 
-          <div class="info-item">
-            <span>Saved</span>
-            <strong id="savedPercent">0%</strong>
-          </div>
+    <div>
+      <span>Saved</span>
+      <strong id="savedPercent">-</strong>
+    </div>
 
-        </div>
-
-
-        <div class="quality-control">
-
-          <div class="quality-header">
-            <label for="quality">
-              Compression Quality
-            </label>
-
-            <strong id="qualityValue">70%</strong>
-          </div>
-
-          <input
-            type="range"
-            id="quality"
-            min="10"
-            max="100"
-            value="70"
-          >
-
-          <div class="quality-labels">
-            <span>Smaller File</span>
-            <span>Better Quality</span>
-          </div>
-
-        </div>
+  </div>
 
 
-        <div class="action-buttons">
+  <div class="quality-area">
 
-          <button class="compress-btn" id="compressBtn">
-            🗜️ Compress Image
-          </button>
+    <div class="quality-top">
+      <label>Compression Quality</label>
+      <strong id="qualityValue">70%</strong>
+    </div>
 
-          <button class="download-btn" id="downloadBtn">
-            ⬇️ Download Image
-          </button>
+    <input
+      type="range"
+      id="quality"
+      min="10"
+      max="100"
+      value="70"
+    >
 
-          <button class="reset-btn" id="resetBtn">
-            🔄 Compress Another
-          </button>
-
-        </div>
-
-      </div>
-
-    </section>
+  </div>
 
 
-    <section class="tool-info">
+  <div class="compress-actions">
 
-      <h2>🗜️ Compress Images Online</h2>
+    <button id="compressBtn" class="compress-main">
+      🗜️ Compress Image
+    </button>
 
-      <p>
-        Our free Image Compressor helps you reduce image file sizes
-        quickly without complicated software. Compress JPG, PNG and
-        WebP images directly in your browser.
-      </p>
+    <button id="downloadBtn" class="download-main" disabled>
+      ⬇️ Download
+    </button>
 
-      <h2>✨ Why Use Our Image Compressor?</h2>
+    <button id="resetBtn" class="reset-main">
+      🔄 New Image
+    </button>
 
-      <ul>
-        <li>🚀 Fast image compression</li>
-        <li>🆓 Completely free to use</li>
-        <li>🔒 Images are processed in your browser</li>
-        <li>📱 Works on mobile and desktop</li>
-        <li>🖼️ Supports JPG, PNG and WebP</li>
-        <li>⚡ Helps reduce website image size</li>
-      </ul>
+  </div>
 
-    </section>
+</div>
+```
 
-  </main>
+  </div>
 
+</section>
 
-  <script src="js/image-compressor.js"></script>
-
-</body>
-</html>
+<script src="js/image-compressor.js"></script>
